@@ -1,0 +1,52 @@
+body {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction:column;
+}
+
+section {
+  display: flex;
+  flex-direction:column;
+}
+
+
+
+.navbar {
+  height: 50px;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  background-color:#CCFFCB;
+}
+
+.banner {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  height:200px;
+}
+
+.basicInfo {
+  height: 300px;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  background-color:#CCFFCB;
+  flex-direction:column;
+}
+
+.recentHistory {
+  height: 300px;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.intakeQuestions {
+  height: 300px;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  background-color:#CCFFCB;
+}
+
+.footer {
+  height: 50px;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
