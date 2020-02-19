@@ -38,8 +38,18 @@ andrew.appendChild(div2);
 
 }
 
+function loadNavBar() {
+  let navbar1 = document.createElement('div');
+  navbar1.setAttribute("id", "navbar1");
+  navbar1.innerHTML = "<ul> <li><a href='#'>Home</a></li> <li><a href='#'>Data Input</a></li> <li><a href='#'>About</a></li> </ul>"
+
+  var sectionNav = document.getElementById("navbar");
+  sectionNav.appendChild(navbar1);
+}
+
 //Various start up scripts and preparation
 loadPage();
+loadNavBar();
 
 
 /* Adding text boxes to the basic info screen. We will need text boxes for all the various inputs*/
