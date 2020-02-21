@@ -205,7 +205,7 @@ hideClass('summaryPage');
 function loadNavBar() {
   let navbar1 = document.createElement('div');
   navbar1.setAttribute("id", "navbar1");
-  navbar1.innerHTML = "<ul> <li><a href='#' class='anchor'>Home</a></li> <li><a href='#' class='anchor'>Data Input</a></li> <li><a href='#' class='anchor'>About</a></li> </ul>";
+  navbar1.innerHTML = "<ul> <li><a href='#' class='anchor'>Home</a></li> <li><a href='#' class='anchor'>Data Input</a></li> </ul>";
 
   var sectionNav = document.getElementById("navbar");
   sectionNav.appendChild(navbar1);
@@ -323,11 +323,5 @@ function handler() {
   //if navbar, Home is selected
 if(this.innerHTML === 'Home') {
   showClass('basicInfo');
-  hideClass('addressInfo');
-  hideClass('abuserInfo');
-  hideClass('medicalAndFinancial');
-  hideClass('familyAndFriends');
-  hideClass('generalInfo');
-  hideClass('summaryPage');
 }
 }
