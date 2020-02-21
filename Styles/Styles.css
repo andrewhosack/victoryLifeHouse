@@ -76,6 +76,7 @@ input[type="text"] {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   flex-direction:column;
+  background-color:#CCFFCB;
 }
 
 .abuserInfo {
@@ -89,6 +90,21 @@ input[type="text"] {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   flex-direction:column;
+  background-color:#CCFFCB;
+}
+
+.familyAndFriends {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction:column;
+  background-color:#CCFFCB;
+}
+
+.generalInfo {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction:column;
+  background-color:#CCFFCB;
 }
 
 .footer {
