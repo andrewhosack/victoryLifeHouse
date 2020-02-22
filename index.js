@@ -43,6 +43,10 @@ function Navigation(btnClick, type) {
 
 if (type === 'next') {
 
+if(btnClick==='splashScreen') {
+    hideClass('splashScreen');
+    showClass('basicInfo');
+  }
 if(btnClick==='basicInfo') {
   hideClass('basicInfo');
   showClass('addressInfo');
@@ -75,10 +79,10 @@ if (btnClick==='generalInfo')
 
 else if (type === 'previous') {
 
-/*if(btnClick==='basicInfo') {
+if(btnClick==='basicInfo') {
   hideClass('basicInfo');
-  showClass('addressInfo');
-}*/
+  showClass('splashScreen');
+}
 if (btnClick==='addressInfo') {
   hideClass('addressInfo');
   showClass('basicInfo');
@@ -115,6 +119,20 @@ if (btnClick==='summaryPage')
 
 
 function loadPage() {
+
+//Creating splash screen
+let splashScreenDiv = document.createElement('div');
+splashScreenDiv.setAttribute("id", "splashScreenDiv");
+splashScreenDiv.innerHTML = 'Splash Screen:';
+
+let splashScreenDiv2 = document.createElement('div');
+splashScreenDiv2.setAttribute("id", "splashScreenDiv2");
+splashScreenDiv2.innerHTML = '<img src=".\\images\\VLH.jpg" alt="banner of VLH" width="100%">';
+
+let btnSplashScreen = document.createElement('div');
+btnSplashScreen.setAttribute("id", "btnSplashScreen");
+btnSplashScreen.innerHTML = '<input type="button" value="Next >>" id="btnSplashScreenNext">';
+
 //Creating the divs in the basic info
 let div = document.createElement('div');
 div.setAttribute("id", "div");
@@ -125,8 +143,7 @@ div2.setAttribute("id", "div2");
 
 let btnBasicInfo = document.createElement('div');
 btnBasicInfo.setAttribute("id", "btnBasicInfo");
-//btnBasicInfo.innerHTML = '<input type="button" value="<< Previous" id="btnBasicInfoPrevious"><input type="button" value="Next >>" id="btnBasicInfoNext">';
-btnBasicInfo.innerHTML = '<input type="button" value="Next >>" id="btnBasicInfoNext">';
+btnBasicInfo.innerHTML = '<input type="button" value="<< Previous" id="btnBasicInfoPrevious"><input type="button" value="Next >>" id="btnBasicInfoNext">';
 
 
 //Creating the divs in the address info
@@ -203,6 +220,11 @@ btnSummaryPage.innerHTML = '<input type="button" value="<< Previous" id="btnSumm
 
 
 //Appending the divs to the various sections
+var spashScreen = document.getElementById('splashScreen');
+spashScreen.appendChild(splashScreenDiv);
+spashScreen.appendChild(splashScreenDiv2);
+spashScreen.appendChild(btnSplashScreen);
+
 var basicInfo = document.getElementById('basicInfo');
 basicInfo.appendChild(div);
 basicInfo.appendChild(div2);
@@ -239,7 +261,7 @@ summaryPage.appendChild(div14);
 summaryPage.appendChild(btnSummaryPage);
 
 //By default only show the first screen
-//hideClass('basicInfo');
+hideClass('basicInfo');
 hideClass('addressInfo');
 hideClass('abuserInfo');
 hideClass('medicalAndFinancial');
@@ -336,6 +358,10 @@ addTextBox('Do you have any food allergies?', 'txtFoodAllergies', 'div12');
 
 
 
+document.getElementById("btnSplashScreenNext").addEventListener("click", function(){
+    Navigation('splashScreen', 'next');
+});
+
 document.getElementById("btnBasicInfoNext").addEventListener("click", function(){
     Navigation('basicInfo', 'next');
 });
@@ -360,9 +386,9 @@ document.getElementById("btnGeneralInfoNext").addEventListener("click", function
     Navigation('generalInfo', 'next');
 });
 
-/* document.getElementById("btnBasicInfoPrevious").addEventListener("click", function(){
+ document.getElementById("btnBasicInfoPrevious").addEventListener("click", function(){
     Navigation('basicInfo', 'previous');
-});*/
+});
 
 document.getElementById("btnAddressInfoPrevious").addEventListener("click", function(){
     Navigation('addressInfo', 'previous');
@@ -398,7 +424,8 @@ for (var i=0; i<anchors.length; i++) {
 function handler() {
   //if navbar, Home is selected
 if(this.innerHTML === 'Home') {
-  showClass('basicInfo');
+  showClass('splashScreen');
+  hideClass('basicInfo');
   hideClass('addressInfo');
   hideClass('abuserInfo');
   hideClass('medicalAndFinancial');
