@@ -39,7 +39,9 @@ function showClass(className) {
       }
 }
 
-function Navigation(btnClick) {
+function Navigation(btnClick, type) {
+
+if (type === 'next') {
 
 if(btnClick==='basicInfo') {
   hideClass('basicInfo');
@@ -69,6 +71,44 @@ if (btnClick==='generalInfo')
   hideClass('generalInfo');
   showClass('summaryPage');
 }
+}
+
+else if (type === 'previous') {
+
+/*if(btnClick==='basicInfo') {
+  hideClass('basicInfo');
+  showClass('addressInfo');
+}*/
+if (btnClick==='addressInfo') {
+  hideClass('addressInfo');
+  showClass('basicInfo');
+}
+if (btnClick==='abuserInfo')
+{
+  hideClass('abuserInfo');
+  showClass('addressInfo');
+}
+if (btnClick==='medicalAndFinancial')
+{
+  hideClass('medicalAndFinancial');
+  showClass('abuserInfo');
+}
+if (btnClick==='familyAndFriends')
+{
+  hideClass('familyAndFriends');
+  showClass('medicalAndFinancial');
+}
+if (btnClick==='generalInfo')
+{
+  hideClass('generalInfo');
+  showClass('familyAndFriends');
+}
+if (btnClick==='summaryPage')
+{
+  hideClass('summaryPage');
+  showClass('generalInfo');
+}
+}
 
 }
 
@@ -85,7 +125,9 @@ div2.setAttribute("id", "div2");
 
 let btnBasicInfo = document.createElement('div');
 btnBasicInfo.setAttribute("id", "btnBasicInfo");
-btnBasicInfo.innerHTML = '<input type="button" value="Next >>" id="btnBasicInfobtn">';
+//btnBasicInfo.innerHTML = '<input type="button" value="<< Previous" id="btnBasicInfoPrevious"><input type="button" value="Next >>" id="btnBasicInfoNext">';
+btnBasicInfo.innerHTML = '<input type="button" value="Next >>" id="btnBasicInfoNext">';
+
 
 //Creating the divs in the address info
 let div3 = document.createElement('div');
@@ -97,7 +139,7 @@ div4.setAttribute("id", "div4");
 
 let btnAddressInfo = document.createElement('div');
 btnAddressInfo.setAttribute("id", "btnAddressInfo");
-btnAddressInfo.innerHTML = '<input type="button" value="Next >>" id="btnAddressInfobtn">';
+btnAddressInfo.innerHTML = '<input type="button" value="<< Previous" id="btnAddressInfoPrevious"><input type="button" value="Next >>" id="btnAddressInfoNext">';
 
 //Creating the divs in the abuser info
 let div5 = document.createElement('div');
@@ -109,7 +151,7 @@ div6.setAttribute("id", "div6");
 
 let btnAbuserInfo = document.createElement('div');
 btnAbuserInfo.setAttribute("id", "btnAbuserInfo");
-btnAbuserInfo.innerHTML = '<input type="button" value="Next >>" id="btnAbuserInfobtn">';
+btnAbuserInfo.innerHTML = '<input type="button" value="<< Previous" id="btnAbuserInfoPrevious"><input type="button" value="Next >>" id="btnAbuserInfoNext">';
 
 //Creating the divs in the medical and financial info
 let div7 = document.createElement('div');
@@ -121,7 +163,7 @@ div8.setAttribute("id", "div8");
 
 let btnMedicalAndFinancial = document.createElement('div');
 btnMedicalAndFinancial.setAttribute("id", "btnMedicalAndFinancial");
-btnMedicalAndFinancial.innerHTML = '<input type="button" value="Next >>" id="btnMedicalAndFinancialbtn">';
+btnMedicalAndFinancial.innerHTML = '<input type="button" value="<< Previous" id="btnMedicalAndFinancialPrevious"><input type="button" value="Next >>" id="btnMedicalAndFinancialNext">';
 
 //Creating the divs in the family and friends info
 let div9 = document.createElement('div');
@@ -133,7 +175,7 @@ div10.setAttribute("id", "div10");
 
 let btnFamilyAndFriends = document.createElement('div');
 btnFamilyAndFriends.setAttribute("id", "btnFamilyAndFriends");
-btnFamilyAndFriends.innerHTML = '<input type="button" value="Next >>" id="btnFamilyAndFriendsbtn">';
+btnFamilyAndFriends.innerHTML = '<input type="button" value="<< Previous" id="btnFamilyAndFriendsPrevious"><input type="button" value="Next >>" id="btnFamilyAndFriendsNext">';
 
 //Creating the divs in the general info
 let div11 = document.createElement('div');
@@ -145,7 +187,7 @@ div12.setAttribute("id", "div12");
 
 let btnGeneralInfo = document.createElement('div');
 btnGeneralInfo.setAttribute("id", "btnGeneralInfo");
-btnGeneralInfo.innerHTML = '<input type="button" value="Next >>" id="btnGeneralInfobtn">';
+btnGeneralInfo.innerHTML = '<input type="button" value="<< Previous" id="btnGeneralInfoPrevious"><input type="button" value="Next >>" id="btnGeneralInfoNext">';
 
 //Creating the divs in the summary page
 let div13 = document.createElement('div');
@@ -154,6 +196,11 @@ div13.innerHTML = 'Summary Page:';
 
 let div14 = document.createElement('div');
 div14.setAttribute("id", "div14");
+
+let btnSummaryPage = document.createElement('div');
+btnSummaryPage.setAttribute("id", "btnSummaryPage");
+btnSummaryPage.innerHTML = '<input type="button" value="<< Previous" id="btnSummaryPagePrevious">';
+
 
 //Appending the divs to the various sections
 var basicInfo = document.getElementById('basicInfo');
@@ -189,6 +236,7 @@ generalInfo.appendChild(btnGeneralInfo);
 var summaryPage = document.getElementById('summaryPage');
 summaryPage.appendChild(div13);
 summaryPage.appendChild(div14);
+summaryPage.appendChild(btnSummaryPage);
 
 //By default only show the first screen
 //hideClass('basicInfo');
@@ -205,7 +253,7 @@ hideClass('summaryPage');
 function loadNavBar() {
   let navbar1 = document.createElement('div');
   navbar1.setAttribute("id", "navbar1");
-  navbar1.innerHTML = "<ul> <li><a href='#' class='anchor'>Home</a></li> <li><a href='#' class='anchor'>Data Input</a></li> </ul>";
+  navbar1.innerHTML = "<ul> <li><a href='#' class='anchor'>Home</a></li> <li><a href='#' class='anchor'>Data Input</a></li> <li><a href='#' class='anchor'>About</a></li> </ul>";
 
   var sectionNav = document.getElementById("navbar");
   sectionNav.appendChild(navbar1);
@@ -288,28 +336,56 @@ addTextBox('Do you have any food allergies?', 'txtFoodAllergies', 'div12');
 
 
 
-document.getElementById("btnBasicInfobtn").addEventListener("click", function(){
-    Navigation('basicInfo');
+document.getElementById("btnBasicInfoNext").addEventListener("click", function(){
+    Navigation('basicInfo', 'next');
 });
 
-document.getElementById("btnAddressInfobtn").addEventListener("click", function(){
-    Navigation('addressInfo');
+document.getElementById("btnAddressInfoNext").addEventListener("click", function(){
+    Navigation('addressInfo', 'next');
 });
 
-document.getElementById("btnAbuserInfobtn").addEventListener("click", function(){
-    Navigation('abuserInfo');
+document.getElementById("btnAbuserInfoNext").addEventListener("click", function(){
+    Navigation('abuserInfo', 'next');
 });
 
-document.getElementById("btnMedicalAndFinancialbtn").addEventListener("click", function(){
-    Navigation('medicalAndFinancial');
+document.getElementById("btnMedicalAndFinancialNext").addEventListener("click", function(){
+    Navigation('medicalAndFinancial', 'next');
 });
 
-document.getElementById("btnFamilyAndFriendsbtn").addEventListener("click", function(){
-    Navigation('familyAndFriends');
+document.getElementById("btnFamilyAndFriendsNext").addEventListener("click", function(){
+    Navigation('familyAndFriends', 'next');
 });
 
-document.getElementById("btnGeneralInfobtn").addEventListener("click", function(){
-    Navigation('generalInfo');
+document.getElementById("btnGeneralInfoNext").addEventListener("click", function(){
+    Navigation('generalInfo', 'next');
+});
+
+/* document.getElementById("btnBasicInfoPrevious").addEventListener("click", function(){
+    Navigation('basicInfo', 'previous');
+});*/
+
+document.getElementById("btnAddressInfoPrevious").addEventListener("click", function(){
+    Navigation('addressInfo', 'previous');
+});
+
+document.getElementById("btnAbuserInfoPrevious").addEventListener("click", function(){
+    Navigation('abuserInfo', 'previous');
+});
+
+document.getElementById("btnMedicalAndFinancialPrevious").addEventListener("click", function(){
+    Navigation('medicalAndFinancial', 'previous');
+});
+
+document.getElementById("btnFamilyAndFriendsPrevious").addEventListener("click", function(){
+    Navigation('familyAndFriends', 'previous');
+});
+
+document.getElementById("btnGeneralInfoPrevious").addEventListener("click", function(){
+    Navigation('generalInfo', 'previous');
+});
+
+document.getElementById("btnSummaryPagePrevious").addEventListener("click", function(){
+    Navigation('summaryPage', 'previous');
 });
 
 //navbar items
@@ -323,5 +399,11 @@ function handler() {
   //if navbar, Home is selected
 if(this.innerHTML === 'Home') {
   showClass('basicInfo');
+  hideClass('addressInfo');
+  hideClass('abuserInfo');
+  hideClass('medicalAndFinancial');
+  hideClass('familyAndFriends');
+  hideClass('generalInfo');
+  hideClass('summaryPage');
 }
 }
