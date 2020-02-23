@@ -65,6 +65,13 @@ input[type="text"] {
   align-items: center; /* align vertical */
 }
 
+.splashScreen {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  background-color:#CCFFCB;
+  flex-direction:column;
+}
+
 .basicInfo {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */

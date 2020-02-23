@@ -35,7 +35,7 @@ function showClass(className) {
   var divsToShow = document.getElementsByClassName(className); //divsToHide is an array
       for(var i = 0; i < divsToShow.length; i++){
           divsToShow[i].style.visibility = "visible"; // or
-          divsToShow[i].style.display = "inline"; // depending on what you're doing
+          divsToShow[i].style.display = "flex"; // depending on what you're doing
       }
 }
 
