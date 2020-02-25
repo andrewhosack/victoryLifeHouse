@@ -145,6 +145,7 @@ div.classList.add("sectionHeader");
 
 let div2 = document.createElement('div');
 div2.setAttribute("id", "div2");
+div2.classList.add("divQuestionContent");
 
 let btnBasicInfo = document.createElement('div');
 btnBasicInfo.setAttribute("id", "btnBasicInfo");
@@ -160,6 +161,7 @@ div3.classList.add("sectionHeader");
 
 let div4 = document.createElement('div');
 div4.setAttribute("id", "div4");
+div4.classList.add("divQuestionContent");
 
 let btnAddressInfo = document.createElement('div');
 btnAddressInfo.setAttribute("id", "btnAddressInfo");
@@ -175,6 +177,7 @@ div5.classList.add("sectionHeader");
 
 let div6 = document.createElement('div');
 div6.setAttribute("id", "div6");
+div6.classList.add("divQuestionContent");
 
 let btnAbuserInfo = document.createElement('div');
 btnAbuserInfo.setAttribute("id", "btnAbuserInfo");
@@ -190,6 +193,7 @@ div7.classList.add("sectionHeader");
 
 let div8 = document.createElement('div');
 div8.setAttribute("id", "div8");
+div8.classList.add("divQuestionContent");
 
 let btnMedicalAndFinancial = document.createElement('div');
 btnMedicalAndFinancial.setAttribute("id", "btnMedicalAndFinancial");
@@ -205,6 +209,7 @@ div9.classList.add("sectionHeader");
 
 let div10 = document.createElement('div');
 div10.setAttribute("id", "div10");
+div10.classList.add("divQuestionContent");
 
 let btnFamilyAndFriends = document.createElement('div');
 btnFamilyAndFriends.setAttribute("id", "btnFamilyAndFriends");
@@ -220,6 +225,7 @@ div11.classList.add("sectionHeader");
 
 let div12 = document.createElement('div');
 div12.setAttribute("id", "div12");
+div12.classList.add("divQuestionContent");
 
 let btnGeneralInfo = document.createElement('div');
 btnGeneralInfo.setAttribute("id", "btnGeneralInfo");
@@ -235,6 +241,7 @@ div13.classList.add("sectionHeader");
 
 let div14 = document.createElement('div');
 div14.setAttribute("id", "div14");
+div14.classList.add("divQuestionContent");
 
 let btnSummaryPage = document.createElement('div');
 btnSummaryPage.setAttribute("id", "btnSummaryPage");
