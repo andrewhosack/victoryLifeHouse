@@ -5,11 +5,6 @@ const STORE = [
       onElement: 'div2'
     },
     {
-      question: 'Middle Name',
-      textboxName: 'txtMiddleName',
-      onElement: 'div2'
-    },
-    {
       question: 'Last Name',
       textboxName: 'txtLastName',
       onElement: 'div2'
@@ -24,11 +19,13 @@ const STORE = [
       textboxName: 'txtDateOfBirth',
       onElement: 'div2'
     },
+    /*
     {
       question: 'City/State of Birth',
       textboxName: 'txtCityStateOfBirth',
       onElement: 'div2'
     },
+
     {
       question: 'Ethnicity',
       textboxName: 'txtEthnicity',
@@ -44,6 +41,7 @@ const STORE = [
       textboxName: 'txtReligion',
       onElement: 'div2'
     },
+    */
     {
       question: 'Street name and number',
       textboxName: 'txtStreetName',
@@ -185,23 +183,33 @@ const STORE = [
       onElement: 'div8'
     },
     {
-      question: 'Do you have children?',
-      textboxName: 'txtChildren',
+      question: 'Do you currently have children living at home with you?',
+      textboxName: 'txtChildrenLivingAtHome',
       onElement: 'div10'
     },
     {
-      question: 'Where there any children abused as well?',
-      textboxName: 'txtChildrenAbused',
+      question: 'Did any children experience trauma?',
+      textboxName: 'txtChildrenTrauma',
+      onElement: 'div10'
+    },
+    {
+      question: 'Did any children experience trauma?',
+      textboxName: 'txtChildrenTrauma',
+      onElement: 'div10'
+    },
+    {
+      question: 'Please explain the trauma experienced by your children',
+      textboxName: 'txtChildrenTraumaExplanation',
+      onElement: 'div10'
+    },
+    {
+      question: 'What is the name of the person responsible for your children right now and the address where you last left your children?',
+      textboxName: 'txtChildrenCurrentLocationAndInfo',
       onElement: 'div10'
     },
     {
       question: 'What are the names, relationships, and contact information of the two people you most trust right now to not share where you are or what you are doing?',
       textboxName: 'txtTrustedContacts',
-      onElement: 'div10'
-    },
-    {
-      question: 'Would you be interested in your children going to summer camp while you are here?',
-      textboxName: 'txtChildrenSummerCamp',
       onElement: 'div10'
     },
     {
@@ -245,13 +253,8 @@ const STORE = [
       onElement: 'div12'
     },
     {
-      question: 'Are you blind?',
-      textboxName: 'txtBlind',
-      onElement: 'div12'
-    },
-    {
-      question: 'Are you deaf?',
-      textboxName: 'txtDeaf',
+      question: 'Do you have any physical limitations?',
+      textboxName: 'txtPhysicalLimitations',
       onElement: 'div12'
     },
     {

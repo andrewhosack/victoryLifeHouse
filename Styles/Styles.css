@@ -1,5 +1,5 @@
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Muli', 'Open Sans';
   display: flex;
   flex-direction:column;
 }
@@ -11,8 +11,15 @@ section {
   border-color:black;
 }
 
+.splashScreen img {
+  max-width: 50%;
+  max-height: 50vh;
+  margin: auto;
+  display: block;
+}
+
 img {
-  max-width: 100%;
+  max-width: 75%;
   max-height: 100%;
   margin: auto;
   display: block;
@@ -30,23 +37,28 @@ input[type="text"] {
   label {
     display:block;
   }
-  input {
-
+  .sectionHeader {
+    font-size:large;
   }
+
 }
 
 @media screen and (min-width: 700px) and (max-width: 1100px) {
   label {
     display: block;
   }
-  input {
-    justify-content:space-around;
+  .sectionHeader {
+    font-size:x-large;
   }
+
 }
 
 @media screen and (min-width: 1100px) {
   label {
     display: block;
+  }
+  .sectionHeader {
+    font-size:xx-large;
   }
 }
 
@@ -124,6 +136,13 @@ input[type="text"] {
 }
 
 .generalInfo {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction:column;
+  background-color:#CCFFCB;
+}
+
+.summaryPage {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   flex-direction:column;

@@ -83,10 +83,6 @@ if (btnClick==='generalInfo')
 
 else if (type === 'previous') {
 
-if(btnClick==='basicInfo') {
-  hideClass('basicInfo');
-  showClass('splashScreen');
-}
 if (btnClick==='addressInfo') {
   hideClass('addressInfo');
   showClass('basicInfo');
@@ -127,7 +123,9 @@ function loadPage() {
 //Creating splash screen
 let splashScreenDiv = document.createElement('div');
 splashScreenDiv.setAttribute("id", "splashScreenDiv");
-splashScreenDiv.innerHTML = 'Splash Screen:';
+splashScreenDiv.innerHTML = 'Welcome to VictoryLife House!';
+splashScreenDiv.setAttribute('style', 'height:15vh; width:100%; display:flex; align-items:center;');
+splashScreenDiv.classList.add("sectionHeader");
 
 let splashScreenDiv2 = document.createElement('div');
 splashScreenDiv2.setAttribute("id", "splashScreenDiv2");
@@ -135,98 +133,113 @@ splashScreenDiv2.innerHTML = '<img src=".\\images\\VLH.jpg" alt="banner of VLH" 
 
 let btnSplashScreen = document.createElement('div');
 btnSplashScreen.setAttribute("id", "btnSplashScreen");
-btnSplashScreen.innerHTML = '<input type="button" value="Let\'s get started! >>" id="btnSplashScreenNext">';
+btnSplashScreen.innerHTML = '<input type="button" value="Let\'s get started! >>" id="btnSplashScreenNext" style="height:50%">';
+btnSplashScreen.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly; height:10vh; align-items:center;');
 
 //Creating the divs in the basic info
 let div = document.createElement('div');
 div.setAttribute("id", "div");
-div.innerHTML = 'Basic Info:';
+div.innerHTML = 'Let\'s first get started with some basic info!';
+div.setAttribute('style', 'height:15vh; width:100%; display:flex; align-items:center;');
+div.classList.add("sectionHeader");
 
 let div2 = document.createElement('div');
 div2.setAttribute("id", "div2");
 
 let btnBasicInfo = document.createElement('div');
 btnBasicInfo.setAttribute("id", "btnBasicInfo");
-btnBasicInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnBasicInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnBasicInfoNext">';
-btnBasicInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
+btnBasicInfo.innerHTML = '<input type="button" value="Next Set of Questions >>" id="btnBasicInfoNext" style="height:50%">';
+btnBasicInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly; height:10vh; align-items:center;');
 
 //Creating the divs in the address info
 let div3 = document.createElement('div');
 div3.setAttribute("id", "div3");
-div3.innerHTML = 'Address Info:';
+div3.innerHTML = 'We need some information about your previous and current addresses...';
+div3.setAttribute('style', 'height:15vh; width:100%; display:flex; align-items:center;');
+div3.classList.add("sectionHeader");
 
 let div4 = document.createElement('div');
 div4.setAttribute("id", "div4");
 
 let btnAddressInfo = document.createElement('div');
 btnAddressInfo.setAttribute("id", "btnAddressInfo");
-btnAddressInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAddressInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnAddressInfoNext">';
-btnAddressInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
+btnAddressInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAddressInfoPrevious" style="height:50%"><input type="button" value="Next Set of Questions >>" id="btnAddressInfoNext" style="height:50%">';
+btnAddressInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly; height:10vh; align-items:center;');
 
 //Creating the divs in the abuser info
 let div5 = document.createElement('div');
 div5.setAttribute("id", "div5");
-div5.innerHTML = 'Abuser Info:';
+div5.innerHTML = 'Information about the reason you\'re here today, the abuse...';
+div5.setAttribute('style', 'height:15vh; width:100%; display:flex; align-items:center;');
+div5.classList.add("sectionHeader");
 
 let div6 = document.createElement('div');
 div6.setAttribute("id", "div6");
 
 let btnAbuserInfo = document.createElement('div');
 btnAbuserInfo.setAttribute("id", "btnAbuserInfo");
-btnAbuserInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAbuserInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnAbuserInfoNext">';
-btnAbuserInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
+btnAbuserInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAbuserInfoPrevious" style="height:50%"><input type="button" value="Next Set of Questions >>" id="btnAbuserInfoNext" style="height:50%">';
+btnAbuserInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly; height:10vh; align-items:center;');
 
 //Creating the divs in the medical and financial info
 let div7 = document.createElement('div');
 div7.setAttribute("id", "div7");
-div7.innerHTML = 'Medical and Financial Info:';
+div7.innerHTML = 'Some details about your personal medical and financial history...';
+div7.setAttribute('style', 'height:15vh; width:100%; display:flex; align-items:center;');
+div7.classList.add("sectionHeader");
 
 let div8 = document.createElement('div');
 div8.setAttribute("id", "div8");
 
 let btnMedicalAndFinancial = document.createElement('div');
 btnMedicalAndFinancial.setAttribute("id", "btnMedicalAndFinancial");
-btnMedicalAndFinancial.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnMedicalAndFinancialPrevious"><input type="button" value="Next Set of Questions >>" id="btnMedicalAndFinancialNext">';
-btnMedicalAndFinancial.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
+btnMedicalAndFinancial.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnMedicalAndFinancialPrevious" style="height:50%"><input type="button" value="Next Set of Questions >>" id="btnMedicalAndFinancialNext" style="height:50%">';
+btnMedicalAndFinancial.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly; height:10vh; align-items:center;');
 
 //Creating the divs in the family and friends info
 let div9 = document.createElement('div');
 div9.setAttribute("id", "div9");
-div9.innerHTML = 'Family and Friends:';
+div9.innerHTML = 'Let\'s talk about your family and friends...';
+div9.setAttribute('style', 'height:15vh; width:100%; display:flex; align-items:center;');
+div9.classList.add("sectionHeader");
 
 let div10 = document.createElement('div');
 div10.setAttribute("id", "div10");
 
 let btnFamilyAndFriends = document.createElement('div');
 btnFamilyAndFriends.setAttribute("id", "btnFamilyAndFriends");
-btnFamilyAndFriends.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnFamilyAndFriendsPrevious"><input type="button" value="Next Set of Questions >>" id="btnFamilyAndFriendsNext">';
-btnFamilyAndFriends.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
+btnFamilyAndFriends.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnFamilyAndFriendsPrevious" style="height:50%"><input type="button" value="Next Set of Questions >>" id="btnFamilyAndFriendsNext" style="height:50%">';
+btnFamilyAndFriends.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly; height:10vh; align-items:center;');
 
 //Creating the divs in the general info
 let div11 = document.createElement('div');
 div11.setAttribute("id", "div11");
-div11.innerHTML = 'General Info:';
+div11.innerHTML = 'A few more general questions...';
+div11.setAttribute('style', 'height:15vh; width:100%; display:flex; align-items:center;');
+div11.classList.add("sectionHeader");
 
 let div12 = document.createElement('div');
 div12.setAttribute("id", "div12");
 
 let btnGeneralInfo = document.createElement('div');
 btnGeneralInfo.setAttribute("id", "btnGeneralInfo");
-btnGeneralInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnGeneralInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnGeneralInfoNext">';
-btnGeneralInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
+btnGeneralInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnGeneralInfoPrevious" style="height:50%"><input type="button" value="Next Set of Questions >>" id="btnGeneralInfoNext" style="height:50%">';
+btnGeneralInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly; height:10vh; align-items:center;');
 
 //Creating the divs in the summary page
 let div13 = document.createElement('div');
 div13.setAttribute("id", "div13");
-div13.innerHTML = 'Summary Page:';
+div13.innerHTML = 'A summary of your previous entries...';
+div13.setAttribute('style', 'height:15vh; width:100%; display:flex; align-items:center;');
+div13.classList.add("sectionHeader");
 
 let div14 = document.createElement('div');
 div14.setAttribute("id", "div14");
 
 let btnSummaryPage = document.createElement('div');
 btnSummaryPage.setAttribute("id", "btnSummaryPage");
-btnSummaryPage.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnSummaryPagePrevious">';
-
+btnSummaryPage.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnSummaryPagePrevious" style="height:50%">';
+btnSummaryPage.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly; height:10vh; align-items:center;');
 
 //Appending the divs to the various sections
 var spashScreen = document.getElementById('splashScreen');
@@ -323,10 +336,6 @@ document.getElementById("btnFamilyAndFriendsNext").addEventListener("click", fun
 
 document.getElementById("btnGeneralInfoNext").addEventListener("click", function(){
     Navigation('generalInfo', 'next');
-});
-
- document.getElementById("btnBasicInfoPrevious").addEventListener("click", function(){
-    Navigation('basicInfo', 'previous');
 });
 
 document.getElementById("btnAddressInfoPrevious").addEventListener("click", function(){
