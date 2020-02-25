@@ -1,27 +1,31 @@
-function addTextBox(labelName, textboxName, onElement) {
+function addQuestionsToDiv(item, index, array) {
 
+console.log(item.question, item.textboxName, item.onElement);
 //Create an input type dynamically.
 var element = document.createElement("input");
 
 //Create Labels
 var label = document.createElement("Label");
-label.innerHTML = labelName;
+label.innerHTML = item.question;
 
 //Assign different attributes to the element.
 element.setAttribute("type", "text");
 element.setAttribute("value", "");
-element.setAttribute("name", textboxName);
+element.setAttribute("name", item.textboxName);
 element.setAttribute("style", "width:200px");
 
 label.setAttribute("style", "font-weight:normal");
+label.setAttribute("for", item.textboxName);
 
 // 'foobar' is the div id, where new fields are to be added
-var foo = document.getElementById(onElement);
+var foo = document.getElementById(item.onElement);
 
 //Append the element in page (in span).
 foo.appendChild(label);
 foo.appendChild(element);
+
 }
+
 
 function hideClass(className) {
   var divsToHide = document.getElementsByClassName(className); //divsToHide is an array
@@ -269,6 +273,8 @@ hideClass('familyAndFriends');
 hideClass('generalInfo');
 hideClass('summaryPage');
 
+STORE.forEach(addQuestionsToDiv);
+
 
 }
 
@@ -284,78 +290,6 @@ function loadNavBar() {
 //Various start up scripts and preparation
 loadPage();
 loadNavBar();
-
-
-
-
-
-
-
-/* Adding text boxes to the basic info section.*/
-addTextBox('First Name', 'txtFirstName', 'div2');
-addTextBox('Middle Name', 'txtMiddleName', 'div2');
-addTextBox('Last Name', 'txtLastName', 'div2');
-addTextBox('Social Security Number', 'txtSocialSecurityNumber', 'div2');
-addTextBox('Date of Birth', 'txtDateOfBirth', 'div2');
-addTextBox('City/State of Birth', 'txtCityStateOfBirth', 'div2');
-addTextBox('Ethnicity', 'txtEthnicity', 'div2');
-addTextBox('Original Gender', 'txtOriginalGender', 'div2');
-addTextBox('Religious Affiliation', 'txtReligion', 'div2');
-
-/* Adding text boxes to the address info section.*/
-addTextBox('Street name and number', 'txtStreetName', 'div4');
-addTextBox('City', 'txtCity', 'div4');
-addTextBox('State', 'txtState', 'div4');
-addTextBox('Zip Code', 'txtZipCode', 'div4');
-
-addTextBox('Street name and number', 'txtBillingStreetName', 'div4');
-addTextBox('City', 'txtBillingCity', 'div4');
-addTextBox('State', 'txtBillingState', 'div4');
-addTextBox('Zip Code', 'txtBillingZipCode', 'div4');
-
-/* Adding text boxes to the abuser info section.*/
-addTextBox('Street name and number', 'txtAbuseStreetName', 'div6');
-addTextBox('City', 'txtAbuseCity', 'div6');
-addTextBox('State', 'txtAbuseState', 'div6');
-addTextBox('Zip Code', 'txtAbuseZipCode', 'div6');
-addTextBox('Location of Abuser', 'txtAbuserLocation', 'div6');
-addTextBox('What Date did you leave your abuser?', 'txtDateLeftAbuser', 'div6');
-addTextBox('What was relationship to abuser?', 'txtRelationshipToAbuser', 'div6');
-addTextBox('Restraining Order?', 'txtRestrainingOrder', 'div6');
-addTextBox('Hospital Stay?', 'txtHospitalStay', 'div6');
-addTextBox('Name of Hospital', 'txtHospitalName', 'div6');
-
-/* Adding text boxes to the medical and financial info section.*/
-addTextBox('Current medical bills from this trauma?', 'txtMedicalBills', 'div8');
-addTextBox('Are you on a payment plan?', 'txtPaymentPlan', 'div8');
-addTextBox('What kind of Health Insurance do you have?', 'txtHealthInsuranceType', 'div8');
-addTextBox('What kind of Health insurance do your kids have?', 'txtChildsHealthInsuranceType', 'div8');
-addTextBox('What were the damages', 'txtDamages', 'div8');
-addTextBox('Are you on any medicines?', 'txtMedication', 'div8');
-addTextBox('Name of Doctor', 'txtDoctorsName', 'div8');
-addTextBox('Phone Number', 'txtDoctorsPhoneNumber', 'div8');
-addTextBox('Email Address', 'txtDoctorsEmailAddress', 'div8');
-addTextBox('Are you employed?', 'txtEmployed', 'div8');
-
-/* Adding text boxes to the family and friends info section.*/
-addTextBox('Do you have children?', 'txtChildren', 'div10');
-addTextBox('Where there any children abused as well?', 'txtChildrenAbused', 'div10');
-addTextBox('What are the names, relationships, and contact information of the two people you most trust right now to not share where you are or what you are doing?', 'txtTrustedContacts', 'div10');
-addTextBox('Would you be interested in your children going to summer camp while you are here?', 'txtChildrenSummerCamp', 'div10');
-addTextBox('How many times have you left and gone back to your abuser?', 'txtTimesReturnedToAbuser', 'div10');
-addTextBox('Have you purposed it in your heart to not go back this time?', 'txtDoesNotWantToReturn', 'div10');
-
-/* Adding text boxes to the general info section.*/
-addTextBox('What is your marital status?', 'txtMaritalStatus', 'div12');
-addTextBox('Do you have legal counsel?', 'txtLegalCounsel', 'div12');
-addTextBox('Will you be pursuing legal counsel?', 'txtPursuingLegalCouncel', 'div12');
-addTextBox('Do you smoke?', 'txtSmoke', 'div12');
-addTextBox('Do you have any chemical additions?', 'txtAddictions', 'div12');
-addTextBox('What languages do you speak?', 'txtLanguages', 'div12');
-addTextBox('Are you blind?', 'txtBlind', 'div12');
-addTextBox('Are you deaf?', 'txtDeaf', 'div12');
-addTextBox('Do you have any food allergies?', 'txtFoodAllergies', 'div12');
-
 
 
 document.getElementById("btnSplashScreenNext").addEventListener("click", function(){
