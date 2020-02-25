@@ -135,7 +135,7 @@ splashScreenDiv2.innerHTML = '<img src=".\\images\\VLH.jpg" alt="banner of VLH" 
 
 let btnSplashScreen = document.createElement('div');
 btnSplashScreen.setAttribute("id", "btnSplashScreen");
-btnSplashScreen.innerHTML = '<input type="button" value="Next >>" id="btnSplashScreenNext">';
+btnSplashScreen.innerHTML = '<input type="button" value="Let\'s get started! >>" id="btnSplashScreenNext">';
 
 //Creating the divs in the basic info
 let div = document.createElement('div');
@@ -147,8 +147,8 @@ div2.setAttribute("id", "div2");
 
 let btnBasicInfo = document.createElement('div');
 btnBasicInfo.setAttribute("id", "btnBasicInfo");
-btnBasicInfo.innerHTML = '<input type="button" value="<< Previous" id="btnBasicInfoPrevious"><input type="button" value="Next >>" id="btnBasicInfoNext">';
-
+btnBasicInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnBasicInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnBasicInfoNext">';
+btnBasicInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
 
 //Creating the divs in the address info
 let div3 = document.createElement('div');
@@ -160,7 +160,8 @@ div4.setAttribute("id", "div4");
 
 let btnAddressInfo = document.createElement('div');
 btnAddressInfo.setAttribute("id", "btnAddressInfo");
-btnAddressInfo.innerHTML = '<input type="button" value="<< Previous" id="btnAddressInfoPrevious"><input type="button" value="Next >>" id="btnAddressInfoNext">';
+btnAddressInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAddressInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnAddressInfoNext">';
+btnAddressInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
 
 //Creating the divs in the abuser info
 let div5 = document.createElement('div');
@@ -172,7 +173,8 @@ div6.setAttribute("id", "div6");
 
 let btnAbuserInfo = document.createElement('div');
 btnAbuserInfo.setAttribute("id", "btnAbuserInfo");
-btnAbuserInfo.innerHTML = '<input type="button" value="<< Previous" id="btnAbuserInfoPrevious"><input type="button" value="Next >>" id="btnAbuserInfoNext">';
+btnAbuserInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAbuserInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnAbuserInfoNext">';
+btnAbuserInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
 
 //Creating the divs in the medical and financial info
 let div7 = document.createElement('div');
@@ -184,7 +186,8 @@ div8.setAttribute("id", "div8");
 
 let btnMedicalAndFinancial = document.createElement('div');
 btnMedicalAndFinancial.setAttribute("id", "btnMedicalAndFinancial");
-btnMedicalAndFinancial.innerHTML = '<input type="button" value="<< Previous" id="btnMedicalAndFinancialPrevious"><input type="button" value="Next >>" id="btnMedicalAndFinancialNext">';
+btnMedicalAndFinancial.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnMedicalAndFinancialPrevious"><input type="button" value="Next Set of Questions >>" id="btnMedicalAndFinancialNext">';
+btnMedicalAndFinancial.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
 
 //Creating the divs in the family and friends info
 let div9 = document.createElement('div');
@@ -196,7 +199,8 @@ div10.setAttribute("id", "div10");
 
 let btnFamilyAndFriends = document.createElement('div');
 btnFamilyAndFriends.setAttribute("id", "btnFamilyAndFriends");
-btnFamilyAndFriends.innerHTML = '<input type="button" value="<< Previous" id="btnFamilyAndFriendsPrevious"><input type="button" value="Next >>" id="btnFamilyAndFriendsNext">';
+btnFamilyAndFriends.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnFamilyAndFriendsPrevious"><input type="button" value="Next Set of Questions >>" id="btnFamilyAndFriendsNext">';
+btnFamilyAndFriends.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
 
 //Creating the divs in the general info
 let div11 = document.createElement('div');
@@ -208,7 +212,8 @@ div12.setAttribute("id", "div12");
 
 let btnGeneralInfo = document.createElement('div');
 btnGeneralInfo.setAttribute("id", "btnGeneralInfo");
-btnGeneralInfo.innerHTML = '<input type="button" value="<< Previous" id="btnGeneralInfoPrevious"><input type="button" value="Next >>" id="btnGeneralInfoNext">';
+btnGeneralInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnGeneralInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnGeneralInfoNext">';
+btnGeneralInfo.setAttribute('style', 'display:flex; width:100%; justify-content:space-evenly;');
 
 //Creating the divs in the summary page
 let div13 = document.createElement('div');
@@ -220,7 +225,7 @@ div14.setAttribute("id", "div14");
 
 let btnSummaryPage = document.createElement('div');
 btnSummaryPage.setAttribute("id", "btnSummaryPage");
-btnSummaryPage.innerHTML = '<input type="button" value="<< Previous" id="btnSummaryPagePrevious">';
+btnSummaryPage.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnSummaryPagePrevious">';
 
 
 //Appending the divs to the various sections
