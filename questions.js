@@ -193,12 +193,7 @@ const STORE = [
       onElement: 'div10'
     },
     {
-      question: 'Did any children experience trauma?',
-      textboxName: 'txtChildrenTrauma',
-      onElement: 'div10'
-    },
-    {
-      question: 'Please explain the trauma experienced by your children',
+      question: 'Please explain the trauma experienced by the children',
       textboxName: 'txtChildrenTraumaExplanation',
       onElement: 'div10'
     },
