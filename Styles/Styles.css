@@ -106,6 +106,7 @@ section input[type="button"]:hover {
   max-height: 50vh;
   margin: auto;
   display: block;
+  border-radius: 8%;
 }
 
 img {
@@ -127,7 +128,7 @@ label {
 }
 
 .sectionHeader {
-  height:10vh;
+  height:8vh;
   width:100%;
   display:flex;
   align-items:center;

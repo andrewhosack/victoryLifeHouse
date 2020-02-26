@@ -135,6 +135,21 @@ btnSplashScreen.setAttribute("id", "btnSplashScreen");
 btnSplashScreen.innerHTML = '<input type="button" value="Let\'s get started! >>" id="btnSplashScreenNext">';
 btnSplashScreen.classList.add("divBackAndNext");
 
+let splashScreenTestimonials = document.createElement('div');
+splashScreenTestimonials.setAttribute("id", "splashScreenTestimonials");
+
+splashScreenTestimonials.innerHTML =
+'  <div id="splashScreenTestimonialsHeader" class="sectionHeader"><p>Encouragment from previous success!</p></div><div class="container">' +
+    '<img src="./images/bandmember.jpg" alt="Avatar" style="width:90px">' +
+    '<p><span>Chris Fox.</span> Volunteer and Money Management Class Leader</p>' +
+    '<p>"I\'ve been volunteering at Victory Life House for 5 years. The community always keeps my coming back and I appreciate what VLH is doing for the community."</p>' +
+  '</div>' +
+  '<div class="container">' +
+    '<img src="./images/avatar_g2.jpg" alt="Avatar" style="width:90px">' +
+    '<p><span>Rebecca Flex.</span> Loving Daughter and Mother of 3</p>' +
+    '<p>"Before Victory Life House, I didn\'t have a direction. Although I still face a tough reality, I feel more equipped to move forward!"</p>' +
+  '</div>';
+  splashScreenTestimonials.classList.add('splashScreenTestimonials');
 
 //Creating the divs in the basic info
 let div = document.createElement('div');
@@ -246,6 +261,7 @@ var spashScreen = document.getElementById('splashScreen');
 spashScreen.appendChild(splashScreenDiv);
 spashScreen.appendChild(splashScreenDiv2);
 spashScreen.appendChild(btnSplashScreen);
+spashScreen.appendChild(splashScreenTestimonials);
 
 var basicInfo = document.getElementById('basicInfo');
 basicInfo.appendChild(div);
@@ -297,7 +313,7 @@ STORE.forEach(addQuestionsToDiv);
 }
 
 function loadNavBar() {
-  let navbar1 = document.createElement('navbar');
+  let navbar1 = document.createElement('div');
   navbar1.setAttribute("id", "navbar1");
   navbar1.innerHTML = "<ul> <li><a href='#' class='anchor'>Home</a></li> <li><a href='#' class='anchor'>Data Input</a></li> <li><a href='#' class='anchor'>Log in</a></li> </ul>";
   navbar1.classList.add("navbar1");
