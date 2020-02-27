@@ -48,15 +48,6 @@ section {
   height:100%;
 }
 
-section input[type="button"] {
-  width:auto;
-  height:auto;
-  min-height:50%;
-  white-space:normal;
-  margin:5px;
-  transition: transform .2s; /* Animation */
-}
-
 .navbar {
   width:100%;
   background-color:#f3f3f3;
@@ -88,10 +79,6 @@ section input[type="button"] {
   background-color: #D3D3D3;
 }
 
-section input[type="button"]:hover {
-  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-
 .divQuestionContent  {
   display:flex;
   width:100%;
@@ -116,12 +103,7 @@ img {
   display: block;
 }
 
-input[type="text"] {
-  flex:1 1 auto;
-  width:5em;
-  padding:.25em .5em;
-  margin:5px;
-}
+
 
 label {
   margin:5px;
@@ -146,8 +128,28 @@ label {
   align-items:center;
 }
 
+.divQuestionContent input[type="text"] {
+  flex:1 1 auto;
+  width:5em;
+  padding:.25em .5em;
+  margin:5px;
+}
+
+.divBackAndNext input[type="button"] {
+  width:auto;
+  height:auto;
+  min-height:50%;
+  white-space:normal;
+  margin:5px;
+  transition: transform .2s; /* Animation */
+}
+
+.divBackAndNext input[type="button"]:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 @media screen and (min-width: 350px) and (max-width: 700px) {
-  label {
+  .divQuestionContent label {
     display:block;
   }
   .sectionHeader {
@@ -157,7 +159,7 @@ label {
 }
 
 @media screen and (min-width: 700px) and (max-width: 1100px) {
-  label {
+  .divQuestionContent label {
     display: block;
   }
   .sectionHeader {
@@ -167,7 +169,7 @@ label {
 }
 
 @media screen and (min-width: 1100px) {
-  label {
+  .divQuestionContent label {
     display: block;
   }
   .sectionHeader {
