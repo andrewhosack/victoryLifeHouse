@@ -2,17 +2,6 @@
   width:90%;
 }
 
-.form input[type="text"] {
-  font: 1em sans-serif;
-  position:relative;
-  width:50%;
-  max-width:250px;
-  box-sizing: border-box;
-  border: 1px solid #999;
-  padding: 1px 0px;
-  margin:auto;
-}
-
 .form section {
 display: block;
 border:none;
@@ -47,8 +36,8 @@ border:none;
 
 .form label span {
     display: inline-block;
-    width: 80px;
-    text-align: right;
+    width: 80%;
+    text-align: left;
 }
 
 .form input, textarea {
@@ -99,29 +88,59 @@ border:none;
 
 @media screen and (min-width: 350px) and (max-width: 700px) {
   .form label {
-    display:inline;
+    display:block;
   }
   .sectionHeader {
     font-size:large;
+  }
+  .form input[type="text"] {
+    font: 1em sans-serif;
+    position:relative;
+    width:80%;
+    max-width:350px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    padding: 1px 0px;
+    margin:auto;
   }
 
 }
 
 @media screen and (min-width: 700px) and (max-width: 1100px) {
   .form label {
-    display: inline;
+    display: block;
   }
   .sectionHeader {
     font-size:x-large;
+  }
+  .form input[type="text"] {
+    font: 1em sans-serif;
+    position:relative;
+    width:80%;
+    max-width:350px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    padding: 1px 0px;
+    margin:auto;
   }
 
 }
 
 @media screen and (min-width: 1100px) {
   .form label {
-    display: inline;
+    display: block;
   }
   .sectionHeader {
     font-size:xx-large;
+  }
+  .form input[type="text"] {
+    font: 1em sans-serif;
+    position:relative;
+    width:80%;
+    max-width:350px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    padding: 1px 0px;
+    margin:auto;
   }
 }

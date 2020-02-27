@@ -186,14 +186,14 @@ label {
 .splashScreen {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
-  background-color:#E3FFE2;
+  background-color:#CCFFCB;
   flex-direction:column;
 }
 
 .basicInfo {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
-  background-color:#E3FFE2;
+  background-color:#CCFFCB;
   flex-direction:column;
 }
 
@@ -201,42 +201,42 @@ label {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   flex-direction:column;
-  background-color:#E3FFE2;
+  background-color:#CCFFCB;
 }
 
 .abuserInfo {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   flex-direction:column;
-  background-color:#E3FFE2;
+  background-color:#CCFFCB;
 }
 
 .medicalAndFinancial {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   flex-direction:column;
-  background-color:#E3FFE2;
+  background-color:#CCFFCB;
 }
 
 .familyAndFriends {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   flex-direction:column;
-  background-color:#E3FFE2;
+  background-color:#CCFFCB;
 }
 
 .generalInfo {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   flex-direction:column;
-    background-color:#E3FFE2;
+  background-color:#CCFFCB;
 }
 
 .summaryPage {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   flex-direction:column;
-  background-color:#E3FFE2;
+  background-color:#CCFFCB;
 }
 
 .footer {
