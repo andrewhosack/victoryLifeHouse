@@ -163,6 +163,11 @@ let buildString = '';
 var myDivs = STORE;
 for (var key in myDivs) {
   if(screenToBuild === myDivs[key].onElement) {
+
+      if(myDivs[key].formHeader != '') {
+        buildString += '<h3>' + myDivs[key].formHeader + '</h3';
+      }
+
   buildString +=
     '               <p>' +
     '                <label for="' + myDivs[key].textboxName + '">' +

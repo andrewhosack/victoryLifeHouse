@@ -15,6 +15,12 @@ border:none;
     border-bottom:solid;
 }
 
+.form h3 {
+    border-bottom:dotted;
+    border-color:#38023B;
+    color:#38023B;
+}
+
 .form ul {
     margin: 0;
     padding: 0;
@@ -85,6 +91,17 @@ border:none;
   top: 20px;
 }
 
+.form input[type="text"] {
+  font: 1em sans-serif;
+  position:relative;
+  width:80%;
+  max-width:350px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  padding: 1px 0px;
+  margin:auto;
+  margin-left:10px;
+}
 
 @media screen and (min-width: 350px) and (max-width: 700px) {
   .form label {
@@ -93,16 +110,7 @@ border:none;
   .sectionHeader {
     font-size:large;
   }
-  .form input[type="text"] {
-    font: 1em sans-serif;
-    position:relative;
-    width:80%;
-    max-width:350px;
-    box-sizing: border-box;
-    border: 1px solid #999;
-    padding: 1px 0px;
-    margin:auto;
-  }
+
 
 }
 
@@ -113,16 +121,6 @@ border:none;
   .sectionHeader {
     font-size:x-large;
   }
-  .form input[type="text"] {
-    font: 1em sans-serif;
-    position:relative;
-    width:80%;
-    max-width:350px;
-    box-sizing: border-box;
-    border: 1px solid #999;
-    padding: 1px 0px;
-    margin:auto;
-  }
 
 }
 
@@ -132,15 +130,5 @@ border:none;
   }
   .sectionHeader {
     font-size:xx-large;
-  }
-  .form input[type="text"] {
-    font: 1em sans-serif;
-    position:relative;
-    width:80%;
-    max-width:350px;
-    box-sizing: border-box;
-    border: 1px solid #999;
-    padding: 1px 0px;
-    margin:auto;
   }
 }
