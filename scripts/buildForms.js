@@ -173,9 +173,28 @@ for (var key in myDivs) {
     '                <label for="' + myDivs[key].textboxName + '">' +
     '                  <span>' + myDivs[key].question + ': </span>' +
   /*  '                  <strong><abbr title="required">*</abbr></strong>' + */
-    '                </label>' +
-    '                <input type="text" id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName + '">' +
-    '              </p>';
+    '                </label>';
+
+          if(myDivs[key].inputType === 'text' || myDivs[key].inputType === 'date') {
+            buildString +=
+            '                <input type="' + myDivs[key].inputType + '" id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName + '">';
+          }
+          else if(myDivs[key].inputType === 'select') {
+            buildString +=
+            '                <select id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName + '">';
+
+            if(myDivs[key].inputValues != '') {
+              let createOptions = myDivs[key].inputValues.split(',');
+              for (var i=0; i < createOptions.length; i++) {
+                buildString +=
+                '                  <option value="' + createOptions[i] + '">' + createOptions[i] + '</option>'
+              }
+            }
+            buildString +=
+            '                </select>'
+          }
+
+    buildString += '              </p>';
   }
   }
 

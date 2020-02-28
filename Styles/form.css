@@ -34,6 +34,7 @@ border:none;
     padding: 2em 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
+    background-color:white;
 }
 
 .form div+div {
@@ -91,7 +92,7 @@ border:none;
   top: 20px;
 }
 
-.form input[type="text"] {
+.form input[type="text"], input[type="date"], select{
   font: 1em sans-serif;
   position:relative;
   width:80%;
