@@ -175,7 +175,7 @@ for (var key in myDivs) {
   /*  '                  <strong><abbr title="required">*</abbr></strong>' + */
     '                </label>';
 
-          if(myDivs[key].inputType === 'text' || myDivs[key].inputType === 'date') {
+          if(myDivs[key].inputType === 'text' || myDivs[key].inputType === 'date' || myDivs[key].inputType === 'radio') {
             buildString +=
             '                <input type="' + myDivs[key].inputType + '" id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName + '">';
           }

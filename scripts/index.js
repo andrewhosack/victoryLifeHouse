@@ -118,13 +118,13 @@ splashScreenTestimonials.setAttribute("id", "splashScreenTestimonials");
 splashScreenTestimonials.innerHTML =
 '  <div id="splashScreenTestimonialsHeader" class="sectionHeader"><p>Encouragment from previous success!</p></div><div class="container">' +
     '<img src="./images/bandmember.jpg" alt="Avatar" style="width:90px">' +
-    '<p><span>Chris Fox.</span> Volunteer and Money Management Class Leader</p>' +
-    '<p>"I\'ve been volunteering at Victory Life House for 5 years. The community always keeps my coming back and I appreciate what VLH is doing for the community."</p>' +
+    '<p><span>Chris Fox.</span> Volunteer Money Management Instructor</p>' +
+    '<p>"I\'ve been volunteering at VictoryLife House for five years. I appreciate what they are doing for the community, and I\'m always ready to come back."</p>' +
   '</div>' +
   '<div class="container">' +
     '<img src="./images/avatar_g2.jpg" alt="Avatar" style="width:90px">' +
-    '<p><span>Rebecca Flex.</span> Loving Daughter and Mother of 3</p>' +
-    '<p>"Before Victory Life House, I didn\'t have a direction. Although I still face a tough reality, I feel more equipped to move forward!"</p>' +
+    '<p><span>Rebecca Flex.</span> Loving daughter and mother of three</p>' +
+    '<p>"Before VictoryLife House, I didn\'t have a direction. Although I still face a tough reality, I feel more equipped to move forward!"</p>' +
   '</div>';
   splashScreenTestimonials.classList.add('splashScreenTestimonials');
 

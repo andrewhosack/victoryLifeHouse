@@ -10,16 +10,18 @@ const STORE = [
       question: 'First Name',
       textboxName: 'txtFirstName',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div2',
+      onElementSection:'1',
       formHeader: ''
     },
     {
       question: 'Last Name',
       textboxName: 'txtLastName',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div2',
+      onElementSection:'1',
       formHeader: ''
 
     },
@@ -27,16 +29,18 @@ const STORE = [
       question: 'Social Security number',
       textboxName: 'txtSocialSecurityNumber',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div2',
+      onElementSection:'1',
       formHeader: ''
     },
     {
       question: 'Date of Birth',
       textboxName: 'txtDateOfBirth' ,
       inputType: 'date',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div2',
+      onElementSection:'1',
       formHeader: ''
     },
     /*
@@ -66,344 +70,405 @@ const STORE = [
       question: 'Street name and number',
       textboxName: 'txtStreetName',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div4',
-      formHeader: 'Mailing Address information'
+      onElementSection:'1',
+      formHeader: 'Mailing Address Information'
     },
     {
       question: 'City',
       textboxName: 'txtCity',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div4',
+      onElementSection:'1',
       formHeader: ''
     },
     {
       question: 'State',
-      textboxName: 'txtState',
+      textboxName: 'selState',
       inputType: 'select',
-      inputValues:',Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
+      inputValues: ',,Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
       onElement: 'div4',
+      onElementSection:'1',
       formHeader: ''
     },
     {
       question: 'Zip Code',
       textboxName: 'txtZipCode',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div4',
+      onElementSection:'1',
+      formHeader: ''
+    },
+    {
+      question: 'Is this Address current?',
+      textboxName: 'chkCurrentAddress',
+      inputType: 'radio',
+      inputValues: '',
+      onElement: 'div4',
+      onElementSection:'1',
       formHeader: ''
     },
     {
       question: 'Street name and number',
-      textboxName: 'txtBillingStreetName',
+      textboxName: 'txtNewStreetName',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div4',
-      formHeader: 'Billing Address Information'
+      onElementSection:'2',
+      formHeader: 'New Mailing Address Information'
     },
     {
       question: 'City',
-      textboxName: 'txtBillingCity',
+      textboxName: 'txtNewCity',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div4',
+      onElementSection:'2',
       formHeader: ''
     },
     {
       question: 'State',
-      textboxName: 'txtBillingState',
+      textboxName: 'selNewState',
       inputType: 'select',
-      inputValues:',Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
+      inputValues: ',,Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
       onElement: 'div4',
+      onElementSection:'2',
       formHeader: ''
     },
     {
       question: 'Zip Code',
-      textboxName: 'txtBillingZipCode',
+      textboxName: 'txtNewZipCode',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div4',
+      onElementSection:'2',
       formHeader: ''
     },
     {
-      question: 'Street name and number',
-      textboxName: 'txtAbuseStreetName',
-      inputType: 'text',
-      inputValues:',',
+      question: 'Select an address from the drop down',
+      textboxName: 'selAbuseLocation',
+      inputType: 'select',
+      inputValues: ',Existing Address from on file, Other',
       onElement: 'div6',
+      onElementSection:'1',
       formHeader: 'Where did the abuse happen?'
     },
     {
-      question: 'City',
-      textboxName: 'txtAbuseCity',
+      question: 'Location of the abuse',
+      textboxName: 'txtAbuseLocationOther',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div6',
-      formHeader: ''
-    },
-    {
-      question: 'State',
-      textboxName: 'txtAbuseState',
-      inputType: 'select',
-      inputValues:',Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
-      onElement: 'div6',
-      formHeader: ''
-    },
-    {
-      question: 'Zip Code',
-      textboxName: 'txtAbuseZipCode',
-      inputType: 'text',
-      inputValues:',',
-      onElement: 'div6',
+      onElementSection:'1',
       formHeader: ''
     },
     {
       question: 'Location of Abuser',
       textboxName: 'txtAbuserLocation',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div6',
+      onElementSection:'2',
       formHeader: 'Information about the abuse'
     },
     {
       question: 'What Date did you leave your abuser?',
       textboxName: 'txtDateLeftAbuser',
       inputType: 'date',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div6',
+      onElementSection:'2',
       formHeader: ''
     },
     {
       question: 'What was relationship to abuser?',
       textboxName: 'txtRelationshipToAbuser',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div6',
+      onElementSection:'2',
       formHeader: ''
     },
     {
       question: 'Restraining Order?',
-      textboxName: 'txtRestrainingOrder',
+      textboxName: 'selCurrentRestrainingOrder',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div6',
+      onElementSection:'2',
+      formHeader: ''
+    },
+    {
+      question: 'Would you like a restraining order?',
+      textboxName: 'selRequestedRestrainingOrder',
+      inputType: 'select',
+      inputValues: ',Yes, No',
+      onElement: 'div6',
+      onElementSection:'2',
       formHeader: ''
     },
     {
       question: 'Hospital Stay?',
-      textboxName: 'txtHospitalStay',
+      textboxName: 'selHospitalStay',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div6',
+      onElementSection:'2',
       formHeader: ''
     },
     {
-      question: 'Name of Hospital',
-      textboxName: 'txtHospitalName',
+      question: 'Name and Location of Hospital',
+      textboxName: 'txtNameAndLocationHospital',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div6',
+      onElementSection:'2',
       formHeader: ''
     },
     {
-      question: 'Current medical bills from this trauma?',
-      textboxName: 'txtMedicalBills',
+      question: 'Initial Cost of Treatment?',
+      textboxName: 'txtInitialCostOfPrevTreatment',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div8',
+      onElementSection:'1',
       formHeader: 'Financial Impact'
     },
     {
-      question: 'Are you on a payment plan?',
-      textboxName: 'txtPaymentPlan',
-      inputType: 'select',
-      inputValues:',Yes, No',
+      question: 'Balance Remaining?',
+      textboxName: 'txtBalanceRemainingOfPrevTreatment',
+      inputType: 'text',
+      inputValues: '',
       onElement: 'div8',
+      onElementSection:'1',
+      formHeader: ''
+    },
+    {
+      question: 'Cost of ongoing monthly treatment including medication if any?',
+      textboxName: 'txtCostOngoingPrevTreatment',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div8',
+      onElementSection:'1',
       formHeader: ''
     },
     {
       question: 'What kind of Health Insurance do you have?',
       textboxName: 'txtHealthInsuranceType',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div8',
+      onElementSection:'1',
       formHeader: 'Health Insurance and Medicine'
     },
     {
-      question: 'What kind of Health insurance do your kids have?',
-      textboxName: 'txtChildsHealthInsuranceType',
-      inputType: 'text',
-      inputValues:',',
+      question: 'Is the information above still correct for your insurance?',
+      textboxName: 'chkCurrentHealthInsurance',
+      inputType: 'radio',
+      inputValues: '',
       onElement: 'div8',
+      onElementSection:'1',
       formHeader: ''
     },
     {
-      question: 'What were the damages',
-      textboxName: 'txtDamages',
+      question: 'Details of Health Insurance',
+      textboxName: 'txtNewHealthInsuranceType',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div8',
+      onElementSection:'1',
       formHeader: ''
     },
     {
-      question: 'Are you on any medicines?',
-      textboxName: 'txtMedication',
+      question: 'Are you currently taking any medications?',
+      textboxName: 'selMedication',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div8',
+      onElementSection:'1',
+      formHeader: ''
+    },
+    {
+      question: 'Which medications?',
+      textboxName: 'txtMedication',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div8',
+      onElementSection:'1',
       formHeader: ''
     },
     {
       question: 'Name of Doctor',
       textboxName: 'txtDoctorsName',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div8',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'Phone Number',
       textboxName: 'txtDoctorsPhoneNumber',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div8',
-      formHeader: ''
-    },
-    {
-      question: 'Email Address',
-      textboxName: 'txtDoctorsEmailAddress',
-      inputType: 'text',
-      inputValues:',',
-      onElement: 'div8',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'Are you employed?',
-      textboxName: 'txtEmployed',
+      textboxName: 'selEmployed',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div8',
+      onElementSection:'',
       formHeader: 'Employment'
     },
     {
       question: 'Do you currently have children living at home with you?',
-      textboxName: 'txtChildrenLivingAtHome',
+      textboxName: 'selChildrenLivingAtHome',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div10',
+      onElementSection:'',
       formHeader: 'Children in your life'
     },
     {
       question: 'Did any children experience trauma?',
-      textboxName: 'txtChildrenTrauma',
+      textboxName: 'selChildrenTrauma',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div10',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'Please explain the trauma experienced by the children',
       textboxName: 'txtChildrenTraumaExplanation',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div10',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'What is the name of the person responsible for your children right now and the address where you last left your children?',
       textboxName: 'txtChildrenCurrentLocationAndInfo',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div10',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'What are the names, relationships, and contact information of the two people you most trust right now to not share where you are or what you are doing?',
       textboxName: 'txtTrustedContacts',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div10',
+      onElementSection:'',
       formHeader: 'Let\'s talk about you'
     },
     {
       question: 'How many times have you left and gone back to your abuser?',
       textboxName: 'txtTimesReturnedToAbuser',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div10',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'Have you purposed it in your heart to not go back this time?',
-      textboxName: 'txtDoesNotWantToReturn',
-      inputType: 'text',
-      inputValues:',',
+      textboxName: 'selDoesNotWantToReturn',
+      inputType: 'select',
+      inputValues: ',Yes,No',
       onElement: 'div10',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'What is your marital status?',
-      textboxName: 'txtMaritalStatus',
+      textboxName: 'selMaritalStatus',
       inputType: 'select',
-      inputValues:',Married, Widowed, Divorced or Separated, Never Married or Single',
+      inputValues: ',Married, Widowed, Divorced or Separated, Single or Never Married',
       onElement: 'div12',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'Do you have legal counsel?',
-      textboxName: 'txtLegalCounsel',
+      textboxName: 'selLegalCounsel',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div12',
+      onElementSection:'',
       formHeader: ''
     },
     {
-      question: 'Will you be pursuing legal counsel?',
-      textboxName: 'txtPursuingLegalCouncel',
+      question: 'Would you like assistance obtaining legal counsel?',
+      textboxName: 'selPursuingLegalCouncel',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div12',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'Do you smoke?',
-      textboxName: 'txtSmoke',
+      textboxName: 'selSmoke',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div12',
+      onElementSection:'',
       formHeader: 'Personal Details'
     },
     {
       question: 'Do you have any chemical additions?',
-      textboxName: 'txtAddictions',
+      textboxName: 'selAddictions',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div12',
+      onElementSection:'',
+      formHeader: ''
+    },
+    {
+      question: 'Which Addictions?',
+      textboxName: 'txtCurrentAddictions',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div12',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'What languages do you speak?',
       textboxName: 'txtLanguages',
       inputType: 'text',
-      inputValues:',',
+      inputValues: '',
       onElement: 'div12',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'Do you have any physical limitations?',
-      textboxName: 'txtPhysicalLimitations',
+      textboxName: 'selPhysicalLimitations',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div12',
+      onElementSection:'',
       formHeader: ''
     },
     {
       question: 'Do you have any food allergies?',
-      textboxName: 'txtFoodAllergies',
+      textboxName: 'selFoodAllergies',
       inputType: 'select',
-      inputValues:',Yes, No',
+      inputValues: ',Yes, No',
       onElement: 'div12',
+      onElementSection:'',
       formHeader: ''
     }
   ];
