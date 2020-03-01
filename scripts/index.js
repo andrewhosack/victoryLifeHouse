@@ -14,80 +14,86 @@ function showClass(className) {
       }
 }
 
+//Scrolling to top of page
 function topFunction() {
   document.getElementById("banner").scrollIntoView();
 }
 
-function Navigation(btnClick, type) {
+function loadNavBar() {
+  let navbar1 = document.createElement('div');
+  navbar1.setAttribute("id", "navbar1");
+  navbar1.innerHTML = "<ul> <li><a href='#' class='anchor'>Home</a></li> <li><a href='#' class='anchor'>Data Input</a></li> <li><a href='#' class='anchor'>Log in</a></li> </ul>";
+  navbar1.classList.add("navbar1");
 
-if (type === 'next') {
+  var sectionNav = document.getElementById("navbar");
+  sectionNav.appendChild(navbar1);
+}
 
-if(btnClick==='splashScreen') {
+function Navigation(btnClick) {
+
+if(btnClick==='btnSplashScreenNext') {
     hideClass('splashScreen');
     showClass('basicInfo');
   }
-if(btnClick==='basicInfo') {
+if(btnClick==='btnBasicInfoNext') {
   hideClass('basicInfo');
   showClass('addressInfo');
 }
-if (btnClick==='addressInfo') {
+if (btnClick==='btnAddressInfoNext') {
   hideClass('addressInfo');
   showClass('abuserInfo');
 }
-if (btnClick==='abuserInfo')
+if (btnClick==='btnAbuserInfoNext')
 {
   hideClass('abuserInfo');
   showClass('medicalAndFinancial');
 }
-if (btnClick==='medicalAndFinancial')
+if (btnClick==='btnMedicalAndFinancialNext')
 {
   hideClass('medicalAndFinancial');
   showClass('familyAndFriends');
 }
-if (btnClick==='familyAndFriends')
+if (btnClick==='btnFamilyAndFriendsNext')
 {
   hideClass('familyAndFriends');
   showClass('generalInfo');
 }
-if (btnClick==='generalInfo')
+if (btnClick==='btnGeneralInfoNext')
 {
   hideClass('generalInfo');
   showClass('summaryPage');
 }
-}
 
-else if (type === 'previous') {
-
-if (btnClick==='addressInfo') {
+if (btnClick==='btnAddressInfoPrevious') {
   hideClass('addressInfo');
   showClass('basicInfo');
 }
-if (btnClick==='abuserInfo')
+if (btnClick==='btnAbuserInfoPrevious')
 {
   hideClass('abuserInfo');
   showClass('addressInfo');
 }
-if (btnClick==='medicalAndFinancial')
+if (btnClick==='btnMedicalAndFinancialPrevious')
 {
   hideClass('medicalAndFinancial');
   showClass('abuserInfo');
 }
-if (btnClick==='familyAndFriends')
+if (btnClick==='btnFamilyAndFriendsPrevious')
 {
   hideClass('familyAndFriends');
   showClass('medicalAndFinancial');
 }
-if (btnClick==='generalInfo')
+if (btnClick==='btnGeneralInfoPrevious')
 {
   hideClass('generalInfo');
   showClass('familyAndFriends');
 }
-if (btnClick==='summaryPage')
+if (btnClick==='btnSummaryPagePrevious')
 {
   hideClass('summaryPage');
   showClass('generalInfo');
 }
-}
+
 
 topFunction();
 
@@ -109,7 +115,7 @@ splashScreenDiv2.innerHTML = '<img src=".\\images\\VLH.jpg" alt="banner of VLH" 
 
 let btnSplashScreen = document.createElement('div');
 btnSplashScreen.setAttribute("id", "btnSplashScreen");
-btnSplashScreen.innerHTML = '<input type="button" value="Let\'s get started! >>" id="btnSplashScreenNext">';
+btnSplashScreen.innerHTML = '<input type="button" value="Let\'s get started! >>" id="btnSplashScreenNext" class = "navButtons">';
 btnSplashScreen.classList.add("divBackAndNext");
 
 let splashScreenTestimonials = document.createElement('div');
@@ -142,7 +148,7 @@ div2.innerHTML = createForm('Basic Info', 'div2');
 
 let btnBasicInfo = document.createElement('div');
 btnBasicInfo.setAttribute("id", "btnBasicInfo");
-btnBasicInfo.innerHTML = '<input type="button" value="Next Set of Questions >>" id="btnBasicInfoNext">';
+btnBasicInfo.innerHTML = '<input type="button" value="Next Set of Questions >>" id="btnBasicInfoNext" class = "navButtons">';
 btnBasicInfo.classList.add("divBackAndNext");
 
 //Creating the divs in the address info
@@ -158,7 +164,7 @@ div4.innerHTML = createForm('Address Info', 'div4');
 
 let btnAddressInfo = document.createElement('div');
 btnAddressInfo.setAttribute("id", "btnAddressInfo");
-btnAddressInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAddressInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnAddressInfoNext">';
+btnAddressInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAddressInfoPrevious" class = "navButtons"><input type="button" value="Next Set of Questions >>" id="btnAddressInfoNext" class = "navButtons">';
 btnAddressInfo.classList.add("divBackAndNext");
 
 //Creating the divs in the abuser info
@@ -174,7 +180,7 @@ div6.innerHTML = createForm('Abuser Info', 'div6');
 
 let btnAbuserInfo = document.createElement('div');
 btnAbuserInfo.setAttribute("id", "btnAbuserInfo");
-btnAbuserInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAbuserInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnAbuserInfoNext">';
+btnAbuserInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnAbuserInfoPrevious" class = "navButtons"><input type="button" value="Next Set of Questions >>" id="btnAbuserInfoNext" class = "navButtons">';
 btnAbuserInfo.classList.add("divBackAndNext");
 
 //Creating the divs in the medical and financial info
@@ -190,7 +196,7 @@ div8.innerHTML = createForm('Medical and Financial Info', 'div8');
 
 let btnMedicalAndFinancial = document.createElement('div');
 btnMedicalAndFinancial.setAttribute("id", "btnMedicalAndFinancial");
-btnMedicalAndFinancial.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnMedicalAndFinancialPrevious"><input type="button" value="Next Set of Questions >>" id="btnMedicalAndFinancialNext">';
+btnMedicalAndFinancial.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnMedicalAndFinancialPrevious" class = "navButtons"><input type="button" value="Next Set of Questions >>" id="btnMedicalAndFinancialNext" class = "navButtons">';
 btnMedicalAndFinancial.classList.add("divBackAndNext");
 
 //Creating the divs in the family and friends info
@@ -206,7 +212,7 @@ div10.innerHTML = createForm('Family and Friends Info', 'div10');
 
 let btnFamilyAndFriends = document.createElement('div');
 btnFamilyAndFriends.setAttribute("id", "btnFamilyAndFriends");
-btnFamilyAndFriends.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnFamilyAndFriendsPrevious"><input type="button" value="Next Set of Questions >>" id="btnFamilyAndFriendsNext">';
+btnFamilyAndFriends.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnFamilyAndFriendsPrevious" class = "navButtons"><input type="button" value="Next Set of Questions >>" id="btnFamilyAndFriendsNext" class = "navButtons">';
 btnFamilyAndFriends.classList.add("divBackAndNext");
 
 //Creating the divs in the general info
@@ -222,7 +228,7 @@ div12.innerHTML = createForm('General Info', 'div12');
 
 let btnGeneralInfo = document.createElement('div');
 btnGeneralInfo.setAttribute("id", "btnGeneralInfo");
-btnGeneralInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnGeneralInfoPrevious"><input type="button" value="Next Set of Questions >>" id="btnGeneralInfoNext">';
+btnGeneralInfo.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnGeneralInfoPrevious" class = "navButtons"><input type="button" value="Next Set of Questions >>" id="btnGeneralInfoNext" class = "navButtons">';
 btnGeneralInfo.classList.add("divBackAndNext");
 
 //Creating the divs in the summary page
@@ -238,7 +244,7 @@ div14.innerHTML = createForm('Summary Info', 'div14');
 
 let btnSummaryPage = document.createElement('div');
 btnSummaryPage.setAttribute("id", "btnSummaryPage");
-btnSummaryPage.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnSummaryPagePrevious">';
+btnSummaryPage.innerHTML = '<input type="button" value="<< Previous Set of Questions" id="btnSummaryPagePrevious" class = "navButtons">';
 btnSummaryPage.classList.add("divBackAndNext");
 
 //Appending the divs to the various sections
@@ -291,80 +297,47 @@ hideClass('medicalAndFinancial');
 hideClass('familyAndFriends');
 hideClass('generalInfo');
 hideClass('summaryPage');
-
-/*
-**Removing this because I can use a simple for loop to only loop over the elements I want, instead of every item in the array
-STORE.forEach(addQuestionsToDiv);
-*/
-
 }
 
-function loadNavBar() {
-  let navbar1 = document.createElement('div');
-  navbar1.setAttribute("id", "navbar1");
-  navbar1.innerHTML = "<ul> <li><a href='#' class='anchor'>Home</a></li> <li><a href='#' class='anchor'>Data Input</a></li> <li><a href='#' class='anchor'>Log in</a></li> </ul>";
-  navbar1.classList.add("navbar1");
-
-  var sectionNav = document.getElementById("navbar");
-  sectionNav.appendChild(navbar1);
-}
 
 //Various start up scripts and preparation
 loadPage();
 loadNavBar();
 
 
-document.getElementById("btnSplashScreenNext").addEventListener("click", function(){
-    Navigation('splashScreen', 'next');
-});
 
-document.getElementById("btnBasicInfoNext").addEventListener("click", function(){
-    Navigation('basicInfo', 'next');
-});
+//Creating the navigation events in this area
+var elements = document.getElementsByClassName("navButtons");
 
-document.getElementById("btnAddressInfoNext").addEventListener("click", function(){
-    Navigation('addressInfo', 'next');
-});
+var navigationControl = function() {
+    var attribute = this.getAttribute("id");
+    Navigation(attribute);
+};
 
-document.getElementById("btnAbuserInfoNext").addEventListener("click", function(){
-    Navigation('abuserInfo', 'next');
-});
+for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener('click', navigationControl, false);
+}
+//Navigation Events end
 
-document.getElementById("btnMedicalAndFinancialNext").addEventListener("click", function(){
-    Navigation('medicalAndFinancial', 'next');
-});
 
-document.getElementById("btnFamilyAndFriendsNext").addEventListener("click", function(){
-    Navigation('familyAndFriends', 'next');
-});
+//Creating the forms visible/invisible options based on user selection
+//var formSelects = document.getElementsByClassName("formSelects");
 
-document.getElementById("btnGeneralInfoNext").addEventListener("click", function(){
-    Navigation('generalInfo', 'next');
-});
+var visibilityControl = function(name, value, childGrouping) {
+    let className = 'formClass' + childGrouping;
+    var elements = document.getElementsByClassName(className);
 
-document.getElementById("btnAddressInfoPrevious").addEventListener("click", function(){
-    Navigation('addressInfo', 'previous');
-});
+    for (var i=0; i < elements.length; i++) {
+      elements[i].removeAttribute("hidden");
+    }
 
-document.getElementById("btnAbuserInfoPrevious").addEventListener("click", function(){
-    Navigation('abuserInfo', 'previous');
-});
 
-document.getElementById("btnMedicalAndFinancialPrevious").addEventListener("click", function(){
-    Navigation('medicalAndFinancial', 'previous');
-});
+};
 
-document.getElementById("btnFamilyAndFriendsPrevious").addEventListener("click", function(){
-    Navigation('familyAndFriends', 'previous');
-});
-
-document.getElementById("btnGeneralInfoPrevious").addEventListener("click", function(){
-    Navigation('generalInfo', 'previous');
-});
-
-document.getElementById("btnSummaryPagePrevious").addEventListener("click", function(){
-    Navigation('summaryPage', 'previous');
-});
+//for (var i = 0; i < formSelects.length; i++) {
+  //  formSelects[i].addEventListener('click', visibilityControl, false);
+//}
+//Navigation Events end
 
 //navbar items
 var anchors = document.querySelectorAll('.anchor');

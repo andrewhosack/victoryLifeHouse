@@ -12,7 +12,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div2',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'1',
       formHeader: ''
     },
     {
@@ -21,7 +23,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div2',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'1',
       formHeader: ''
 
     },
@@ -31,7 +35,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div2',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'1',
       formHeader: ''
     },
     {
@@ -40,7 +46,9 @@ const STORE = [
       inputType: 'date',
       inputValues: '',
       onElement: 'div2',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'1',
       formHeader: ''
     },
     /*
@@ -72,7 +80,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div4',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: false,
+      questionGrouping:'2',
       formHeader: 'Mailing Address Information'
     },
     {
@@ -81,7 +91,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div4',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: false,
+      questionGrouping:'2',
       formHeader: ''
     },
     {
@@ -90,7 +102,9 @@ const STORE = [
       inputType: 'select',
       inputValues: ',,Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
       onElement: 'div4',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: false,
+      questionGrouping:'2',
       formHeader: ''
     },
     {
@@ -99,16 +113,21 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div4',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: false,
+      questionGrouping:'2',
       formHeader: ''
     },
     {
       question: 'Is this Address current?',
-      textboxName: 'chkCurrentAddress',
-      inputType: 'radio',
-      inputValues: '',
+      textboxName: 'selCurrentAddress',
+      inputType: 'select',
+      inputValues: ',Yes,No',
       onElement: 'div4',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'2',
+      childGrouping: '3',
       formHeader: ''
     },
     {
@@ -117,7 +136,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div4',
-      onElementSection:'2',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'3',
       formHeader: 'New Mailing Address Information'
     },
     {
@@ -126,7 +147,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div4',
-      onElementSection:'2',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'3',
       formHeader: ''
     },
     {
@@ -135,7 +158,10 @@ const STORE = [
       inputType: 'select',
       inputValues: ',,Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
       onElement: 'div4',
-      onElementSection:'2',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'3',
+      childGrouping: '4',
       formHeader: ''
     },
     {
@@ -144,7 +170,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div4',
-      onElementSection:'2',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'3',
       formHeader: ''
     },
     {
@@ -153,35 +181,33 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Existing Address from on file, Other',
       onElement: 'div6',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'4',
+      childGrouping: '5',
       formHeader: 'Where did the abuse happen?'
     },
     {
-      question: 'Location of the abuse',
-      textboxName: 'txtAbuseLocationOther',
+      question: 'Location of Abuse',
+      textboxName: 'txtAbuseLocation',
       inputType: 'text',
       inputValues: '',
       onElement: 'div6',
-      onElementSection:'1',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'5',
       formHeader: ''
     },
     {
-      question: 'Location of Abuser',
-      textboxName: 'txtAbuserLocation',
-      inputType: 'text',
-      inputValues: '',
-      onElement: 'div6',
-      onElementSection:'2',
-      formHeader: 'Information about the abuse'
-    },
-    {
-      question: 'What Date did you leave your abuser?',
+      question: 'What date did you leave your abuser?',
       textboxName: 'txtDateLeftAbuser',
       inputType: 'date',
       inputValues: '',
       onElement: 'div6',
-      onElementSection:'2',
-      formHeader: ''
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'6',
+      formHeader: 'Information about the abuse'
     },
     {
       question: 'What was relationship to abuser?',
@@ -189,16 +215,21 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div6',
-      onElementSection:'2',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'6',
       formHeader: ''
     },
     {
-      question: 'Restraining Order?',
+      question: 'Was a restraining order filed for the reason why you are here?',
       textboxName: 'selCurrentRestrainingOrder',
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div6',
-      onElementSection:'2',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'6',
+      childGrouping: '7',
       formHeader: ''
     },
     {
@@ -207,7 +238,10 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div6',
-      onElementSection:'2',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'7',
+      childGrouping: '8',
       formHeader: ''
     },
     {
@@ -216,7 +250,10 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div6',
-      onElementSection:'2',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'8',
+      childGrouping: '9',
       formHeader: ''
     },
     {
@@ -225,7 +262,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div6',
-      onElementSection:'2',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'9',
       formHeader: ''
     },
     {
@@ -234,7 +273,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'10',
       formHeader: 'Financial Impact'
     },
     {
@@ -243,7 +284,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'10',
       formHeader: ''
     },
     {
@@ -252,7 +295,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'10',
       formHeader: ''
     },
     {
@@ -261,16 +306,21 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: false,
+      questionGrouping:'10',
       formHeader: 'Health Insurance and Medicine'
     },
     {
       question: 'Is the information above still correct for your insurance?',
-      textboxName: 'chkCurrentHealthInsurance',
-      inputType: 'radio',
-      inputValues: '',
+      textboxName: 'selCurrentHealthInsurance',
+      inputType: 'select',
+      inputValues: ',Yes,No',
       onElement: 'div8',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'10',
+      childGrouping: '11',
       formHeader: ''
     },
     {
@@ -279,7 +329,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
-      onElementSection:'1',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'11',
       formHeader: ''
     },
     {
@@ -288,7 +340,10 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div8',
-      onElementSection:'1',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'12',
+      childGrouping: '13',
       formHeader: ''
     },
     {
@@ -297,7 +352,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
-      onElementSection:'1',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'13',
       formHeader: ''
     },
     {
@@ -306,7 +363,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'14',
       formHeader: ''
     },
     {
@@ -315,7 +374,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'14',
       formHeader: ''
     },
     {
@@ -324,7 +385,10 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div8',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'14',
+      childGrouping: '15',
       formHeader: 'Employment'
     },
     {
@@ -333,7 +397,10 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div10',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'15',
+      childGrouping: '16',
       formHeader: 'Children in your life'
     },
     {
@@ -342,7 +409,10 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div10',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'16',
+      childGrouping: '17',
       formHeader: ''
     },
     {
@@ -351,7 +421,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div10',
-      onElementSection:'',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'17',
       formHeader: ''
     },
     {
@@ -360,7 +432,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div10',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'18',
       formHeader: ''
     },
     {
@@ -369,7 +443,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div10',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'18',
       formHeader: 'Let\'s talk about you'
     },
     {
@@ -378,7 +454,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div10',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'18',
       formHeader: ''
     },
     {
@@ -387,7 +465,9 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes,No',
       onElement: 'div10',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'18',
       formHeader: ''
     },
     {
@@ -396,7 +476,9 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Married, Widowed, Divorced or Separated, Single or Never Married',
       onElement: 'div12',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'19',
       formHeader: ''
     },
     {
@@ -405,7 +487,10 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div12',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'19',
+      childGrouping: '20',
       formHeader: ''
     },
     {
@@ -414,7 +499,9 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div12',
-      onElementSection:'',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'20',
       formHeader: ''
     },
     {
@@ -423,7 +510,9 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div12',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'21',
       formHeader: 'Personal Details'
     },
     {
@@ -432,7 +521,10 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div12',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'21',
+      childGrouping: '22',
       formHeader: ''
     },
     {
@@ -441,7 +533,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div12',
-      onElementSection:'',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'22',
       formHeader: ''
     },
     {
@@ -450,7 +544,9 @@ const STORE = [
       inputType: 'text',
       inputValues: '',
       onElement: 'div12',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'23',
       formHeader: ''
     },
     {
@@ -459,7 +555,9 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div12',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'24',
       formHeader: ''
     },
     {
@@ -468,7 +566,9 @@ const STORE = [
       inputType: 'select',
       inputValues: ',Yes, No',
       onElement: 'div12',
-      onElementSection:'',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'25',
       formHeader: ''
     }
   ];

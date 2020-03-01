@@ -104,6 +104,31 @@ border:none;
   margin-left:10px;
 }
 
+.form select:disabled, input[type="text"]:disabled {
+  font: 1em sans-serif;
+  position:relative;
+  width:80%;
+  max-width:350px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  padding: 1px 0px;
+  margin:auto;
+  margin-left:10px;
+  border-style:none;
+  background-color:white;
+}
+
+.form select:enabled {
+  background-color:white;
+}
+
+/* Making the little arrow disappear when select box is disabled */
+.form select:disabled {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 @media screen and (min-width: 350px) and (max-width: 700px) {
   .form label {
     display:block;

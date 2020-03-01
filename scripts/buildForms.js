@@ -2,14 +2,16 @@ function createForm(formName, screenToBuild) {
 let buildFormHTML;
 
 buildFormHTML = buildFormStartHeaders(formName);
-buildFormHTML +=
+/*buildFormHTML +=
 
 '          <section>' +
-'              <h2></h2>';
+'              <h2></h2>'; */
 buildFormHTML += addTextBoxesToForm(screenToBuild);
-buildFormHTML +=
+
+buildFormHTML += buildFormEndHeaders();
+/*buildFormHTML +=
   '          </section>';
-/*  '          <section>' +
+  '          <section>' +
   '              <h2>Contact information</h2>' +
   '              <fieldset>' +
   '                <legend>Title</legend>' +
@@ -89,7 +91,7 @@ buildFormHTML +=
   /*'              <p> <button type="submit">Validate the payment</button> </p>' + */
 /*  '          </section>'; */
 
-buildFormHTML += buildFormEndHeaders();
+
 
   return buildFormHTML;
 }
@@ -128,48 +130,33 @@ function buildFormEndSection() {
 
 }
 
-/*
-function addQuestionsToDiv(item, index, array) {
-
-//Create an input type dynamically.
-var element = document.createElement("input");
-
-//Create Labels
-var label = document.createElement("Label");
-label.innerHTML = item.question;
-
-//Assign different attributes to the element.
-element.setAttribute("type", "text");
-element.setAttribute("value", "");
-element.setAttribute("name", item.textboxName);
-element.setAttribute("style", "width:200px");
-
-label.setAttribute("style", "font-weight:normal");
-label.setAttribute("for", item.textboxName);
-
-// 'foobar' is the div id, where new fields are to be added
-var foo = document.getElementById(item.onElement);
-
-//Append the element in page (in span).
-foo.appendChild(label);
-foo.appendChild(element);
-
-}
-*/
-
 function addTextBoxesToForm(screenToBuild) {
-let buildString = '';
+let buildString = '' +
+'          <section>' +
+'              <h2></h2>';
 
 var myDivs = STORE;
 for (var key in myDivs) {
+  console.log(myDivs[key]);
+  //Only showing items that should be visible by default, will have to make visible the items we want to show later in the logic, based on a value from the array
   if(screenToBuild === myDivs[key].onElement) {
 
       if(myDivs[key].formHeader != '') {
-        buildString += '<h3>' + myDivs[key].formHeader + '</h3';
+        buildString += '<h3 class ="formClass' + myDivs[key].questionGrouping + '"';
+        if ( myDivs[key].isVisible == false) {
+          buildString +=
+          ' hidden';
+        }
+        buildString += '>' + myDivs[key].formHeader + '</h3>';
       }
+buildString += '               <p class="formClass' + myDivs[key].questionGrouping + '"';
+      if ( myDivs[key].isVisible == false) {
 
+        buildString +=
+        ' hidden ';
+      }
+      buildString += '>';
   buildString +=
-    '               <p>' +
     '                <label for="' + myDivs[key].textboxName + '">' +
     '                  <span>' + myDivs[key].question + ': </span>' +
   /*  '                  <strong><abbr title="required">*</abbr></strong>' + */
@@ -177,11 +164,31 @@ for (var key in myDivs) {
 
           if(myDivs[key].inputType === 'text' || myDivs[key].inputType === 'date' || myDivs[key].inputType === 'radio') {
             buildString +=
-            '                <input type="' + myDivs[key].inputType + '" id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName + '">';
+            '                <input type="' + myDivs[key].inputType + '" id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName + '"';
+
+            if ( myDivs[key].isEnabled == false) {
+              buildString +=
+              ' disabled';
+            }
+            /*if ( myDivs[key].isVisible == false) {
+              buildString +=
+              ' hidden';
+            }*/
+            buildString += '>';
           }
           else if(myDivs[key].inputType === 'select') {
             buildString +=
-            '                <select id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName + '">';
+            '                <select id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName+ '" onChange="visibilityControl(this.name,this.value,' + myDivs[key].childGrouping + ');"';
+
+            if ( myDivs[key].isEnabled == false) {
+              buildString +=
+              ' disabled';
+            }
+            /*if ( myDivs[key].isVisible == false) {
+              buildString +=
+              ' hidden';
+            }*/
+            buildString += '>';
 
             if(myDivs[key].inputValues != '') {
               let createOptions = myDivs[key].inputValues.split(',');
@@ -197,6 +204,7 @@ for (var key in myDivs) {
     buildString += '              </p>';
   }
   }
-
+  buildString +=
+    '          </section>'
   return buildString;
 }
