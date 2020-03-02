@@ -137,7 +137,6 @@ let buildString = '' +
 
 var myDivs = STORE;
 for (var key in myDivs) {
-  console.log(myDivs[key]);
   //Only showing items that should be visible by default, will have to make visible the items we want to show later in the logic, based on a value from the array
   if(screenToBuild === myDivs[key].onElement) {
 
@@ -178,7 +177,13 @@ buildString += '               <p class="formClass' + myDivs[key].questionGroupi
           }
           else if(myDivs[key].inputType === 'select') {
             buildString +=
-            '                <select id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName+ '" onChange="visibilityControl(this.name,this.value,' + myDivs[key].childGrouping + ');"';
+            '                <select id="' + myDivs[key].textboxName + '" name="' + myDivs[key].textboxName + '"';
+
+            //Only add visibilityControl if the select box selection should toggle an element on or off
+            if(myDivs[key].responses) {
+            buildString += ' onChange="visibilityControl(this.name,this.value);"';
+            }
+
 
             if ( myDivs[key].isEnabled == false) {
               buildString +=

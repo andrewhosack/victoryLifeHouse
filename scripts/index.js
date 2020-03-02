@@ -319,25 +319,39 @@ for (var i = 0; i < elements.length; i++) {
 }
 //Navigation Events end
 
-
 //Creating the forms visible/invisible options based on user selection
-//var formSelects = document.getElementsByClassName("formSelects");
+var visibilityControl = function(name, value) {
 
-var visibilityControl = function(name, value, childGrouping) {
-    let className = 'formClass' + childGrouping;
-    var elements = document.getElementsByClassName(className);
+  let visibilityShow = STORE;
+  for (var key in visibilityShow) {
 
-    for (var i=0; i < elements.length; i++) {
-      elements[i].removeAttribute("hidden");
+    //Only review the textbox/question that was clicked
+    if(visibilityShow[key].textboxName == name) {
+      //Go each possible response to the textbox, these responses are held in the STORE array
+      for (let i = 0; i < visibilityShow[key].responses.length; i++) {
+        //If the response in the array is equal to the response they selected on screen then trigger this if()
+        //The variables are determining which class to show based on the childGrouping value, and elements is determining which elements need to be updated
+        if ( visibilityShow[key].responses[i].Response === value) {
+          let className = 'formClass' + visibilityShow[key].responses[i].childgrouping;
+          var elements = document.getElementsByClassName(className);
+          //Iterating through each element and removing the hidden attribute
+          for (var j=0; j < elements.length; j++) {
+            elements[j].removeAttribute("hidden");
+          }
+        }
+        else {
+          //Could add logic to say if nothing is being shown, and nothing needs to happen, confirm if anything needs to be hidden or not before trying to hide the elements.
+          //could also add in the responses object some indication on "what to do" if 'yes' is selected but nothing needs to happen, instead of only putting answers that require action.
+          let className = 'formClass' + visibilityShow[key].responses[i].childgrouping;
+          var elements = document.getElementsByClassName(className);
+          for (var j=0; j < elements.length; j++) {
+          elements[j].hidden = "hidden"
+          }
+        }
     }
-
-
+    }
+}
 };
-
-//for (var i = 0; i < formSelects.length; i++) {
-  //  formSelects[i].addEventListener('click', visibilityControl, false);
-//}
-//Navigation Events end
 
 //navbar items
 var anchors = document.querySelectorAll('.anchor');
