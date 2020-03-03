@@ -101,10 +101,10 @@ let buildFormStartHeaders;
 
 buildFormStartHeaders =
 '<div id="form" class="form">' +
-'  <form method="post">' +
-'          <h1>' + formName +'</h1>' +
+'  <form method="post">';
+/*'          <h1>' + formName +'</h1>' +
 '          <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>';
-
+*/
 return  buildFormStartHeaders;
 
 }

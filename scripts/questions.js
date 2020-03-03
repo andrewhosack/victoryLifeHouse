@@ -83,7 +83,7 @@ const STORE = [
       isVisible: true,
       isEnabled: false,
       questionGrouping:'2',
-      formHeader: 'Mailing Address Information'
+      formHeader: 'Current Physical Address'
     },
     {
       question: 'City',
@@ -209,7 +209,7 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'6',
-      formHeader: 'Information about the abuse'
+      formHeader: 'Information about your abuser and the abuse'
     },
     {
       question: 'What was relationship to abuser?',
@@ -248,8 +248,8 @@ const STORE = [
       formHeader: ''
     },
     {
-      question: 'Hospital Stay?',
-      textboxName: 'selHospitalStay',
+      question: 'Did you require emergency services or a hospital stay due to the abuse?',
+      textboxName: 'selRequiredEmergencyServices',
       inputType: 'select',
       inputValues: ',Yes,No',
       onElement: 'div6',
@@ -261,8 +261,8 @@ const STORE = [
       formHeader: ''
     },
     {
-      question: 'Name and Location of Hospital',
-      textboxName: 'txtNameAndLocationHospital',
+      question: 'Name and Location of facility',
+      textboxName: 'txtNameAndLocationFacility',
       inputType: 'text',
       inputValues: '',
       onElement: 'div6',
@@ -272,8 +272,8 @@ const STORE = [
       formHeader: ''
     },
     {
-      question: 'Initial Cost of Treatment?',
-      textboxName: 'txtInitialCostOfPrevTreatment',
+      question: 'What were your out of pocket expenses for medical treatment?',
+      textboxName: 'txtOutOfPocketExpenses',
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
@@ -283,8 +283,8 @@ const STORE = [
       formHeader: 'Financial Impact'
     },
     {
-      question: 'Balance Remaining?',
-      textboxName: 'txtBalanceRemainingOfPrevTreatment',
+      question: 'What is the approximate balance you currently owe for your medical bills?',
+      textboxName: 'txtMoneyOwedForMedical',
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
@@ -294,7 +294,7 @@ const STORE = [
       formHeader: ''
     },
     {
-      question: 'Cost of ongoing monthly treatment including medication if any?',
+      question: 'Do you require ongoing treatment including medication, mental or physical therapy, etc. due to the abuse?',
       textboxName: 'txtCostOngoingPrevTreatment',
       inputType: 'text',
       inputValues: '',
@@ -305,67 +305,8 @@ const STORE = [
       formHeader: ''
     },
     {
-      question: 'What kind of Health Insurance do you have?',
-      textboxName: 'txtHealthInsuranceType',
-      inputType: 'text',
-      inputValues: '',
-      onElement: 'div8',
-      isVisible: true,
-      isEnabled: false,
-      questionGrouping:'10',
-      formHeader: 'Health Insurance and Medicine'
-    },
-    {
-      question: 'Is the information above still correct for your insurance?',
-      textboxName: 'selCurrentHealthInsurance',
-      inputType: 'select',
-      inputValues: ',Yes,No',
-      onElement: 'div8',
-      isVisible: true,
-      isEnabled: true,
-      questionGrouping:'10',
-      childGrouping: '11',
-      responses: [{ Response: 'No', childgrouping: '11' }],
-      formHeader: ''
-    },
-    {
-      question: 'Details of Health Insurance',
-      textboxName: 'txtNewHealthInsuranceType',
-      inputType: 'text',
-      inputValues: '',
-      onElement: 'div8',
-      isVisible: false,
-      isEnabled: true,
-      questionGrouping:'11',
-      formHeader: ''
-    },
-    {
-      question: 'Are you currently taking any medications?',
-      textboxName: 'selMedication',
-      inputType: 'select',
-      inputValues: ',Yes,No',
-      onElement: 'div8',
-      isVisible: true,
-      isEnabled: true,
-      questionGrouping:'12',
-      childGrouping: '13',
-      responses: [{ Response: 'Yes', childgrouping: '13' }],
-      formHeader: ''
-    },
-    {
-      question: 'Which medications?',
-      textboxName: 'txtMedication',
-      inputType: 'text',
-      inputValues: '',
-      onElement: 'div8',
-      isVisible: false,
-      isEnabled: true,
-      questionGrouping:'13',
-      formHeader: ''
-    },
-    {
-      question: 'Name of Doctor',
-      textboxName: 'txtDoctorsName',
+      question: 'What is the name and address or phone number of your primary care physician?',
+      textboxName: 'txtPrimaryCarePhysician',
       inputType: 'text',
       inputValues: '',
       onElement: 'div8',
@@ -486,7 +427,7 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'19',
-      formHeader: ''
+      formHeader: 'Personal Details'
     },
     {
       question: 'Do you have legal counsel?',
@@ -513,18 +454,29 @@ const STORE = [
       formHeader: ''
     },
     {
-      question: 'Do you smoke?',
-      textboxName: 'selSmoke',
+      question: 'Do you smoke or vape nicotine?',
+      textboxName: 'selSmokeOrVape',
       inputType: 'select',
       inputValues: ',Yes,No',
       onElement: 'div12',
       isVisible: true,
       isEnabled: true,
       questionGrouping:'21',
-      formHeader: 'Personal Details'
+      formHeader: ''
     },
     {
-      question: 'Do you have any chemical additions?',
+      question: 'Do you drink alcohol?',
+      textboxName: 'selConsumeAlcohol',
+      inputType: 'select',
+      inputValues: ',Yes,No',
+      onElement: 'div12',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'21',
+      formHeader: ''
+    },
+    {
+      question: 'Do you have any chemical additions you would like to not have?',
       textboxName: 'selAddictions',
       inputType: 'select',
       inputValues: ',Yes,No',
