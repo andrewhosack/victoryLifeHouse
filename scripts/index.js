@@ -154,7 +154,7 @@ btnBasicInfo.classList.add("divBackAndNext");
 //Creating the divs in the address info
 let div3 = document.createElement('div');
 div3.setAttribute("id", "div3");
-div3.innerHTML = '<p>We need some information about your previous and current addresses...</p>';
+div3.innerHTML = '<p>We need some information about your most recent and previous physical address</p>';
 div3.classList.add("sectionHeader");
 
 let div4 = document.createElement('div');

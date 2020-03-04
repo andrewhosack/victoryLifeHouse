@@ -119,7 +119,7 @@ const STORE = [
       formHeader: ''
     },
     {
-      question: 'Is this Address current?',
+      question: 'Prior to right now, was this your most recent address?',
       textboxName: 'selCurrentAddress',
       inputType: 'select',
       inputValues: ',Yes,No',
@@ -140,7 +140,7 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'3',
-      formHeader: 'New Mailing Address Information'
+      formHeader: 'Most recent Physical Address before arriving to VictoryLife House'
     },
     {
       question: 'City',
@@ -157,12 +157,11 @@ const STORE = [
       question: 'State',
       textboxName: 'selNewState',
       inputType: 'select',
-      inputValues: ',,Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
+      inputValues: ',Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
       onElement: 'div4',
       isVisible: false,
       isEnabled: true,
       questionGrouping:'3',
-      childGrouping: '4',
       formHeader: ''
     },
     {
@@ -170,6 +169,17 @@ const STORE = [
       textboxName: 'txtNewZipCode',
       inputType: 'text',
       inputValues: '',
+      onElement: 'div4',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'3',
+      formHeader: ''
+    },
+    {
+      question: 'Please share the relationship of whose address this is',
+      textboxName: 'selRelationshipToNewAddress',
+      inputType: 'select',
+      inputValues: ',Self,Son,Daughter,Friend,Safe House,Other',
       onElement: 'div4',
       isVisible: false,
       isEnabled: true,
@@ -185,23 +195,10 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'4',
-      childGrouping: '5',
-      responses: [{ Response: 'Other', childgrouping: '5' }],
       formHeader: 'Where did the abuse happen?'
     },
     {
-      question: 'Location of Abuse',
-      textboxName: 'txtAbuseLocation',
-      inputType: 'text',
-      inputValues: '',
-      onElement: 'div6',
-      isVisible: false,
-      isEnabled: true,
-      questionGrouping:'5',
-      formHeader: ''
-    },
-    {
-      question: 'What date did you leave your abuser?',
+      question: 'What was the date you last left your abuser?',
       textboxName: 'txtDateLeftAbuser',
       inputType: 'date',
       inputValues: '',
@@ -210,6 +207,28 @@ const STORE = [
       isEnabled: true,
       questionGrouping:'6',
       formHeader: 'Information about your abuser and the abuse'
+    },
+    {
+      question: 'What was the last date you had communications with your abuser?',
+      textboxName: 'txtLastCommunication',
+      inputType: 'date',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'6',
+      formHeader: ''
+    },
+    {
+      question: 'Please briefly share the final event that made you leave',
+      textboxName: 'txtFinalEvent',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'6',
+      formHeader: ''
     },
     {
       question: 'What was relationship to abuser?',
