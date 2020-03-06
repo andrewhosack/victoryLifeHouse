@@ -60,6 +60,11 @@ if (btnClick==='btnFamilyAndFriendsNext')
 }
 if (btnClick==='btnGeneralInfoNext')
 {
+  //This will populate the summary details on the summary screen
+  //addSummaryDetailsToForm();
+
+  div14.innerHTML = addSummaryDetailsToForm();
+
   hideClass('generalInfo');
   showClass('summaryPage');
 }
@@ -240,7 +245,7 @@ div13.classList.add("sectionHeader");
 let div14 = document.createElement('div');
 div14.setAttribute("id", "div14");
 div14.classList.add("divQuestionContent");
-div14.innerHTML = createForm('Summary Info', 'div14');
+//div14.innerHTML = createForm('Summary Info', 'div14');
 
 let btnSummaryPage = document.createElement('div');
 btnSummaryPage.setAttribute("id", "btnSummaryPage");
@@ -324,15 +329,18 @@ var visibilityControl = function(name, value) {
 
   let visibilityShow = STORE;
   for (var key in visibilityShow) {
-
     //Only review the textbox/question that was clicked
     if(visibilityShow[key].textboxName == name) {
-      //Go each possible response to the textbox, these responses are held in the STORE array
+      //Go to each possible response to the textbox, these responses are held in the STORE array
+
+      //classToShow makes sure if two responses point to the same childGroup that the childGroup gets displayed and not hidden.
+      let classToShow;
       for (let i = 0; i < visibilityShow[key].responses.length; i++) {
         //If the response in the array is equal to the response they selected on screen then trigger this if()
         //The variables are determining which class to show based on the childGrouping value, and elements is determining which elements need to be updated
         if ( visibilityShow[key].responses[i].Response === value) {
           let className = 'formClass' + visibilityShow[key].responses[i].childgrouping;
+          classToShow = className;
           var elements = document.getElementsByClassName(className);
           //Iterating through each element and removing the hidden attribute
           for (var j=0; j < elements.length; j++) {
@@ -344,8 +352,12 @@ var visibilityControl = function(name, value) {
           //could also add in the responses object some indication on "what to do" if 'yes' is selected but nothing needs to happen, instead of only putting answers that require action.
           let className = 'formClass' + visibilityShow[key].responses[i].childgrouping;
           var elements = document.getElementsByClassName(className);
-          for (var j=0; j < elements.length; j++) {
-          elements[j].hidden = "hidden"
+          //Making sure we aren't going to hide the current class we want to display
+          if(classToShow != className) {
+            for (var j=0; j < elements.length; j++) {
+
+              elements[j].hidden = "hidden";
+            }
           }
         }
     }

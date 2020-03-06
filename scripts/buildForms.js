@@ -2,98 +2,14 @@ function createForm(formName, screenToBuild) {
 let buildFormHTML;
 
 buildFormHTML = buildFormStartHeaders(formName);
-/*buildFormHTML +=
 
-'          <section>' +
-'              <h2></h2>'; */
 buildFormHTML += addTextBoxesToForm(screenToBuild);
 
 buildFormHTML += buildFormEndHeaders();
-/*buildFormHTML +=
-  '          </section>';
-  '          <section>' +
-  '              <h2>Contact information</h2>' +
-  '              <fieldset>' +
-  '                <legend>Title</legend>' +
-  '                <ul>' +
-  '                    <li>' +
-  '                      <label for="title_1">' +
-  '                        <input type="radio" id="title_1" name="title" value="A">' +
-  '                        Ace' +
-  '                      </label>' +
-  '                    </li>' +
-  '                    <li>' +
-  '                      <label for="title_2">' +
-  '                        <input type="radio" id="title_2" name="title" value="K" >' +
-  '                        King' +
-  '                      </label>' +
-  '                    </li>' +
-  '                    <li>' +
-  '                      <label for="title_3">' +
-  '                        <input type="radio" id="title_3" name="title" value="Q">' +
-  '                        Queen' +
-  '                      </label>' +
-  '                    </li>' +
-  '                </ul>' +
-  '              </fieldset>' +
-  '              <p>' +
-  '                <label for="name">' +
-  '                  <span>Name: </span>' +
-  '                  <strong><abbr title="required">*</abbr></strong>' +
-  '                </label>' +
-  '                <input type="text" id="name" name="username">' +
-  '              </p>' +
-  '              <p>' +
-  '                <label for="mail">' +
-  '                  <span>E-mail: </span>' +
-  '                  <strong><abbr title="required">*</abbr></strong>' +
-  '                </label>' +
-  '                <input type="email" id="mail" name="usermail">' +
-  '              </p>' +
-  '              <p>' +
-  '                <label for="pwd">' +
-  '                  <span>Password: </span>' +
-  '                  <strong><abbr title="required">*</abbr></strong>' +
-  '                </label>' +
-  '                <input type="password" id="pwd" name="password">' +
-  '              </p>' +
-  '          </section>' +
-  '          <section>' +
-  '              <h2>Payment information</h2>' +
-  '              <p>' +
-  '                <label for="card">' +
-  '                  <span>Card type:</span>' +
-  '                </label>' +
-  '                <select id="card" name="usercard">' +
-  '                  <option value="visa">Visa</option>' +
-  '                  <option value="mc">Mastercard</option>' +
-  '                  <option value="amex">American Express</option>' +
-  '                </select>' +
-  '              </p>' +
-  '              <p>' +
-  '                <label for="number">' +
-  '                  <span>Card number:</span>' +
-  '                  <strong><abbr title="required">*</abbr></strong>' +
-  '                </label>' +
-  '                  <input type="tel" id="number" name="cardnumber">' +
-  '              </p>' +
-  '              <p>' +
-  '                <label for="date">' +
-  '                  <span>Expiration date:</span>' +
-
-  '                  <strong><abbr title="required">*</abbr></strong>' + */
-  /*'                  <em>formatted as mm/yy</em>' + */
-  /*'                </label>' +
-  '                <input type="date" id="date" name="expiration">' +
-  '              </p>' +
-  '          </section>' +
-  '          <section>' + */
-  /*'              <p> <button type="submit">Validate the payment</button> </p>' + */
-/*  '          </section>'; */
 
 
 
-  return buildFormHTML;
+return buildFormHTML;
 }
 
 function buildFormStartHeaders(formName) {
@@ -122,12 +38,30 @@ function buildFormEndHeaders() {
 
 }
 
-function buildFormStartSection() {
+function addSummaryDetailsToForm() {
+let buildString = '';// = '<h3>Summary Information<h3>';
+
+var myDivs = STORE;
+for (var key in myDivs) {
+
+  if(document.getElementById(myDivs[key].textboxName).value) {
+
+
+    buildString +=
+
+      '<div class="SummaryDisplay">' +
+      '      <div class="SummaryLabels">          <label for="' + myDivs[key].textboxName + '">' +
+      '                  <span>' + myDivs[key].question + ': </span>' +
+      '                </label> </div>' +
+      '     <div class="SummaryValues"> <input type="text" value="' + document.getElementById(myDivs[key].textboxName).value + '"></div>' +
+        '</div>';
+  }
+
 
 }
 
-function buildFormEndSection() {
 
+  return buildString;
 }
 
 function addTextBoxesToForm(screenToBuild) {

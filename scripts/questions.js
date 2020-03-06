@@ -15,7 +15,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'1',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'Last Name',
@@ -26,7 +27,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'1',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
 
     },
     {
@@ -38,7 +40,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'1',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'Date of Birth',
@@ -49,31 +52,9 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'1',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
-    /*
-    {
-      question: 'City/State of Birth',
-      textboxName: 'txtCityStateOfBirth',
-      onElement: 'div2'
-    },
-
-    {
-      question: 'Ethnicity',
-      textboxName: 'txtEthnicity',
-      onElement: 'div2'
-    },
-    {
-      question: 'Original Gender',
-      textboxName: 'txtOriginalGender',
-      onElement: 'div2'
-    },
-    {
-      question: 'Religious Affiliation',
-      textboxName: 'txtReligion',
-      onElement: 'div2'
-    },
-    */
     {
       question: 'Street name and number',
       textboxName: 'txtStreetName',
@@ -83,7 +64,8 @@ const STORE = [
       isVisible: true,
       isEnabled: false,
       questionGrouping:'2',
-      formHeader: 'Current Physical Address'
+      formHeader: 'Current Physical Address',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'City',
@@ -94,7 +76,8 @@ const STORE = [
       isVisible: true,
       isEnabled: false,
       questionGrouping:'2',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'State',
@@ -105,7 +88,8 @@ const STORE = [
       isVisible: true,
       isEnabled: false,
       questionGrouping:'2',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'Zip Code',
@@ -116,7 +100,8 @@ const STORE = [
       isVisible: true,
       isEnabled: false,
       questionGrouping:'2',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'Prior to right now, was this your most recent address?',
@@ -129,7 +114,8 @@ const STORE = [
       questionGrouping:'2',
       childGrouping: '3',
       responses: [{ Response: 'No', childgrouping: '3' }],
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'Street name and number',
@@ -140,7 +126,8 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'3',
-      formHeader: 'Most recent Physical Address before arriving to VictoryLife House'
+      formHeader: 'Most recent Physical Address before arriving to VictoryLife House',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'City',
@@ -151,7 +138,8 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'3',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'State',
@@ -162,7 +150,8 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'3',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'Zip Code',
@@ -173,7 +162,8 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'3',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'Please share the relationship of whose address this is',
@@ -184,7 +174,8 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'3',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'Select an address from the drop down',
@@ -195,7 +186,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'4',
-      formHeader: 'Where did the abuse happen?'
+      formHeader: 'Where did the abuse happen?',
+      availableOnAp:'ST,LT'
     },
     {
       question: 'What was the date you last left your abuser?',
@@ -206,7 +198,93 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'6',
-      formHeader: 'Information about your abuser and the abuse'
+      formHeader: 'Information about your abuser and the abuse',
+      availableOnAp:''
+    },
+    {
+      question: 'Location of your abuser?',
+      textboxName: 'selLocation',
+      inputType: 'select',
+      inputValues: ',Jail,Display all addresses related to woman,Other address',
+      onElement: 'div6',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'6',
+      responses: [{ Response: 'Jail', childgrouping: '70' }, { Response: 'Other address', childgrouping: '71' }],
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'Jail Name and Location of Institution',
+      textboxName: 'txtAbuserJailInfo',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'70',
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'Street name and number',
+      textboxName: 'txtAbuserStreetName',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'71',
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'City',
+      textboxName: 'txtAbuserCity',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'71',
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'State',
+      textboxName: 'selAbuserState',
+      inputType: 'select',
+      inputValues: ',Alabama, Alaska, American Samoa, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Guam, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Minor Outlying Islands, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Oregon, Pennsylvania, Puerto Rico, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming',
+      onElement: 'div6',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'71',
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'Zip Code',
+      textboxName: 'txtAbuserZipCode',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'71',
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'Other information you would like to provide',
+      textboxName: 'txtInformationOnAbuser',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'6',
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'What was the last date you had communications with your abuser?',
@@ -217,7 +295,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'6',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Please briefly share the final event that made you leave',
@@ -228,18 +307,57 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'6',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
-      question: 'What was relationship to abuser?',
-      textboxName: 'txtRelationshipToAbuser',
-      inputType: 'text',
-      inputValues: '',
+      question: 'What was your relationship to your abuser?',
+      textboxName: 'selRelationshipToAbuser',
+      inputType: 'select',
+      inputValues: ',Wife,Girl friend,Related,Co-worker,Stranger,Other',
       onElement: 'div6',
       isVisible: true,
       isEnabled: true,
       questionGrouping:'6',
-      formHeader: ''
+      responses: [{ Response: 'Wife', childgrouping: '80' }, { Response: 'Girl friend', childgrouping: '81' }, { Response: 'Related', childgrouping: '82' }, { Response: 'Co-worker', childgrouping: '82' }],
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'What was the date of your marriage?',
+      textboxName: 'txtDateOfMarriageToAbuser',
+      inputType: 'date',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'80',
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'How long have you been dating?',
+      textboxName: 'txtDateOfRelationshipToAbuser',
+      inputType: 'date',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'81',
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'Please explain the relationship',
+      textboxName: 'txtRelationshipToAbuserDescription',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div6',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'82',
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Was a restraining order filed for the reason why you are here?',
@@ -252,7 +370,8 @@ const STORE = [
       questionGrouping:'6',
       childGrouping: '7',
       responses: [{ Response: 'No', childgrouping: '7' }],
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Would you like a restraining order?',
@@ -264,7 +383,8 @@ const STORE = [
       isEnabled: true,
       questionGrouping:'7',
       childGrouping: '8',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Did you require emergency services or a hospital stay due to the abuse?',
@@ -277,7 +397,8 @@ const STORE = [
       questionGrouping:'8',
       childGrouping: '9',
       responses: [{ Response: 'Yes', childgrouping: '9' }],
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Name and Location of facility',
@@ -288,7 +409,8 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'9',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'What were your out of pocket expenses for medical treatment?',
@@ -299,7 +421,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'10',
-      formHeader: 'Financial Impact'
+      formHeader: 'Financial Impact',
+      availableOnAp:''
     },
     {
       question: 'What is the approximate balance you currently owe for your medical bills?',
@@ -310,18 +433,72 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'10',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
-      question: 'Do you require ongoing treatment including medication, mental or physical therapy, etc. due to the abuse?',
-      textboxName: 'txtCostOngoingPrevTreatment',
-      inputType: 'text',
-      inputValues: '',
+      question: 'Has your abuser been court ordered to pay for any of your medical bills?',
+      textboxName: 'selCourtOrderedForSupport',
+      inputType: 'select',
+      inputValues: ',Yes,No',
       onElement: 'div8',
       isVisible: true,
       isEnabled: true,
       questionGrouping:'10',
-      formHeader: ''
+      childGrouping: '11',
+      responses: [{ Response: 'Yes', childgrouping: '11' }],
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'How much?',
+      textboxName: 'txtCourtOrderedToPay',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div8',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'11',
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'Do you have a copy of your divorce decree with you?',
+      textboxName: 'selDivorceDecree',
+      inputType: 'select',
+      inputValues: ',Yes,No',
+      onElement: 'div8',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'11',
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'Do you require ongoing treatment including medication, mental or physical therapy, etc. due to the abuse?',
+      textboxName: 'selOngoingTreatment',
+      inputType: 'select',
+      inputValues: ',Yes,No',
+      onElement: 'div8',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'12',
+      childGrouping: '13',
+      responses: [{ Response: 'Yes', childgrouping: '13' }],
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'Please explain',
+      textboxName: 'txtOngoingTreatment',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div8',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'13',
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'What is the name and address or phone number of your primary care physician?',
@@ -332,19 +509,51 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'14',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
+
     {
-      question: 'Phone Number',
-      textboxName: 'txtDoctorsPhoneNumber',
-      inputType: 'text',
-      inputValues: '',
+      question: 'Was your abuser court ordered to pay alimony?',
+      textboxName: 'selAbuserAlimony',
+      inputType: 'select',
+      inputValues: ',Yes,No',
       onElement: 'div8',
       isVisible: true,
       isEnabled: true,
       questionGrouping:'14',
-      formHeader: ''
+      childGrouping: '60',
+      responses: [{ Response: 'Yes', childgrouping: '60' }],
+      formHeader: '',
+      availableOnAp:''
     },
+    {
+      question: 'Is he behind in payments?',
+      textboxName: 'selAbuserAlimonyLate',
+      inputType: 'select',
+      inputValues: ',Yes,No',
+      onElement: 'div8',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'60',
+      childGrouping: '61',
+      responses: [{ Response: 'Yes', childgrouping: '61' }],
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'How many months does he owe you?',
+      textboxName: 'txtAbuserAlimonyLateAmount',
+      inputType: 'text',
+      inputValues: '',
+      onElement: 'div8',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'61',
+      formHeader: '',
+      availableOnAp:''
+    },
+
     {
       question: 'Are you employed?',
       textboxName: 'selEmployed',
@@ -355,7 +564,8 @@ const STORE = [
       isEnabled: true,
       questionGrouping:'14',
       childGrouping: '15',
-      formHeader: 'Employment'
+      formHeader: 'Employment',
+      availableOnAp:''
     },
     {
       question: 'Do you currently have children living at home with you?',
@@ -367,7 +577,8 @@ const STORE = [
       isEnabled: true,
       questionGrouping:'15',
       childGrouping: '16',
-      formHeader: 'Children in your life'
+      formHeader: 'Children in your life',
+      availableOnAp:''
     },
     {
       question: 'Did any children experience trauma?',
@@ -380,7 +591,8 @@ const STORE = [
       questionGrouping:'16',
       childGrouping: '17',
       responses: [{ Response: 'Yes', childgrouping: '17' }],
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Please explain the trauma experienced by the children',
@@ -391,7 +603,8 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'17',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'What is the name of the person responsible for your children right now and the address where you last left your children?',
@@ -402,7 +615,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'18',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'What are the names, relationships, and contact information of the two people you most trust right now to not share where you are or what you are doing?',
@@ -413,7 +627,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'18',
-      formHeader: 'Let\'s talk about you'
+      formHeader: 'Let\'s talk about you',
+      availableOnAp:''
     },
     {
       question: 'How many times have you left and gone back to your abuser?',
@@ -424,7 +639,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'18',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Have you purposed it in your heart to not go back this time?',
@@ -435,7 +651,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'18',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'What is your marital status?',
@@ -446,7 +663,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'19',
-      formHeader: 'Personal Details'
+      formHeader: 'Personal Details',
+      availableOnAp:''
     },
     {
       question: 'Do you have legal counsel?',
@@ -459,7 +677,8 @@ const STORE = [
       questionGrouping:'19',
       childGrouping: '20',
       responses: [{ Response: 'No', childgrouping: '20' }],
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Would you like assistance obtaining legal counsel?',
@@ -470,7 +689,8 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'20',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Do you smoke or vape nicotine?',
@@ -481,7 +701,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'21',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Do you drink alcohol?',
@@ -492,7 +713,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'21',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Do you have any chemical additions you would like to not have?',
@@ -505,7 +727,8 @@ const STORE = [
       questionGrouping:'21',
       childGrouping: '22',
       responses: [{ Response: 'Yes', childgrouping: '22' }],
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Which Addictions?',
@@ -516,7 +739,8 @@ const STORE = [
       isVisible: false,
       isEnabled: true,
       questionGrouping:'22',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'What languages do you speak?',
@@ -527,7 +751,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'23',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Do you have any physical limitations?',
@@ -538,7 +763,8 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'24',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     },
     {
       question: 'Do you have any food allergies?',
@@ -549,6 +775,7 @@ const STORE = [
       isVisible: true,
       isEnabled: true,
       questionGrouping:'25',
-      formHeader: ''
+      formHeader: '',
+      availableOnAp:''
     }
   ];
