@@ -2,11 +2,11 @@
   "name": "node-api-postgres",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
   "web": "node server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+ 	"main": "server.js",
   },
   "keywords": [],
   "author": "",
