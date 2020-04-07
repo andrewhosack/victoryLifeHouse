@@ -1,7 +1,7 @@
 //const index = require('./index.js')
 const express = require('express')
 const app = express();
-const port = 3000
+//const port = 3000
 const path = require('path');
 const router = express.Router();
 
@@ -15,6 +15,8 @@ app.use(express.static('build'));
 
 //add the router
 app.use('/', router);
-app.listen(process.env.port || port);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
-console.log('Running at Port 3000');
+console.log('server started');
