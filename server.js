@@ -5,7 +5,7 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 
-app.use(express.static(__dirname + "/public/"));
+app.use('public', express.static(path.join(__dirname, "/public/")));
 
 
 //add the router
