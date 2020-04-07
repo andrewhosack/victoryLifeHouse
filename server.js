@@ -11,7 +11,7 @@ router.get('/',function(req,res){
 });
 
 
-app.use('/build', express.static(path.join(__dirname, "build")));
+app.use('/public', express.static(path.join(__dirname, "public")));
 
 //add the router
 app.use('/', router);
