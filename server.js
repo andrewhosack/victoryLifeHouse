@@ -25,9 +25,9 @@ app.use(express.static('build'));
 
 //add the router
 app.use('/', router);
-app.listen(3500);
+app.listen(process.env.PORT);
 
-console.log('Running at Port 3500');
+console.log('Running at Port ');
 
 app.use(bodyParser.json())
 app.use(
@@ -49,6 +49,6 @@ app.post('/guests', db.createGuest)
 app.get('/guests/:id', db.getGuestById)
 app.put('/guests/:id', db.updateGuest)
 
-app.listen(port, () => {
-  console.log(`App running on port ${port}.`)
+app.listen(process.env.PORT, () => {
+  console.log(`App running on port`)
 })
