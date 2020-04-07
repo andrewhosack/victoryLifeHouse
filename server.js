@@ -15,6 +15,6 @@ app.use(express.static('build'));
 
 //add the router
 app.use('/', router);
-app.listen(process.env.port || port);
+app.listen(process.env.port);
 
 console.log('Running at Port 3000');
