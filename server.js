@@ -1,26 +1,15 @@
-//const index = require('./index.js')
-const express = require('express')
+const express = require('express');
 const app = express();
-//const port = 3000
 const path = require('path');
 const router = express.Router();
 
-app.use('public', express.static(path.join(__dirname, "/public/")));
-
-
-//add the router
-app.use('/', router);
-
 router.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/index.html'));
+  res.sendFile(path.join(__dirname+'/public/index.html'));
   //__dirname : It will resolve to your project folder.
 });
 
+//add the router
+app.use('/', router);
+app.listen(process.env.port || 3000);
 
-
-
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
-
-console.log('server started');
+console.log('Running at Port 3000');
