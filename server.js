@@ -4,10 +4,18 @@ const path = require('path');
 const router = express.Router();
 const cors = require('cors');
 
-//database scripts
-const index = require('./index');
-
 process.env.PWD = process.cwd()
+
+//Adding for node json calls
+const db = require('./queries')
+const bodyParser = require('body-parser')
+
+
+
+//database scripts
+port = this.address().port
+
+
 
 app.use(cors());
 
@@ -26,3 +34,28 @@ app.listen(process.env.PORT || 3000, function(){
 });
 
 console.log('server started');
+
+//Adding for Database Scripts
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
+
+app.get('/', (request, response) => {
+  response.json({ info: 'Node.js, Express, and Postgres API' })
+})
+
+app.get('/users', db.getUsers)
+app.get('/users/:id', db.getUserById)
+app.post('/users', db.createUser)
+app.put('/users/:id', db.updateUser)
+app.delete('/users/:id', db.deleteUser)
+app.post('/guests', db.createGuest)
+app.get('/guests/:id', db.getGuestById)
+app.put('/guests/:id', db.updateGuest)
+
+app.listen(port, () => {
+  console.log(`App running on port ${port}.`)
+})
