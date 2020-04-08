@@ -22,11 +22,7 @@ router.get('/',function(req,res){
   //__dirname : It will resolve to your project folder.
 });
 
-//add the router
-app.use('/', router);
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+
 
 console.log('server started');
 
@@ -51,6 +47,8 @@ app.post('/guests', db.createGuest)
 app.get('/guests/:id', db.getGuestById)
 app.put('/guests/:id', db.updateGuest)
 
+//add the router
+app.use('/', router);
 app.listen(process.env.PORT || 3000, function(){
-  console.log("Running the node database scripts as well");
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
