@@ -364,13 +364,19 @@ const query = {
 	foodAllergies],
 }
 // callback
-client.query(query, (err, res) => {
-  if (err) {
-    console.log(err)
-  } else {
-	response.status(201).send(`Guest added with name: ${firstName}`)
-  }
-})
+//client.query(query, (err, res) => {
+//  if (err) {
+//    console.log(err)
+ // } else {
+//	response.status(201).send(`Guest added with name: ${firstName}`)
+ // }
+//})
+try {
+  const res = await client.query(text, values)
+  console.log(res.rows[0])
+} catch (err) {
+  console.log(err.stack)
+}
 client.end();
 }
 	
@@ -632,13 +638,20 @@ client.connect();
 }
 console.log(query);
 // callback
-client.query(query, (err, res) => {
-  if (err) {
-    console.log(err)
-  } else {
-	response.status(201).send(`Guest modified with name: ${firstName}`)
-  }
-})
+//client.query(query, (err, res) => {
+//  if (err) {
+//    console.log(err)
+//  } else {
+//	response.status(201).send(`Guest modified with name: ${firstName}`)
+//  }
+//})
+try {
+  const res = await client.query(text, values)
+  console.log(res.rows[0])
+  // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
+} catch (err) {
+  console.log(err.stack)
+}
 client.end();
 }
 
