@@ -12,11 +12,6 @@ const bodyParser = require('body-parser')
 
 
 
-//database scripts
-port = this.address().port
-
-
-
 app.use(cors());
 
 //app.use(express.static('public'));
@@ -57,5 +52,5 @@ app.get('/guests/:id', db.getGuestById)
 app.put('/guests/:id', db.updateGuest)
 
 app.listen(port, () => {
-  console.log(`App running on port ${port}.`)
+  console.log("Running the node database scripts as well");
 })
