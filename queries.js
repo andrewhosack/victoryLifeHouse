@@ -8,13 +8,17 @@
 //})
 const { Client } = require('pg');
 
-const client = new Client({
+//const client = new Client({
+//  connectionString: process.env.DATABASE_URL,
+ // ssl: true,
+//});
+
+const getUsers = (request, response) => {
+  const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
-
-const getUsers = (request, response) => {
-  client.connect();
+client.connect();
   client.query('SELECT * FROM users ORDER BY id ASC', (err, res) => {
     if (err) {
       console.log(err);
@@ -84,7 +88,11 @@ const deleteUser = (request, response) => {
 
 //App INSERT
 const getGuestById = (request, response) => {
-	client.connect();
+	const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+client.connect();
   const id = parseInt(request.params.id)
 
   client.query('SELECT * FROM guests WHERE "guestID" = $1', [id], (err, res) => {
@@ -98,7 +106,11 @@ const getGuestById = (request, response) => {
 }
 
 const createGuest = (request, response) => {
-	client.connect();
+	const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+client.connect();
   let { 
   firstName, 
   lastName, 
@@ -364,7 +376,11 @@ client.end();
 	
 
 const updateGuest = (request, response) => {
-	client.connect();
+	const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+client.connect();
 	const id = parseInt(request.params.id)
 	let { 
   firstName, 
