@@ -92,8 +92,9 @@ const getGuestById = (request, response) => {
       console.log(err);
     }
     response.status(200).json(res.rows)
+	client.end();
   })
-  client.end();
+  
 }
 
 const createGuest = (request, response) => {
