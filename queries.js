@@ -1,12 +1,12 @@
-//const Pool = require('pg').Pool
-//const pool = new Pool({
-//  user: 'pjygppujijezfa',
-//  host: 'ec2-52-7-39-178.compute-1.amazonaws.com',
-//  database: 'd721cr2mgfd73i',
-//  password: '9f388ec0b45de0d36e2e90f31837b1d6e63451970cf53c064ff8b536c1809b5f',
-//  port: 5432,
-//})
-const { Client } = require('pg');
+const { Pool, Client } = require('pg')
+const pool = new Pool({
+  user: 'pjygppujijezfa',
+  host: 'ec2-52-7-39-178.compute-1.amazonaws.com',
+  database: 'd721cr2mgfd73i',
+  password: '9f388ec0b45de0d36e2e90f31837b1d6e63451970cf53c064ff8b536c1809b5f',
+  port: 5432,
+})
+
 
 //const client = new Client({
 //  connectionString: process.env.DATABASE_URL,
@@ -18,48 +18,48 @@ const getUsers = (request, response) => {
   connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
-client.connect();
-  client.query('SELECT * FROM users ORDER BY id ASC', (err, res) => {
+pool.connect();
+  pool.query('SELECT * FROM users ORDER BY id ASC', (err, res) => {
     if (err) {
       console.log(err);
     }
     response.status(200).json(res.rows)
   })
-  client.end();
+  pool.end();
 }
 
 const getUserById = (request, response) => {
-	client.connect();
+	pool.connect();
   const id = parseInt(request.params.id)
 
-  client.query('SELECT * FROM users WHERE id = $1', [id], (err, res) => {
+  pool.query('SELECT * FROM users WHERE id = $1', [id], (err, res) => {
     if (err) {
       console.log(err);
     }
     response.status(200).json(res.rows)
   })
-	client.end();
+	pool.end();
 }
 
 const createUser = (request, response) => {
-	client.connect();
+	pool.connect();
   const { firstName, lastName, SSN, dateOfBirth } = request.body
 
-  client.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (err, res) => {
+  pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (err, res) => {
     if (err) {
       console.log(err);
     }
     response.status(201).send(`User added with ID: ${result.insertId}`)
   })
-  client.end();
+  pool.end();
 }
 
 const updateUser = (request, response) => {
-	client.connect();
+	pool.connect();
   const id = parseInt(request.params.id)
   const { name, email } = request.body
 
-  client.query(
+  pool.query(
     'UPDATE users SET name = $1, email = $2 WHERE id = $3',
     [name, email, id],
     (err, res) => {
@@ -69,20 +69,20 @@ const updateUser = (request, response) => {
       response.status(200).send(`User modified with ID: ${id}`)
     }
   )
-  client.end();
+  pool.end();
 }
 
 const deleteUser = (request, response) => {
-	client.connect();
+	pool.connect();
   const id = parseInt(request.params.id)
 
-  client.query('DELETE FROM users WHERE id = $1', [id], (err, res) => {
+  pool.query('DELETE FROM users WHERE id = $1', [id], (err, res) => {
     if (err) {
       console.log(err);
     }
     response.status(200).send(`User deleted with ID: ${id}`)
   })
-  client.end();
+  pool.end();
 }
 
 
@@ -92,15 +92,15 @@ const getGuestById = (request, response) => {
   connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
-client.connect();
+pool.connect();
   const id = parseInt(request.params.id)
 
-  client.query('SELECT * FROM guests WHERE "guestID" = $1', [id], (err, res) => {
+  pool.query('SELECT * FROM guests WHERE "guestID" = $1', [id], (err, res) => {
     if (err) {
       console.log(err);
     }
     response.status(200).json(res.rows)
-	client.end();
+	pool.end();
   })
   
 }
@@ -110,7 +110,7 @@ const createGuest = (request, response) => {
   connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
-client.connect();
+pool.connect();
   let { 
   firstName, 
   lastName, 
@@ -364,7 +364,7 @@ const query = {
 	foodAllergies],
 }
 // callback
-//client.query(query, (err, res) => {
+//pool.query(query, (err, res) => {
 //  if (err) {
 //    console.log(err)
  // } else {
@@ -372,12 +372,12 @@ const query = {
  // }
 //})
 try {
-  const res = await client.query(text, values)
+  const res = await pool.query(text, values)
   console.log(res.rows[0])
 } catch (err) {
   console.log(err.stack)
 }
-client.end();
+pool.end();
 }
 	
 
@@ -386,7 +386,7 @@ const updateGuest = (request, response) => {
   connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
-client.connect();
+pool.connect();
 	const id = parseInt(request.params.id)
 	let { 
   firstName, 
@@ -638,7 +638,7 @@ client.connect();
 }
 console.log(query);
 // callback
-//client.query(query, (err, res) => {
+//pool.query(query, (err, res) => {
 //  if (err) {
 //    console.log(err)
 //  } else {
@@ -646,13 +646,13 @@ console.log(query);
 //  }
 //})
 try {
-  const res = await client.query(text, values)
+  const res = await pool.query(text, values)
   console.log(res.rows[0])
   // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
 } catch (err) {
   console.log(err.stack)
 }
-client.end();
+pool.end();
 }
 
 module.exports = {
