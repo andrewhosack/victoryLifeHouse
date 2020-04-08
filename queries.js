@@ -20,7 +20,7 @@ const getUsers = (request, response) => {
     if (err) {
       throw error
     }
-    response.status(200).json(results.rows)
+    response.status(200).json(res.rows)
 	client.end();
   })
 }
@@ -32,7 +32,7 @@ const getUserById = (request, response) => {
     if (err) {
       throw error
     }
-    response.status(200).json(results.rows)
+    response.status(200).json(res.rows)
 	client.end();
   })
 }
@@ -88,7 +88,7 @@ const getGuestById = (request, response) => {
 			console.log(err);
       throw error
     }
-    response.status(200).json(results.rows)
+    response.status(200).json(res.rows)
 	client.end();
   })
 }
