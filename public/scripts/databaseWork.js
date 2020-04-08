@@ -1,3 +1,4 @@
+process.env.PWD = process.cwd()
 
 
 function submitInfo() {
@@ -5,7 +6,7 @@ function submitInfo() {
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
 
-xhr.open('POST', 'http://localhost:3000/guests');
+xhr.open('POST', 'http://localhost:' + this.address().port + '/guests');
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhr.send(
 	'firstName=' + txtFirstName.value +
@@ -246,7 +247,7 @@ xhr.onload = function () {
 // Create and send a GET request
 // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
 // The second argument is the endpoint URL
-xhr.open('GET', 'http://localhost:3000/guests/' + txtSocialSecurityNumber.value);
+xhr.open('GET', 'http://localhost:' + this.address().port + '/guests/' + txtSocialSecurityNumber.value);
 
 xhr.send();
 
@@ -261,7 +262,7 @@ console.log(txtDateOfBirth.value, txtDateLeftAbuser.value, txtLastCommunication.
 
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
-xhr.open('PUT', 'http://localhost:3000/guests/' + txtSocialSecurityNumber.value);
+xhr.open('PUT', 'http://localhost:' + this.address().port + '/guests/' + txtSocialSecurityNumber.value);
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhr.send(
 	'firstName=' + txtFirstName.value +
