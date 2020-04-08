@@ -85,6 +85,7 @@ const getGuestById = (request, response) => {
 
   client.query('SELECT * FROM guests WHERE "guestID" = $1', [id], (err, res) => {
     if (err) {
+			console.log(err);
       throw error
     }
     response.status(200).json(results.rows)
