@@ -8,8 +8,8 @@ process.env.PWD = process.cwd()
 
 app.use(cors());
 
-//app.use(express.static('public'));
-app.use(express.static(process.env.PWD + '/public'));
+app.use(express.static('public'));
+//app.use(express.static(process.env.PWD + '/public'));
 
 router.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/public/index.html'));
