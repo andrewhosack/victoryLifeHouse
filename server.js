@@ -4,9 +4,12 @@ const path = require('path');
 const router = express.Router();
 const cors = require('cors');
 
+process.env.PWD = process.cwd()
+
 app.use(cors());
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
+app.use(express.static(process.env.PWD + '/public'));
 
 router.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/public/index.html'));
