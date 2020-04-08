@@ -4,7 +4,7 @@ function submitInfo() {
 var xhr = new XMLHttpRequest();
 
 xhr.open('POST', 'https://victorylife.herokuapp.com' + '/guests');
-xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhr.setRequestHeader("Content-type", "application/json");
 xhr.send(
 	'firstName=' + txtFirstName.value +
 	'&lastName=' + txtLastName.value +
@@ -260,7 +260,7 @@ console.log(txtDateOfBirth.value, txtDateLeftAbuser.value, txtLastCommunication.
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
 xhr.open('PUT', 'https://victorylife.herokuapp.com' + '/guests/' + txtSocialSecurityNumber.value);
-xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhr.setRequestHeader("Content-type", "application/json");
 xhr.send(
 	'firstName=' + txtFirstName.value +
 	'&lastName=' + txtLastName.value +
