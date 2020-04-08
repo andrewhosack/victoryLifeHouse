@@ -20,8 +20,8 @@ const getUsers = (request, response) => {
       console.log(err);
     }
     response.status(200).json(res.rows)
-	client.end();
   })
+  client.end();
 }
 
 const getUserById = (request, response) => {
@@ -33,8 +33,8 @@ const getUserById = (request, response) => {
       console.log(err);
     }
     response.status(200).json(res.rows)
-	client.end();
   })
+	client.end();
 }
 
 const createUser = (request, response) => {
@@ -46,8 +46,8 @@ const createUser = (request, response) => {
       console.log(err);
     }
     response.status(201).send(`User added with ID: ${result.insertId}`)
-	client.end();
   })
+  client.end();
 }
 
 const updateUser = (request, response) => {
@@ -63,9 +63,9 @@ const updateUser = (request, response) => {
         console.log(err);
       }
       response.status(200).send(`User modified with ID: ${id}`)
-	  client.end();
     }
   )
+  client.end();
 }
 
 const deleteUser = (request, response) => {
@@ -77,8 +77,8 @@ const deleteUser = (request, response) => {
       console.log(err);
     }
     response.status(200).send(`User deleted with ID: ${id}`)
-	client.end();
   })
+  client.end();
 }
 
 
@@ -92,8 +92,8 @@ const getGuestById = (request, response) => {
       console.log(err);
     }
     response.status(200).json(res.rows)
-	client.end();
   })
+  client.end();
 }
 
 const createGuest = (request, response) => {
@@ -357,8 +357,8 @@ client.query(query, (err, res) => {
   } else {
 	response.status(201).send(`Guest added with name: ${firstName}`)
   }
-  client.end();
 })
+client.end();
 }
 	
 
@@ -621,8 +621,8 @@ client.query(query, (err, res) => {
   } else {
 	response.status(201).send(`Guest modified with name: ${firstName}`)
   }
-  client.end();
 })
+client.end();
 }
 
 module.exports = {
