@@ -7,6 +7,11 @@ const pool = new Pool({
   port: 5432,
 })
 
+pool.on('error', (err, client) => {
+  console.error('Unexpected error on idle client', err)
+  process.exit(-1)
+})
+
 
 const getUsers = (request, response) => {
   
@@ -15,7 +20,7 @@ const getUsers = (request, response) => {
     if (err) {
       console.log(err);
     }
-    response.status(200).json(res.rows)
+    response.status(200).json(res.rows[0])
   })
   
 }
@@ -28,7 +33,7 @@ const getUserById = (request, response) => {
     if (err) {
       console.log(err);
     }
-    response.status(200).json(res.rows)
+    response.status(200).json(res.rows[0])
   })
 	
 }
@@ -80,10 +85,6 @@ const deleteUser = (request, response) => {
 
 //App INSERT
 const getGuestById = (request, response) => {
-	
-  
-  
-
 
   const id = parseInt(request.params.id)
 
@@ -91,17 +92,13 @@ const getGuestById = (request, response) => {
     if (err) {
       console.log(err);
     }
-    response.status(200).send(`Guest found with ID: ${id}`);
+    response.status(200).json(res.rows[0])
   })
   
 }
 
 const createGuest = (request, response) => {
 	
-  
-  
-
-
   let { 
   firstName, 
   lastName, 
@@ -359,7 +356,8 @@ pool.query(query, (err, res) => {
   if (err) {
     console.log(err)
   } else {
-	response.status(201).send(`Guest added with name: ${firstName}`)
+	//response.status(201).send(`Guest added with name: ${firstName}`)
+	console.log(res.rows[0])
   }
 })
 
@@ -628,7 +626,8 @@ pool.query(query, (err, res) => {
   if (err) {
     console.log(err)
   } else {
-	response.status(201).send(`Guest modified with name: ${firstName}`)
+	//response.status(201).send(`Guest modified with name: ${firstName}`)
+	console.log(res.rows[0])
   }
 })
 
