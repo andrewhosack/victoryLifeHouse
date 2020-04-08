@@ -52,5 +52,5 @@ app.get('/guests/:id', db.getGuestById)
 app.put('/guests/:id', db.updateGuest)
 
 app.listen(process.env.PORT || 3000, function(){
-  console.log("Running the node database scripts as well);
+  console.log("Running the node database scripts as well");
 });
