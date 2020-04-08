@@ -4,6 +4,9 @@ const path = require('path');
 const router = express.Router();
 const cors = require('cors');
 
+//database scripts
+const index = require('./index');
+
 process.env.PWD = process.cwd()
 
 app.use(cors());
