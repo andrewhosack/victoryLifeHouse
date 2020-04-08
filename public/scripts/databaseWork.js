@@ -250,7 +250,7 @@ xhr.onload = function () {
 
 };
 
-xhr.send(null);
+xhr.send();
 }
 
 
