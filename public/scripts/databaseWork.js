@@ -2,9 +2,30 @@ function submitInfo() {
 
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
-
 xhr.open('POST', '/guests');
+
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+xhr.onreadystatechange = function() { // Call a function when the state changes.
+		if (this.readyState === XMLHttpRequest.DONE && this.status  >= 200 && xhr.status < 300) {
+			// Request finished. Do processing here.
+			// Clear out all text boxes
+			clearFormTextboxes()
+
+
+			// What do when the request is successful
+			//console.log('success!', xhr);
+			alert('Guest was successfully added!');
+
+			Navigation('btnSubmitInfo');
+		}
+		else {
+		// What do when the request fails
+				//console.log('Guest was not added!', xhr.response);
+				alert('Guest was not added. Please contact your System Administrator!');
+		}
+	}
+	
 xhr.send(
 	'firstName=' + txtFirstName.value +
 	'&lastName=' + txtLastName.value +
@@ -57,35 +78,23 @@ xhr.send(
 	'&foodAllergies=' + txtFoodAllergies.value
 	);
 
-// Setup our listener to process completed requests
-xhr.onload = function () {
 
-	if (xhr.status >= 200 && xhr.status < 300) {
-		// Clear out all text boxes
-	clearFormTextboxes()
+	
 
 
-// What do when the request is successful
-		//console.log('success!', xhr);
-		alert('Guest was successfully added!');
 
-		Navigation('btnSubmitInfo');
 
-	} else {
-		// What do when the request fails
-				//console.log('Guest was not added!', xhr.response);
-				alert('Guest was not added. Please contact your System Administrator!');
-	}
-
-	// Code that should run regardless of the request status
-
-};
 
 }
 
 function loadGuestInformation() {
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
+
+// Create and send a GET request
+// The first argument is the post type (GET, POST, PUT, DELETE, etc.)
+// The second argument is the endpoint URL
+xhr.open('GET', '/guests/' + txtSocialSecurityNumber.value);
 
 // Setup our listener to process completed requests
 xhr.onload = function () {
@@ -241,13 +250,6 @@ xhr.onload = function () {
 
 };
 
-// Create and send a GET request
-// The first argument is the post type (GET, POST, PUT, DELETE, etc.)
-// The second argument is the endpoint URL
-xhr.open('GET', '/guests/' + txtSocialSecurityNumber.value);
-
-xhr.send();
-
 }
 
 
@@ -260,7 +262,24 @@ console.log(txtDateOfBirth.value, txtDateLeftAbuser.value, txtLastCommunication.
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
 xhr.open('PUT', '/guests/' + txtSocialSecurityNumber.value);
+
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+xhr.onreadystatechange = function() { // Call a function when the state changes.
+		if (this.readyState === XMLHttpRequest.DONE && this.status  >= 200 && xhr.status < 300) {
+			// Request finished. Do processing here.
+			// Clear out all text boxes
+		clearFormTextboxes();
+		Navigation('btnSubmitInfo');
+		alert('Guest was successfully updated!');
+		}
+		else {
+		// What do when the request fails
+				//console.log('Guest was not added!', xhr.response);
+				alert('Guest was not updated. Please contact your System Administrator!');
+		}
+	}
+	
 xhr.send(
 	'firstName=' + txtFirstName.value +
 	'&lastName=' + txtLastName.value +
@@ -312,28 +331,6 @@ xhr.send(
 	'&physicalLimitations=' + txtPhysicalLimitations.value +
 	'&foodAllergies=' + txtFoodAllergies.value
 	);
-
-// Setup our listener to process completed requests
-xhr.onload = function () {
-
-	// Process our return data
-	if (xhr.status >= 200 && xhr.status < 300) {
-		// What do when the request is successful
-
-		// Clear out all text boxes
-		clearFormTextboxes();
-		Navigation('btnSubmitInfo');
-		alert('Guest was successfully updated!');
-
-
-	} else {
-		// What do when the request fails
-				alert('Guest was not updated. Please contact your System Administrator!');
-	}
-
-	// Code that should run regardless of the request status
-
-};
 
 }
 
