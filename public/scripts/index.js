@@ -167,7 +167,7 @@ splashScreenDiv.classList.add("sectionHeader");
 
 let splashScreenDiv2 = document.createElement('div');
 splashScreenDiv2.setAttribute("id", "splashScreenDiv2");
-splashScreenDiv2.innerHTML = '<img src=".\\Images\\VLH.jpg" alt="banner of VLH" width="100%">';
+splashScreenDiv2.innerHTML = '<img src="Images/VLH.jpg" alt="banner of VLH" width="100%">';
 
 let btnSplashScreen = document.createElement('div');
 btnSplashScreen.setAttribute("id", "btnSplashScreen");
@@ -179,12 +179,12 @@ splashScreenTestimonials.setAttribute("id", "splashScreenTestimonials");
 
 splashScreenTestimonials.innerHTML =
 '  <div id="splashScreenTestimonialsHeader" class="sectionHeader"><p>Encouragment from previous success!</p></div><div class="container">' +
-    '<img src="./Images/bandmember.jpg" alt="Avatar" style="width:90px">' +
+    '<img src="Images/bandmember.jpg" alt="Avatar" style="width:90px">' +
     '<p><span>Chris Fox.</span> Volunteer Money Management Instructor</p>' +
     '<p>"I\'ve been volunteering at VictoryLife House for five years. I appreciate what they are doing for the community, and I\'m always ready to come back."</p>' +
   '</div>' +
   '<div class="container">' +
-    '<img src="./Images/avatar_g2.jpg" alt="Avatar" style="width:90px">' +
+    '<img src="Images/avatar_g2.jpg" alt="Avatar" style="width:90px">' +
     '<p><span>Rebecca Flex.</span> Loving daughter and mother of three</p>' +
     '<p>"Before VictoryLife House, I didn\'t have a direction. Although I still face a tough reality, I feel more equipped to move forward!"</p>' +
   '</div>';
