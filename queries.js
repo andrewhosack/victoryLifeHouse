@@ -364,19 +364,14 @@ const query = {
 	foodAllergies],
 }
 // callback
-//pool.query(query, (err, res) => {
-//  if (err) {
-//    console.log(err)
- // } else {
-//	response.status(201).send(`Guest added with name: ${firstName}`)
- // }
-//})
-try {
-  const res = await pool.query(text, values)
-  console.log(res.rows[0])
-} catch (err) {
-  console.log(err.stack)
-}
+pool.query(query, (err, res) => {
+  if (err) {
+    console.log(err)
+  } else {
+	response.status(201).send(`Guest added with name: ${firstName}`)
+  }
+})
+
 pool.end();
 }
 	
@@ -638,20 +633,14 @@ pool.connect();
 }
 console.log(query);
 // callback
-//pool.query(query, (err, res) => {
-//  if (err) {
-//    console.log(err)
-//  } else {
-//	response.status(201).send(`Guest modified with name: ${firstName}`)
-//  }
-//})
-try {
-  const res = await pool.query(text, values)
-  console.log(res.rows[0])
-  // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
-} catch (err) {
-  console.log(err.stack)
-}
+pool.query(query, (err, res) => {
+  if (err) {
+    console.log(err)
+  } else {
+	response.status(201).send(`Guest modified with name: ${firstName}`)
+  }
+})
+
 pool.end();
 }
 
