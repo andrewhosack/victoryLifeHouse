@@ -13,12 +13,11 @@ const client = new Client({
   ssl: true,
 });
 
-client.connect();
-
 const getUsers = (request, response) => {
+  client.connect();
   client.query('SELECT * FROM users ORDER BY id ASC', (err, res) => {
     if (err) {
-      throw error
+      console.log(err);
     }
     response.status(200).json(res.rows)
 	client.end();
@@ -26,11 +25,12 @@ const getUsers = (request, response) => {
 }
 
 const getUserById = (request, response) => {
+	client.connect();
   const id = parseInt(request.params.id)
 
   client.query('SELECT * FROM users WHERE id = $1', [id], (err, res) => {
     if (err) {
-      throw error
+      console.log(err);
     }
     response.status(200).json(res.rows)
 	client.end();
@@ -38,11 +38,12 @@ const getUserById = (request, response) => {
 }
 
 const createUser = (request, response) => {
+	client.connect();
   const { firstName, lastName, SSN, dateOfBirth } = request.body
 
   client.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (err, res) => {
     if (err) {
-      throw error
+      console.log(err);
     }
     response.status(201).send(`User added with ID: ${result.insertId}`)
 	client.end();
@@ -50,6 +51,7 @@ const createUser = (request, response) => {
 }
 
 const updateUser = (request, response) => {
+	client.connect();
   const id = parseInt(request.params.id)
   const { name, email } = request.body
 
@@ -58,7 +60,7 @@ const updateUser = (request, response) => {
     [name, email, id],
     (err, res) => {
       if (err) {
-        throw error
+        console.log(err);
       }
       response.status(200).send(`User modified with ID: ${id}`)
 	  client.end();
@@ -67,11 +69,12 @@ const updateUser = (request, response) => {
 }
 
 const deleteUser = (request, response) => {
+	client.connect();
   const id = parseInt(request.params.id)
 
   client.query('DELETE FROM users WHERE id = $1', [id], (err, res) => {
     if (err) {
-      throw error
+      console.log(err);
     }
     response.status(200).send(`User deleted with ID: ${id}`)
 	client.end();
@@ -81,12 +84,12 @@ const deleteUser = (request, response) => {
 
 //App INSERT
 const getGuestById = (request, response) => {
+	client.connect();
   const id = parseInt(request.params.id)
 
   client.query('SELECT * FROM guests WHERE "guestID" = $1', [id], (err, res) => {
     if (err) {
-			console.log(err);
-      throw error
+      console.log(err);
     }
     response.status(200).json(res.rows)
 	client.end();
@@ -94,6 +97,7 @@ const getGuestById = (request, response) => {
 }
 
 const createGuest = (request, response) => {
+	client.connect();
   let { 
   firstName, 
   lastName, 
@@ -349,17 +353,17 @@ const query = {
 // callback
 client.query(query, (err, res) => {
   if (err) {
-    console.log(err.stack)
+    console.log(err)
   } else {
 	response.status(201).send(`Guest added with name: ${firstName}`)
-	client.end();
   }
+  client.end();
 })
 }
 	
 
 const updateGuest = (request, response) => {
-	
+	client.connect();
 	const id = parseInt(request.params.id)
 	let { 
   firstName, 
@@ -613,7 +617,7 @@ console.log(query);
 // callback
 client.query(query, (err, res) => {
   if (err) {
-    console.log(err.stack)
+    console.log(err)
   } else {
 	response.status(201).send(`Guest modified with name: ${firstName}`)
   }
