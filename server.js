@@ -24,8 +24,6 @@ router.get('/',function(req,res){
 
 
 
-console.log('server started');
-
 //Adding for Database Scripts
 app.use(bodyParser.json())
 app.use(
@@ -38,7 +36,13 @@ app.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
 })
 
-app.get('/users', db.getUsers)
+//original app.get('/users', db.getUsers)
+app.get('/users', function(req, res){
+  res.send(db.getUsers);
+  res.end();
+});
+
+
 app.get('/users/:id', db.getUserById)
 app.post('/users', db.createUser)
 app.put('/users/:id', db.updateUser)
@@ -47,7 +51,7 @@ app.post('/guests', db.createGuest)
 app.get('/guests/:id', db.getGuestById)
 app.put('/guests/:id', db.updateGuest)
 
-//add the router
+//For website, and also database
 app.use('/', router);
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
