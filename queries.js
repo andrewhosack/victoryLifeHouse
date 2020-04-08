@@ -350,8 +350,8 @@ pool.query(query, (err, res) => {
   if (err) {
     console.log(err)
   } else {
-	//response.status(201).send(`Guest added with name: ${firstName}`)
-	console.log(res.rows[0])
+	response.status(201).send(`Guest added with name: ${firstName}`)
+	//console.log(res.rows[0])
   }
 })
 
@@ -620,8 +620,8 @@ pool.query(query, (err, res) => {
   if (err) {
     console.log(err)
   } else {
-	//response.status(201).send(`Guest modified with name: ${firstName}`)
-	console.log(res.rows[0])
+	response.status(201).send(`Guest modified with name: ${firstName}`)
+	//console.log(res.rows[0])
   }
 })
 
