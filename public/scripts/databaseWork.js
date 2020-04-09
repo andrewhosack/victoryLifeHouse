@@ -24,6 +24,55 @@ xhr.onload = function () {
 		}
 	}
 	
+	console.log('firstName=' + txtFirstName.value +
+	'&lastName=' + txtLastName.value +
+	'&SSN=' + txtSocialSecurityNumber.value +
+	'&dateOfBirth=' + txtDateOfBirth.value +
+	'&currentMailingAddress=0' +//+ txtStreetName.value +
+	'&addressOfLastAbuse=0' +// + selCurrentAddress.value +
+	'&dateLeftAbuser=' + txtDateLeftAbuser.value +
+	'&abuserLocation=0' + //+ selLocationOfAbuser.value +
+	'&abuserJailInfo=' + txtAbuserJailInfo.value +
+	'&abuserInformation=' + txtInformationOnAbuser.value +
+	'&abuserLastCommunication=' + txtLastCommunication.value +
+	'&finalEvent=' + txtFinalEvent.value +
+	'&abuserTypeOfRelationship=' + selRelationshipToAbuser.value +
+	'&abuserDateOfMarriage=' + txtDateOfMarriageToAbuser.value +
+	'&abuserDateOfRelationship=' + txtDateOfRelationshipToAbuser.value +
+	'&abuserRelationshipDescription=' + txtRelationshipToAbuserDescription.value +
+	'&currentRestrainingOrder=' + selCurrentRestrainingOrder.value +
+	'&requestedRestrainingOrder=' + selRequestedRestrainingOrder.value +
+	'&requiredEmergencyServices=' + selRequiredEmergencyServices.value +
+	'&facilityOfEmergencyServices=' + txtFacilityOfEmergencyServices.value +
+	'&outOfPocketExpenses=' + txtOutOfPocketExpenses.value +
+	'&moneyOwedForMedical=' + txtMoneyOwedForMedical.value +
+	'&abuserCourtOrderedForSupport=' + selCourtOrderedForSupport.value +
+	'&abuserCourtOrderedToPay=' + txtCourtOrderedToPay.value +
+	'&divorceDecreeAtCheckIn=' + selDivorceDecree.value +
+	'&onGoingTreatment=' + selOngoingTreatment.value +
+	'&onGoingTreatmentDescription=' + txtOngoingTreatmentDescription.value +
+	'&primaryCarePhysician=' + txtPrimaryCarePhysician.value +
+	'&abuserAlimony=' + selAbuserAlimony.value +
+	'&abuserAlimonyLate=' + selAbuserAlimonyLate.value +
+	'&abuserAlimonyLateAmount=' + txtAbuserAlimonyLateAmount.value +
+	'&currentlyEmployed=' + selEmployed.value +
+	'&childrenLivingAtHome=' + selChildrenLivingAtHome.value +
+	'&childExperienceTrauma=' + selChildrenTrauma.value +
+	'&childTraumaDescription=' + txtChildrenTraumaExplanation.value +
+	'&childrenCurrentInformation=' + txtChildrenCurrentLocationAndInfo.value +
+	'&trustedContacts=' + txtTrustedContacts.value +
+	'&abuserTimesReturned=' + txtTimesReturnedToAbuser.value +
+	'&doesNotWantToReturn=' + selDoesNotWantToReturn.value +
+	'&maritalStatus=' + selMaritalStatus.value +
+	'&hasLegalCounsel=' + selLegalCounsel.value +
+	'&pursuingLegalCouncel=' + selPursuingLegalCouncel.value +
+	'&smokeOrVape=' + selSmokeOrVape.value +
+	'&consumeAlcohol=' + selConsumeAlcohol.value +
+	'&hasCurrentAddictions=' + selAddictions.value +
+	'&currentAddictions=' + txtCurrentAddictions.value +
+	'&languagesSpoken=' + txtLanguages.value +
+	'&physicalLimitations=' + txtPhysicalLimitations.value +
+	'&foodAllergies=' + txtFoodAllergies.value);
 xhr.send(
 	'firstName=' + txtFirstName.value +
 	'&lastName=' + txtLastName.value +
@@ -110,7 +159,7 @@ xhr.onload = function () {
 	}
 	else {
 		console.log('xhr.response: "' + xhr.response + '"');
-    var JSONObject = JSON.parse(xhr.response);
+		var JSONObject = JSON.parse(xhr.response);
 		console.log(JSONObject);
 		console.log(Object.keys(JSONObject).length);
 
