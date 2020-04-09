@@ -138,6 +138,13 @@ function loadGuestInformation() {
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
 
+
+let validation = 0;
+//Validate that user input has been entered into all four textboxes
+
+validation = validateBasicInfo();
+
+if(validation == 1) {
 // Create and send a GET request
 // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
 // The second argument is the endpoint URL
@@ -303,6 +310,11 @@ else {
 }
 
 xhr.send();
+
+}
+else {
+	alert(validation);
+}
 }
 
 
