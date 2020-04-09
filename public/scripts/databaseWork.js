@@ -104,8 +104,8 @@ xhr.onload = function () {
     // What do when the request is successful
 
     var JSONObject = JSON.parse(xhr.response);
-		console.log(JSONObject);
-		console.log(xhr.response);
+		//console.log(JSONObject);
+		//console.log(xhr.response);
 
 		if(JSONObject.length > 0) {
 
@@ -120,113 +120,113 @@ xhr.onload = function () {
 			txtNewZipCode.value = "";
 			selRelationshipToNewAddress.value = "";
 			selAddressOfLastAbuse.value = "";
-			txtDateLeftAbuser.value = moment(JSONObject[0].dateLeftAbuser).format('YYYY-MM-DD');
+			txtDateLeftAbuser.value = moment(JSONObject.dateLeftAbuser).format('YYYY-MM-DD');
 			//selLocationOfAbuser.value = 0;
-			txtAbuserJailInfo.value = JSONObject[0].abuserJailInfo;
+			txtAbuserJailInfo.value = JSONObject.abuserJailInfo;
 			txtAbuserStreetName.value = "123 Fake Street";
 			txtAbuserCity.value = "Hendersonville";
 			selAbuserState.value = "North Carolina";
 			txtAbuserZipCode.value = 12345;
-			txtInformationOnAbuser.value = JSONObject[0].abuserInformation;
-			txtLastCommunication.value = moment(JSONObject[0].abuserLastCommunication).format('YYYY-MM-DD');
-			txtFinalEvent.value = JSONObject[0].finalEvent;
-			selRelationshipToAbuser.value = JSONObject[0].abuserTypeOfRelationship;
-			txtDateOfMarriageToAbuser.value = moment(JSONObject[0].abuserDateOfMarriage).format('YYYY-MM-DD');
-			txtDateOfRelationshipToAbuser.value = moment(JSONObject[0].abuserDateOfRelationship).format('YYYY-MM-DD');
-			txtRelationshipToAbuserDescription.value = JSONObject[0].abuserRelationshipDescription;
+			txtInformationOnAbuser.value = JSONObject.abuserInformation;
+			txtLastCommunication.value = moment(JSONObject.abuserLastCommunication).format('YYYY-MM-DD');
+			txtFinalEvent.value = JSONObject.finalEvent;
+			selRelationshipToAbuser.value = JSONObject.abuserTypeOfRelationship;
+			txtDateOfMarriageToAbuser.value = moment(JSONObject.abuserDateOfMarriage).format('YYYY-MM-DD');
+			txtDateOfRelationshipToAbuser.value = moment(JSONObject.abuserDateOfRelationship).format('YYYY-MM-DD');
+			txtRelationshipToAbuserDescription.value = JSONObject.abuserRelationshipDescription;
 
-			selCurrentRestrainingOrder.value = (JSONObject[0].currentRestrainingOrder == true) ? "Yes"
-																			: (JSONObject[0].currentRestrainingOrder == false) ? "No"
+			selCurrentRestrainingOrder.value = (JSONObject.currentRestrainingOrder == true) ? "Yes"
+																			: (JSONObject.currentRestrainingOrder == false) ? "No"
 																			:	null;
 
-			selRequestedRestrainingOrder.value = (JSONObject[0].requestedRestrainingOrder == true) ? "Yes"
-																			: (JSONObject[0].requestedRestrainingOrder == false) ? "No"
+			selRequestedRestrainingOrder.value = (JSONObject.requestedRestrainingOrder == true) ? "Yes"
+																			: (JSONObject.requestedRestrainingOrder == false) ? "No"
 																			:	null;
 
-			selRequiredEmergencyServices.value = (JSONObject[0].requiredEmergencyServices == true) ? "Yes"
-																			: (JSONObject[0].requiredEmergencyServices == false) ? "No"
+			selRequiredEmergencyServices.value = (JSONObject.requiredEmergencyServices == true) ? "Yes"
+																			: (JSONObject.requiredEmergencyServices == false) ? "No"
 																			:	null;
 
-			txtFacilityOfEmergencyServices.value = JSONObject[0].facilityOfEmergencyServices;
-			txtOutOfPocketExpenses.value = JSONObject[0].outOfPocketExpenses;
-			txtMoneyOwedForMedical.value = JSONObject[0].moneyOwedForMedical;
-			selCourtOrderedForSupport.value = (JSONObject[0].abuserCourtOrderedForSupport == true) ? "Yes"
-																			: (JSONObject[0].abuserCourtOrderedForSupport == false) ? "No"
+			txtFacilityOfEmergencyServices.value = JSONObject.facilityOfEmergencyServices;
+			txtOutOfPocketExpenses.value = JSONObject.outOfPocketExpenses;
+			txtMoneyOwedForMedical.value = JSONObject.moneyOwedForMedical;
+			selCourtOrderedForSupport.value = (JSONObject.abuserCourtOrderedForSupport == true) ? "Yes"
+																			: (JSONObject.abuserCourtOrderedForSupport == false) ? "No"
 																			:	null;
 
-			txtCourtOrderedToPay.value = JSONObject[0].abuserCourtOrderedToPay;
-			selDivorceDecree.value = (JSONObject[0].divorceDecreeAtCheckIn == true) ? "Yes"
-																			: (JSONObject[0].divorceDecreeAtCheckIn == false) ? "No"
+			txtCourtOrderedToPay.value = JSONObject.abuserCourtOrderedToPay;
+			selDivorceDecree.value = (JSONObject.divorceDecreeAtCheckIn == true) ? "Yes"
+																			: (JSONObject.divorceDecreeAtCheckIn == false) ? "No"
 																			:	null;
 
-			selOngoingTreatment.value = (JSONObject[0].onGoingTreatment == true) ? "Yes"
-																			: (JSONObject[0].onGoingTreatment == false) ? "No"
+			selOngoingTreatment.value = (JSONObject.onGoingTreatment == true) ? "Yes"
+																			: (JSONObject.onGoingTreatment == false) ? "No"
 																			:	null;
 
-			txtOngoingTreatmentDescription.value = JSONObject[0].onGoingTreatmentDescription;
-			txtPrimaryCarePhysician.value = JSONObject[0].primaryCarePhysician;
-			selAbuserAlimony.value = (JSONObject[0].abuserAlimony == true) ? "Yes"
-																			: (JSONObject[0].abuserAlimony == false) ? "No"
+			txtOngoingTreatmentDescription.value = JSONObject.onGoingTreatmentDescription;
+			txtPrimaryCarePhysician.value = JSONObject.primaryCarePhysician;
+			selAbuserAlimony.value = (JSONObject.abuserAlimony == true) ? "Yes"
+																			: (JSONObject.abuserAlimony == false) ? "No"
 																			:	null;
 
-			selAbuserAlimonyLate.value = (JSONObject[0].abuserAlimonyLate == true) ? "Yes"
-																			: (JSONObject[0].abuserAlimonyLate == false) ? "No"
+			selAbuserAlimonyLate.value = (JSONObject.abuserAlimonyLate == true) ? "Yes"
+																			: (JSONObject.abuserAlimonyLate == false) ? "No"
 																			:	null;
 
-			txtAbuserAlimonyLateAmount.value = JSONObject[0].abuserAlimonyLateAmount;
-			selEmployed.value = (JSONObject[0].currentlyEmployed == true) ? "Yes"
-																			: (JSONObject[0].currentlyEmployed == false) ? "No"
+			txtAbuserAlimonyLateAmount.value = JSONObject.abuserAlimonyLateAmount;
+			selEmployed.value = (JSONObject.currentlyEmployed == true) ? "Yes"
+																			: (JSONObject.currentlyEmployed == false) ? "No"
 																			:	null;
 
-			selChildrenLivingAtHome.value = (JSONObject[0].childrenLivingAtHome == true) ? "Yes"
-																			: (JSONObject[0].childrenLivingAtHome == false) ? "No"
+			selChildrenLivingAtHome.value = (JSONObject.childrenLivingAtHome == true) ? "Yes"
+																			: (JSONObject.childrenLivingAtHome == false) ? "No"
 																			:	null;
 
-			selChildrenTrauma.value = (JSONObject[0].childExperienceTrauma == true) ? "Yes"
-																			: (JSONObject[0].childExperienceTrauma == false) ? "No"
+			selChildrenTrauma.value = (JSONObject.childExperienceTrauma == true) ? "Yes"
+																			: (JSONObject.childExperienceTrauma == false) ? "No"
 																			:	null;
 
-			txtChildrenTraumaExplanation.value = JSONObject[0].childTraumaDescription;
-			txtChildrenCurrentLocationAndInfo.value = JSONObject[0].childrenCurrentInformation;
-			txtTrustedContacts.value = JSONObject[0].trustedContacts;
-			txtTimesReturnedToAbuser.value = JSONObject[0].abuserTimesReturned;
-			selDoesNotWantToReturn.value = (JSONObject[0].doesNotWantToReturn == true) ? "Yes"
-																			: (JSONObject[0].doesNotWantToReturn == false) ? "No"
+			txtChildrenTraumaExplanation.value = JSONObject.childTraumaDescription;
+			txtChildrenCurrentLocationAndInfo.value = JSONObject.childrenCurrentInformation;
+			txtTrustedContacts.value = JSONObject.trustedContacts;
+			txtTimesReturnedToAbuser.value = JSONObject.abuserTimesReturned;
+			selDoesNotWantToReturn.value = (JSONObject.doesNotWantToReturn == true) ? "Yes"
+																			: (JSONObject.doesNotWantToReturn == false) ? "No"
 																			:	null;
 
-			selMaritalStatus.value = JSONObject[0].maritalStatus;
-			selLegalCounsel.value = (JSONObject[0].hasLegalCounsel == true) ? "Yes"
-																			: (JSONObject[0].hasLegalCounsel == false) ? "No"
+			selMaritalStatus.value = JSONObject.maritalStatus;
+			selLegalCounsel.value = (JSONObject.hasLegalCounsel == true) ? "Yes"
+																			: (JSONObject.hasLegalCounsel == false) ? "No"
 																			:	null;
 
-			selPursuingLegalCouncel.value = (JSONObject[0].pursuingLegalCouncel == true) ? "Yes"
-																			: (JSONObject[0].pursuingLegalCouncel == false) ? "No"
+			selPursuingLegalCouncel.value = (JSONObject.pursuingLegalCouncel == true) ? "Yes"
+																			: (JSONObject.pursuingLegalCouncel == false) ? "No"
 																			:	null;
 
-			selSmokeOrVape.value = (JSONObject[0].smokeOrVape == true) ? "Yes"
-																			: (JSONObject[0].smokeOrVape == false) ? "No"
+			selSmokeOrVape.value = (JSONObject.smokeOrVape == true) ? "Yes"
+																			: (JSONObject.smokeOrVape == false) ? "No"
 																			:	null;
 
-			selConsumeAlcohol.value = (JSONObject[0].consumeAlcohol == true) ? "Yes"
-																			: (JSONObject[0].consumeAlcohol == false) ? "No"
+			selConsumeAlcohol.value = (JSONObject.consumeAlcohol == true) ? "Yes"
+																			: (JSONObject.consumeAlcohol == false) ? "No"
 																			:	null;
 
-			selAddictions.value = (JSONObject[0].hasCurrentAddictions == true) ? "Yes"
-																			: (JSONObject[0].hasCurrentAddictions == false) ? "No"
+			selAddictions.value = (JSONObject.hasCurrentAddictions == true) ? "Yes"
+																			: (JSONObject.hasCurrentAddictions == false) ? "No"
 																			:	null;
 
-			txtCurrentAddictions.value = JSONObject[0].currentAddictions;
-			txtLanguages.value = JSONObject[0].languagesSpoken;
-			selPhysicalLimitations.value = (JSONObject[0].physicalLimitations == true) ? "Yes"
-																			: (JSONObject[0].physicalLimitations == false) ? "No"
+			txtCurrentAddictions.value = JSONObject.currentAddictions;
+			txtLanguages.value = JSONObject.languagesSpoken;
+			selPhysicalLimitations.value = (JSONObject.physicalLimitations == true) ? "Yes"
+																			: (JSONObject.physicalLimitations == false) ? "No"
 																			:	null;
 
-			txtPhysicalLimitations.value = JSONObject[0].physicalLimitations;
-			selFoodAllergies.value = (JSONObject[0].foodAllergies == true) ? "Yes"
-																			: (JSONObject[0].foodAllergies == false) ? "No"
+			txtPhysicalLimitations.value = JSONObject.physicalLimitations;
+			selFoodAllergies.value = (JSONObject.foodAllergies == true) ? "Yes"
+																			: (JSONObject.foodAllergies == false) ? "No"
 																			:	null;
 
-			txtFoodAllergies.value = JSONObject[0].foodAllergies;
+			txtFoodAllergies.value = JSONObject.foodAllergies;
 
 			setTextBoxVisibility();
 
