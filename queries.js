@@ -85,7 +85,7 @@ const query = {
   text: 'SELECT * FROM guests WHERE "guestID" = $1',
   values: [id],
 }
-console.log('contents of the query array are: ' + query);
+console.log('contents of the query array are: ' + query[0].text + ' and ' + query[0].values);
 // callback
 pool.query(query, (err, res) => {
   //pool.query('SELECT * FROM guests WHERE "guestID" = $1', [id], (err, res) => {
