@@ -105,6 +105,7 @@ xhr.onload = function () {
 		//Make sure the Submit Info button is visible on the summary screen
 		document.getElementById("btnUpdateGuest").hidden = "hidden"
 		document.getElementById("btnSubmitInformation").removeAttribute("hidden");
+		clearFormTextboxes();
 		alert('No guest was found with these details!');
 	}
 	else {
