@@ -85,7 +85,6 @@ const query = {
   text: 'SELECT * FROM guests WHERE "guestID" = $1',
   values: [id],
 }
-console.log('contents of the id is: ' + id);
 // callback
 pool.query(query, (err, res) => {
   //pool.query('SELECT * FROM guests WHERE "guestID" = $1', [id], (err, res) => {
@@ -351,6 +350,7 @@ const query = {
 	physicalLimitations,
 	foodAllergies],
 }
+console.log(query);
 // callback
 pool.query(query, (err, res) => {
   if (err) {
