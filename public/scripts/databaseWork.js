@@ -7,7 +7,7 @@ xhr.open('POST', 'https://victorylife.herokuapp.com/guests');
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 xhr.onreadystatechange = function() { // Call a function when the state changes.
-		if (this.readyState === XMLHttpRequest.DONE && this.status  >= 200 && xhr.status < 300) {
+		if (this.readyState === XMLHttpRequest.DONE && this.status  >= 200 && this.status < 300) {
 			// Request finished. Do processing here.
 			// Clear out all text boxes
 			clearFormTextboxes()
@@ -262,9 +262,6 @@ xhr.send();
 function updateGuest() {
 
 
-console.log(txtDateOfBirth.value, txtDateLeftAbuser.value, txtLastCommunication.value, txtDateOfMarriageToAbuser.value, txtDateOfRelationshipToAbuser.value)
-
-
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
 xhr.open('PUT', 'https://victorylife.herokuapp.com/guests/' + txtSocialSecurityNumber.value);
@@ -272,7 +269,7 @@ xhr.open('PUT', 'https://victorylife.herokuapp.com/guests/' + txtSocialSecurityN
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 xhr.onreadystatechange = function() { // Call a function when the state changes.
-		if (this.readyState === XMLHttpRequest.DONE && this.status  >= 200 && xhr.status < 300) {
+		if (this.readyState === XMLHttpRequest.DONE && xhr.status  >= 200 && xhr.status < 300) {
 			// Request finished. Do processing here.
 			// Clear out all text boxes
 		clearFormTextboxes();
@@ -282,6 +279,7 @@ xhr.onreadystatechange = function() { // Call a function when the state changes.
 		else {
 		// What do when the request fails
 				//console.log('Guest was not added!', xhr.response);
+				alert('this.readyState:' +this.readyState + 'this.status:' + this.status + 'xhr.status:' + xhr.status);
 				alert('Guest was not updated. Please contact your System Administrator!');
 		}
 	}
