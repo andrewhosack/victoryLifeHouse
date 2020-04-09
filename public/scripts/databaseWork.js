@@ -103,7 +103,14 @@ xhr.onload = function () {
 	if (xhr.status >= 200 && xhr.status < 300) {
     // What do when the request is successful
 
-console.log(xhr.response);
+	if (xhr.response == null) {
+		//Make sure the Submit Info button is visible on the summary screen
+		document.getElementById("btnUpdateGuest").hidden = "hidden"
+		document.getElementById("btnSubmitInformation").removeAttribute("hidden");
+		alert('No guest was found with these details!');
+	}
+	else {
+		
     var JSONObject = JSON.parse(xhr.response);
 		console.log(JSONObject);
 		console.log(Object.keys(JSONObject).length);
@@ -235,22 +242,18 @@ console.log(xhr.response);
 			document.getElementById("btnSubmitInformation").hidden = "hidden"
 			document.getElementById("btnUpdateGuest").removeAttribute("hidden");
 		}
-		else {
-			//Make sure the Submit Info button is visible on the summary screen
-			document.getElementById("btnUpdateGuest").hidden = "hidden"
-			document.getElementById("btnSubmitInformation").removeAttribute("hidden");
-			alert('No guest was found with these details!');
-		}
+	}
+		
 
-	} else {
+	// Code that should run regardless of the request status
+
+}
+else {
 		// What do when the request fails
 		console.log('The request failed!');
 		alert('Please reach out to a sytem admin, failed to connect to the database.');
 	}
-
-	// Code that should run regardless of the request status
-
-};
+}
 
 xhr.send();
 }
