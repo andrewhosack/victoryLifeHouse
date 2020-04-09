@@ -104,8 +104,8 @@ xhr.onload = function () {
     // What do when the request is successful
 
     var JSONObject = JSON.parse(xhr.response);
-		//console.log(JSONObject);
-		//console.log(Object.keys(JSONObject).length);
+		console.log(JSONObject);
+		console.log(Object.keys(JSONObject).length);
 
 		if(Object.keys(JSONObject).length > 0) {
 
