@@ -2,7 +2,7 @@ function submitInfo() {
 
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
-xhr.open('POST', '/guests');
+xhr.open('POST', 'https://victorylife.herokuapp.com/guests');
 
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -94,7 +94,7 @@ var xhr = new XMLHttpRequest();
 // Create and send a GET request
 // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
 // The second argument is the endpoint URL
-xhr.open('GET', 'guests/' + txtSocialSecurityNumber.value);
+xhr.open('GET', 'https://victorylife.herokuapp.com/guests/' + txtSocialSecurityNumber.value);
 
 // Setup our listener to process completed requests
 xhr.onload = function () {
@@ -262,7 +262,7 @@ console.log(txtDateOfBirth.value, txtDateLeftAbuser.value, txtLastCommunication.
 
 // Set up our HTTP request
 var xhr = new XMLHttpRequest();
-xhr.open('PUT', '/guests/' + txtSocialSecurityNumber.value);
+xhr.open('PUT', 'https://victorylife.herokuapp.com/guests/' + txtSocialSecurityNumber.value);
 
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
