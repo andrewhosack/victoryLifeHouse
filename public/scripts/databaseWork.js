@@ -103,14 +103,14 @@ xhr.onload = function () {
 	if (xhr.status >= 200 && xhr.status < 300) {
     // What do when the request is successful
 
-	if (xhr.response == null) {
+	if (xhr.response == "") {
 		//Make sure the Submit Info button is visible on the summary screen
 		document.getElementById("btnUpdateGuest").hidden = "hidden"
 		document.getElementById("btnSubmitInformation").removeAttribute("hidden");
 		alert('No guest was found with these details!');
 	}
 	else {
-		
+		console.log('xhr.response: "' + xhr.response + '"');
     var JSONObject = JSON.parse(xhr.response);
 		console.log(JSONObject);
 		console.log(Object.keys(JSONObject).length);
