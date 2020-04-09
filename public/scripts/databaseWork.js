@@ -5,9 +5,8 @@ var xhr = new XMLHttpRequest();
 xhr.open('POST', 'https://victorylife.herokuapp.com/guests');
 
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-xhr.onreadystatechange = function() { // Call a function when the state changes.
-		if (this.readyState === XMLHttpRequest.DONE && this.status  >= 200 && this.status < 300) {
+xhr.onload = function () {
+		if (this.status  >= 200 && this.status < 300) {
 			// Request finished. Do processing here.
 			// Clear out all text boxes
 			clearFormTextboxes()
@@ -21,8 +20,7 @@ xhr.onreadystatechange = function() { // Call a function when the state changes.
 		}
 		else {
 		// What do when the request fails
-				//console.log('Guest was not added!', xhr.response);
-				alert('Guest was not added. Please contact your System Administrator!');
+		alert('Guest was not added. Please contact your System Administrator!');
 		}
 	}
 	
@@ -268,19 +266,17 @@ xhr.open('PUT', 'https://victorylife.herokuapp.com/guests/' + txtSocialSecurityN
 
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-xhr.onreadystatechange = function() { // Call a function when the state changes.
-		if (this.readyState === XMLHttpRequest.DONE && xhr.status  >= 200 && xhr.status < 300) {
+xhr.onload = function () {
+		if (xhr.status  >= 200 && xhr.status < 300) {
 			// Request finished. Do processing here.
 			// Clear out all text boxes
-		clearFormTextboxes();
-		Navigation('btnSubmitInfo');
-		alert('Guest was successfully updated!');
+			clearFormTextboxes();
+			Navigation('btnSubmitInfo');
+			alert('Guest was successfully updated!');
 		}
 		else {
-		// What do when the request fails
-				//console.log('Guest was not added!', xhr.response);
-				alert('this.readyState:' +this.readyState + 'this.status:' + this.status + 'xhr.status:' + xhr.status);
-				alert('Guest was not updated. Please contact your System Administrator!');
+			// What do when the request fails
+			alert('Guest was not updated. Please contact your System Administrator!');
 		}
 	}
 	
