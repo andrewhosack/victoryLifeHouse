@@ -103,6 +103,7 @@ xhr.onload = function () {
 	if (xhr.status >= 200 && xhr.status < 300) {
     // What do when the request is successful
 
+console.log(xhr.response);
     var JSONObject = JSON.parse(xhr.response);
 		console.log(JSONObject);
 		console.log(Object.keys(JSONObject).length);
