@@ -105,6 +105,7 @@ xhr.onload = function () {
 
     var JSONObject = JSON.parse(xhr.response);
 		console.log(JSONObject[0]);
+		console.log(xhr.response);
 
 		if(JSONObject.length > 0) {
 
