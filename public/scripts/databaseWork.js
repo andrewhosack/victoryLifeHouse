@@ -95,7 +95,7 @@ var xhr = new XMLHttpRequest();
 // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
 // The second argument is the endpoint URL
 xhr.open('GET', '/guests/' + txtSocialSecurityNumber.value);
-
+console.log('/guests/' + txtSocialSecurityNumber.value);
 // Setup our listener to process completed requests
 xhr.onload = function () {
 
@@ -237,7 +237,7 @@ xhr.onload = function () {
 			//Make sure the Submit Info button is visible on the summary screen
 			document.getElementById("btnUpdateGuest").hidden = "hidden"
 			document.getElementById("btnSubmitInformation").removeAttribute("hidden");
-			alert('No guest was found with these details!');
+			alert('No guest was found with these details!' + txtSocialSecurityNumber.value);
 		}
 
 	} else {
