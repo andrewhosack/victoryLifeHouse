@@ -81,8 +81,13 @@ const deleteUser = (request, response) => {
 const getGuestById = (request, response) => {
 
   const id = parseInt(request.params.id)
-
-  pool.query('SELECT * FROM guests WHERE "guestID" = $1', [id], (err, res) => {
+const query = {
+  text: 'SELECT * FROM guests WHERE "guestID" = $1',
+  values: [id],
+}
+// callback
+pool.query(query, (err, res) => {
+  //pool.query('SELECT * FROM guests WHERE "guestID" = $1', [id], (err, res) => {
     if (err) {
       console.log(err);
     }
