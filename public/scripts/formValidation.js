@@ -67,9 +67,9 @@ function validateAddressInfo() {
   else if(document.getElementById("txtAbuserZipCode").parentElement.hidden == false && document.getElementById("txtAbuserZipCode").value == "") {
     return("You must enter a Zip Code!");
   }
-  else if(document.getElementById("txtInformationOnAbuser").parentElement.hidden == false && document.getElementById("txtInformationOnAbuser").value == "") {
-    return("You must enter various details about the abuser!");
-  }
+  //else if(document.getElementById("txtInformationOnAbuser").parentElement.hidden == false && document.getElementById("txtInformationOnAbuser").value == "") {
+  //  return("You must enter various details about the abuser!");
+  //}
   else if(document.getElementById("txtLastCommunication").parentElement.hidden == false && document.getElementById("txtLastCommunication").value == "") {
     return("You must tell us about the last communication!");
   }

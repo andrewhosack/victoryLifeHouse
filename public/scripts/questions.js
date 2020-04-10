@@ -112,7 +112,7 @@ const STORE = [
       availableOnAp:'ST,LT'
     },
     {
-      question: 'Prior to right now,was this your most recent address?',
+      question: 'Prior to right now, was this your most recent address?',
       textboxName: 'selCurrentAddress',
       inputType: 'select',
       dataType: 'text',
@@ -222,7 +222,7 @@ const STORE = [
       textboxName: 'selLocationOfAbuser',
       inputType: 'select',
       dataType: 'text',
-      inputValues: ',Jail,Display all addresses related to woman,Other address',
+      inputValues: ',Unknown,Jail,Display all addresses related to woman,Other address',
       onElement: 'div6',
       isVisible: true,
       isEnabled: true,
@@ -297,7 +297,7 @@ const STORE = [
       availableOnAp:''
     },
     {
-      question: 'Other information you would like to provide',
+      question: 'Other information you would like to provide (Optional)',
       textboxName: 'txtInformationOnAbuser',
       inputType: 'text',
       dataType: 'text',
@@ -585,7 +585,7 @@ const STORE = [
       availableOnAp:''
     },
     {
-      question: 'How many months does he owe you?',
+      question: 'How many months is he behind in payment?',
       textboxName: 'txtAbuserAlimonyLateAmount',
       inputType: 'text',
       dataType: 'number',
@@ -623,6 +623,7 @@ const STORE = [
       isEnabled: true,
       questionGrouping:'15',
       childGrouping: '16',
+      responses: [{ Response: 'Yes', childgrouping: '16' }],
       formHeader: 'Children in your life',
       availableOnAp:''
     },
@@ -633,7 +634,7 @@ const STORE = [
       dataType: 'text',
       inputValues: ',Yes,No',
       onElement: 'div10',
-      isVisible: true,
+      isVisible: false,
       isEnabled: true,
       questionGrouping:'16',
       childGrouping: '17',
