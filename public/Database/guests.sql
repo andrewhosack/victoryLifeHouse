@@ -47,6 +47,8 @@ CREATE TABLE "guests" (
 "hasCurrentAddictions" BOOLEAN ,
 "currentAddictions" VARCHAR ,
 "languagesSpoken" VARCHAR ,
-"physicalLimitations" VARCHAR ,
-"foodAllergies" VARCHAR
+"physicalLimitations" BOOLEAN ,
+"physicalLimitationsDesc" VARCHAR ,
+"foodAllergies" BOOLEAN ,
+"foodAllergiesDesc" VARCHAR
 )

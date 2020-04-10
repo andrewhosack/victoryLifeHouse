@@ -147,7 +147,9 @@ const createGuest = (request, response) => {
 	currentAddictions,
 	languagesSpoken,
 	physicalLimitations,
-	foodAllergies } = request.body
+	physicalLimitationsDesc,
+	foodAllergies,
+	foodAllergiesDesc } = request.body
 	
 	if(firstName == "") { 
     firstName = null;
@@ -293,13 +295,19 @@ const createGuest = (request, response) => {
 	if(physicalLimitations == "") { 
     physicalLimitations = null;
 	}
+	if(physicalLimitationsDesc == "") { 
+	physicalLimitationsDesc = null;
+	}
 	if(foodAllergies == "") { 
-    foodAllergies = null;
+	foodAllergies = null;
+	}
+	if(foodAllergiesDesc == "") { 
+	foodAllergiesDesc = null;
 	}
 	
 	
 const query = {
-  text: 'INSERT INTO guests ("guestID", "firstName","lastName","SSN","dateOfBirth","currentMailingAddress","addressOfLastAbuse","dateLeftAbuser","abuserLocation","abuserJailInfo","abuserInformation","abuserLastCommunication","finalEvent","abuserTypeOfRelationship","abuserDateOfMarriage","abuserDateOfRelationship","abuserRelationshipDescription","currentRestrainingOrder","requestedRestrainingOrder","requiredEmergencyServices","facilityOfEmergencyServices","outOfPocketExpenses","moneyOwedForMedical","abuserCourtOrderedForSupport","abuserCourtOrderedToPay","divorceDecreeAtCheckIn","onGoingTreatment","onGoingTreatmentDescription","primaryCarePhysician","abuserAlimony","abuserAlimonyLate","abuserAlimonyLateAmount","currentlyEmployed","childrenLivingAtHome","childExperienceTrauma","childTraumaDescription","childrenCurrentInformation","trustedContacts","abuserTimesReturned","doesNotWantToReturn","maritalStatus","hasLegalCounsel","pursuingLegalCouncel","smokeOrVape","consumeAlcohol","hasCurrentAddictions","currentAddictions","languagesSpoken","physicalLimitations","foodAllergies") VALUES ($3, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44, $45, $46, $47, $48, $49)',
+  text: 'INSERT INTO guests ("guestID", "firstName","lastName","SSN","dateOfBirth","currentMailingAddress","addressOfLastAbuse","dateLeftAbuser","abuserLocation","abuserJailInfo","abuserInformation","abuserLastCommunication","finalEvent","abuserTypeOfRelationship","abuserDateOfMarriage","abuserDateOfRelationship","abuserRelationshipDescription","currentRestrainingOrder","requestedRestrainingOrder","requiredEmergencyServices","facilityOfEmergencyServices","outOfPocketExpenses","moneyOwedForMedical","abuserCourtOrderedForSupport","abuserCourtOrderedToPay","divorceDecreeAtCheckIn","onGoingTreatment","onGoingTreatmentDescription","primaryCarePhysician","abuserAlimony","abuserAlimonyLate","abuserAlimonyLateAmount","currentlyEmployed","childrenLivingAtHome","childExperienceTrauma","childTraumaDescription","childrenCurrentInformation","trustedContacts","abuserTimesReturned","doesNotWantToReturn","maritalStatus","hasLegalCounsel","pursuingLegalCouncel","smokeOrVape","consumeAlcohol","hasCurrentAddictions","currentAddictions","languagesSpoken","physicalLimitations","physicalLimitationsDesc","foodAllergies","foodAllergiesDesc") VALUES ($3, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44, $45, $46, $47, $48, $49, $50, $51)',
   values: [firstName, 
 	lastName, 
 	SSN, 
@@ -348,7 +356,9 @@ const query = {
 	currentAddictions,
 	languagesSpoken,
 	physicalLimitations,
-	foodAllergies],
+	physicalLimitationsDesc,
+	foodAllergies,
+	foodAllergiesDesc],
 }
 console.log(query);
 // callback
@@ -421,7 +431,9 @@ const updateGuest = (request, response) => {
 	currentAddictions,
 	languagesSpoken,
 	physicalLimitations,
-	foodAllergies } = request.body
+	physicalLimitationsDesc,
+	foodAllergies,
+	foodAllergiesDesc } = request.body
 	
 	if(firstName == "") { 
     firstName = null;
@@ -567,12 +579,18 @@ const updateGuest = (request, response) => {
 	if(physicalLimitations == "") { 
     physicalLimitations = null;
 	}
+	if(physicalLimitationsDesc == "") { 
+	physicalLimitationsDesc = null;
+	}
 	if(foodAllergies == "") { 
     foodAllergies = null;
 	}
+	if(foodAllergiesDesc == "") { 
+	foodAllergiesDesc = null;
+	}
 	
   const query = {
-  text: 'UPDATE guests SET "currentMailingAddress" = $1,"addressOfLastAbuse" = $2,"dateLeftAbuser" = $3,"abuserLocation" = $4,"abuserJailInfo" = $5,"abuserInformation" = $6,"abuserLastCommunication" = $7,"finalEvent" = $8,"abuserTypeOfRelationship"=$9,"abuserDateOfMarriage"=$10,"abuserDateOfRelationship"=$11,"abuserRelationshipDescription"=$12,"currentRestrainingOrder"=$13,"requestedRestrainingOrder"=$14,"requiredEmergencyServices"=$15,"facilityOfEmergencyServices"=$16,"outOfPocketExpenses"=$17,"moneyOwedForMedical"=$18,"abuserCourtOrderedForSupport"=$19,"abuserCourtOrderedToPay"=$20,"divorceDecreeAtCheckIn"=$21,"onGoingTreatment"=$22,"onGoingTreatmentDescription"=$23,"primaryCarePhysician"=$24,"abuserAlimony"=$25,"abuserAlimonyLate"=$26,"abuserAlimonyLateAmount"=$27,"currentlyEmployed"=$28,"childrenLivingAtHome"=$29,"childExperienceTrauma"=$30,"childTraumaDescription"=$31,"childrenCurrentInformation"=$32,"trustedContacts"=$33,"abuserTimesReturned"=$34,"doesNotWantToReturn"=$35,"maritalStatus"=$36,"hasLegalCounsel"=$37,"pursuingLegalCouncel"=$38,"smokeOrVape"=$39,"consumeAlcohol"=$40,"hasCurrentAddictions"=$41,"currentAddictions"=$42,"languagesSpoken"=$43,"physicalLimitations"=$44,"foodAllergies"=$45 WHERE "guestID"=$46',
+  text: 'UPDATE guests SET "currentMailingAddress" = $1,"addressOfLastAbuse" = $2,"dateLeftAbuser" = $3,"abuserLocation" = $4,"abuserJailInfo" = $5,"abuserInformation" = $6,"abuserLastCommunication" = $7,"finalEvent" = $8,"abuserTypeOfRelationship"=$9,"abuserDateOfMarriage"=$10,"abuserDateOfRelationship"=$11,"abuserRelationshipDescription"=$12,"currentRestrainingOrder"=$13,"requestedRestrainingOrder"=$14,"requiredEmergencyServices"=$15,"facilityOfEmergencyServices"=$16,"outOfPocketExpenses"=$17,"moneyOwedForMedical"=$18,"abuserCourtOrderedForSupport"=$19,"abuserCourtOrderedToPay"=$20,"divorceDecreeAtCheckIn"=$21,"onGoingTreatment"=$22,"onGoingTreatmentDescription"=$23,"primaryCarePhysician"=$24,"abuserAlimony"=$25,"abuserAlimonyLate"=$26,"abuserAlimonyLateAmount"=$27,"currentlyEmployed"=$28,"childrenLivingAtHome"=$29,"childExperienceTrauma"=$30,"childTraumaDescription"=$31,"childrenCurrentInformation"=$32,"trustedContacts"=$33,"abuserTimesReturned"=$34,"doesNotWantToReturn"=$35,"maritalStatus"=$36,"hasLegalCounsel"=$37,"pursuingLegalCouncel"=$38,"smokeOrVape"=$39,"consumeAlcohol"=$40,"hasCurrentAddictions"=$41,"currentAddictions"=$42,"languagesSpoken"=$43,"physicalLimitations"=$44,"physicalLimitations"=$45,"foodAllergies"=$46,"foodAllergies"=$47 WHERE "guestID"=$48',
   values: [currentMailingAddress,
 	addressOfLastAbuse,
 	dateLeftAbuser,
@@ -617,7 +635,9 @@ const updateGuest = (request, response) => {
 	currentAddictions,
 	languagesSpoken,
 	physicalLimitations,
+	physicalLimitationsDesc,
 	foodAllergies,
+	foodAllergiesDesc,
 	id],
 }
 console.log(query);
