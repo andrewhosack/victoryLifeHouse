@@ -469,6 +469,11 @@ function myFunction() {
 
 function populateForm() {
 loadGuestInformation();
+}
 
-
+function loadTestGuestData() {
+  txtFirstName.value = 'TestFirst';
+  txtLastName.value = 'TestLast';
+	txtSocialSecurityNumber.value = '123456789';
+	txtDateOfBirth.value = '1996-01-01';
 }
