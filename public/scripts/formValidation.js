@@ -112,7 +112,7 @@ function validateMedicalAndFinancialInfo() {
   else if(document.getElementById("txtOutOfPocketExpenses").parentElement.hidden == false && document.getElementById("txtOutOfPocketExpenses").value == "") {
     return("You must enter your out of pocket expenses due to the emergency service!");
   }
-  else if(document.getElementById("txtMoneyOwedForMedical").parentElement.hidden == false && document.getElementById("txtMoneyOwedForMedical").value == "") {
+  else if(document.getElementById("selMoneyOwedForMedical").parentElement.hidden == false && document.getElementById("selMoneyOwedForMedical").value == "") {
     return("You must enter the amount of money owed for medical bills!");
   }
   else if(document.getElementById("txtMoneyOwedForMedicalMonthly").parentElement.hidden == false && document.getElementById("txtMoneyOwedForMedicalMonthly").value == "") {
