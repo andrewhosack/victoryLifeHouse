@@ -15,12 +15,15 @@ return buildFormHTML;
 function buildFormStartHeaders(formName) {
 let buildFormStartHeaders;
 
-console.log(formName);
 if(formName === 'Basic Info') {
 
   
   buildFormStartHeaders = '<div id = "testGuestButton" class = "divBackAndNext">' + 
   '<input type="button" value="Load Test Guest Data" id="btnLoadTestGuest" class = "navButtons" onClick="loadTestGuestData();"> </div>';
+}
+else {
+  buildFormStartHeaders = '';
+
 }
 
 buildFormStartHeaders +=
