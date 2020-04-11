@@ -59,6 +59,7 @@ xhr.send(
 	'&abuserAlimonyLate=' + selAbuserAlimonyLate.value +
 	'&abuserAlimonyLateAmount=' + txtAbuserAlimonyLateAmount.value +
 	'&currentlyEmployed=' + selEmployed.value +
+	'&currentSalary=' + txtCurrentSalary.value +
 	'&childrenLivingAtHome=' + selChildrenLivingAtHome.value +
 	'&childExperienceTrauma=' + selChildrenTrauma.value +
 	'&childTraumaDescription=' + txtChildrenTraumaExplanation.value +
@@ -203,7 +204,8 @@ xhr.onload = function () {
 			selEmployed.value = (JSONObject.currentlyEmployed == true) ? "Yes"
 																			: (JSONObject.currentlyEmployed == false) ? "No"
 																			:	null;
-
+			
+			txtCurrentSalary.value = JSONObject.currentSalary;
 			selChildrenLivingAtHome.value = (JSONObject.childrenLivingAtHome == true) ? "Yes"
 																			: (JSONObject.childrenLivingAtHome == false) ? "No"
 																			:	null;
@@ -340,6 +342,7 @@ xhr.send(
 	'&abuserAlimonyLate=' + selAbuserAlimonyLate.value +
 	'&abuserAlimonyLateAmount=' + txtAbuserAlimonyLateAmount.value +
 	'&currentlyEmployed=' + selEmployed.value +
+	'&currentSalary=' + txtCurrentSalary.value +
 	'&childrenLivingAtHome=' + selChildrenLivingAtHome.value +
 	'&childExperienceTrauma=' + selChildrenTrauma.value +
 	'&childTraumaDescription=' + txtChildrenTraumaExplanation.value +
