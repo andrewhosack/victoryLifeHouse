@@ -47,7 +47,7 @@ xhr.send(
 	'&facilityOfEmergencyServices=' + txtFacilityOfEmergencyServices.value +
 	'&abuseMoneyOwedForMedical=' + selAbuseMoneyOwedForMedical.value +
 	'&outOfPocketExpenses=' + txtOutOfPocketExpenses.value +
-	'&moneyOwedForMedical=' + txtMoneyOwedForMedical.value +
+	'&moneyOwedForMedical=' + selMoneyOwedForMedical.value +
 	'&moneyOwedForMedicalMonthly=' + txtMoneyOwedForMedicalMonthly.value +
 	'&abuserCourtOrderedForSupport=' + selCourtOrderedForSupport.value +
 	'&abuserCourtOrderedToPay=' + txtCourtOrderedToPay.value +
@@ -328,7 +328,7 @@ xhr.send(
 	'&facilityOfEmergencyServices=' + txtFacilityOfEmergencyServices.value +
 	'&abuseMoneyOwedForMedical=' + selAbuseMoneyOwedForMedical.value +
 	'&outOfPocketExpenses=' + txtOutOfPocketExpenses.value +
-	'&moneyOwedForMedical=' + txtMoneyOwedForMedical.value +
+	'&moneyOwedForMedical=' + selMoneyOwedForMedical.value +
 	'&moneyOwedForMedicalMonthly=' + txtMoneyOwedForMedicalMonthly.value +
 	'&abuserCourtOrderedForSupport=' + selCourtOrderedForSupport.value +
 	'&abuserCourtOrderedToPay=' + txtCourtOrderedToPay.value +
