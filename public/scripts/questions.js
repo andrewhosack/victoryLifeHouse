@@ -446,28 +446,58 @@ const STORE = [
       availableOnAp:''
     },
     {
+      question: 'Were medical expenses incurred for the reason why you are here?',
+      textboxName: 'selAbuseMoneyOwedForMedical',
+      inputType: 'select',
+      dataType: 'text',
+      inputValues: ',Yes,No',
+      onElement: 'div8',
+      isVisible: true,
+      isEnabled: true,
+      questionGrouping:'10',
+      childGrouping: '3001',
+      responses: [{ Response: 'Yes', childgrouping: '3001' }],
+      formHeader: 'Financial Impact',
+      availableOnAp:''
+    },
+    {
       question: 'What were your out of pocket expenses for medical treatment?',
       textboxName: 'txtOutOfPocketExpenses',
       inputType: 'text',
       dataType: 'number',
       inputValues: '',
       onElement: 'div8',
-      isVisible: true,
+      isVisible: false,
       isEnabled: true,
-      questionGrouping:'10',
-      formHeader: 'Financial Impact',
+      questionGrouping:'3001',
+      formHeader: '',
       availableOnAp:''
     },
     {
-      question: 'What is the approximate balance you currently owe for your medical bills?',
-      textboxName: 'txtMoneyOwedForMedical',
-      inputType: 'text',
-      dataType: 'number',
-      inputValues: '',
+      question: 'Do you have ongoing medical expenses not due to abuse?',
+      textboxName: 'selMoneyOwedForMedical',
+      inputType: 'select',
+      dataType: 'text',
+      inputValues: ',Yes,No',
       onElement: 'div8',
       isVisible: true,
       isEnabled: true,
       questionGrouping:'10',
+      childGrouping: '3002',
+      responses: [{ Response: 'Yes', childgrouping: '3002' }],
+      formHeader: '',
+      availableOnAp:''
+    },
+    {
+      question: 'Monthly Expense?',
+      textboxName: 'txtMoneyOwedForMedicalMonthly',
+      inputType: 'text',
+      dataType: 'number',
+      inputValues: '',
+      onElement: 'div8',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'3002',
       formHeader: '',
       availableOnAp:''
     },
@@ -597,7 +627,6 @@ const STORE = [
       formHeader: '',
       availableOnAp:''
     },
-
     {
       question: 'Are you employed?',
       textboxName: 'selEmployed',
@@ -609,7 +638,20 @@ const STORE = [
       isEnabled: true,
       questionGrouping:'14',
       childGrouping: '15',
+      responses: [{ Response: 'Yes', childgrouping: '3000' }],
       formHeader: 'Employment',
+      availableOnAp:''
+    },
+    {
+      question: 'What is your current annual salary?',
+      textboxName: 'txtCurrentSalary',
+      inputType: 'text',
+      dataType: 'text',
+      onElement: 'div8',
+      isVisible: false,
+      isEnabled: true,
+      questionGrouping:'3000',
+      formHeader: '',
       availableOnAp:''
     },
     {

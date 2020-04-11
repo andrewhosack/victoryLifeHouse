@@ -106,11 +106,17 @@ function validateMedicalAndFinancialInfo() {
   if(document.getElementById("txtFacilityOfEmergencyServices").parentElement.hidden == false && document.getElementById("txtFacilityOfEmergencyServices").value == "") {
     return("You must enter if you required an emergency stay due to the abuser!");
   }
+  else if(document.getElementById("selAbuseMoneyOwedForMedical").parentElement.hidden == false && document.getElementById("selAbuseMoneyOwedForMedical").value == "") {
+    return("You must enter if medical expenses were incurred for the reason you are here!");
+  }
   else if(document.getElementById("txtOutOfPocketExpenses").parentElement.hidden == false && document.getElementById("txtOutOfPocketExpenses").value == "") {
     return("You must enter your out of pocket expenses due to the emergency service!");
   }
   else if(document.getElementById("txtMoneyOwedForMedical").parentElement.hidden == false && document.getElementById("txtMoneyOwedForMedical").value == "") {
     return("You must enter the amount of money owed for medical bills!");
+  }
+  else if(document.getElementById("txtMoneyOwedForMedicalMonthly").parentElement.hidden == false && document.getElementById("txtMoneyOwedForMedicalMonthly").value == "") {
+    return("You must enter the amount of money owed monthly for medical bills!");
   }
   else if(document.getElementById("selCourtOrderedForSupport").parentElement.hidden == false && document.getElementById("selCourtOrderedForSupport").value == "") {
     return("You must enter if your abuser was court ordered to help pay for your medical bills!");
@@ -141,6 +147,9 @@ function validateMedicalAndFinancialInfo() {
   }
   else if(document.getElementById("selEmployed").parentElement.hidden == false && document.getElementById("selEmployed").value == "") {
     return("You must enter if you are employed or not!");
+  }
+  else if(document.getElementById("txtCurrentSalary").parentElement.hidden == false && document.getElementById("txtCurrentSalary").value == "") {
+    return("You must enter your current annual salary!");
   }
   else {
     return 1;

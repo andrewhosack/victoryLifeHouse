@@ -119,8 +119,10 @@ const createGuest = (request, response) => {
 	requestedRestrainingOrder,
 	requiredEmergencyServices,
 	facilityOfEmergencyServices,
+	abuseMoneyOwedForMedical,
 	outOfPocketExpenses,
 	moneyOwedForMedical,
+	moneyOwedForMedicalMonthly,
 	abuserCourtOrderedForSupport,
 	abuserCourtOrderedToPay,
 	divorceDecreeAtCheckIn,
@@ -131,6 +133,7 @@ const createGuest = (request, response) => {
 	abuserAlimonyLate,
 	abuserAlimonyLateAmount,
 	currentlyEmployed,
+	currentSalary,
 	childrenLivingAtHome,
 	childExperienceTrauma,
 	childTraumaDescription,
@@ -211,11 +214,17 @@ const createGuest = (request, response) => {
 	if(facilityOfEmergencyServices == "") { 
     facilityOfEmergencyServices = null;
 	}
+	if(abuseMoneyOwedForMedical == "") { 
+	abuseMoneyOwedForMedical = null;
+	}
 	if(outOfPocketExpenses == "") { 
     outOfPocketExpenses = null;
 	}
 	if(moneyOwedForMedical == "") { 
     moneyOwedForMedical = null;
+	}
+	if(moneyOwedForMedicalMonthly == "") { 
+	moneyOwedForMedicalMonthly = null;
 	}
 	if(abuserCourtOrderedForSupport == "") { 
     abuserCourtOrderedForSupport = null;
@@ -246,6 +255,9 @@ const createGuest = (request, response) => {
 	}
 	if(currentlyEmployed == "") { 
     currentlyEmployed = null;
+	}
+	if(currentSalary == "") { 
+	currentSalary = null;
 	}
 	if(childrenLivingAtHome == "") { 
     childrenLivingAtHome = null;
@@ -307,7 +319,7 @@ const createGuest = (request, response) => {
 	
 	
 const query = {
-  text: 'INSERT INTO guests ("guestID", "firstName","lastName","SSN","dateOfBirth","currentMailingAddress","addressOfLastAbuse","dateLeftAbuser","abuserLocation","abuserJailInfo","abuserInformation","abuserLastCommunication","finalEvent","abuserTypeOfRelationship","abuserDateOfMarriage","abuserDateOfRelationship","abuserRelationshipDescription","currentRestrainingOrder","requestedRestrainingOrder","requiredEmergencyServices","facilityOfEmergencyServices","outOfPocketExpenses","moneyOwedForMedical","abuserCourtOrderedForSupport","abuserCourtOrderedToPay","divorceDecreeAtCheckIn","onGoingTreatment","onGoingTreatmentDescription","primaryCarePhysician","abuserAlimony","abuserAlimonyLate","abuserAlimonyLateAmount","currentlyEmployed","childrenLivingAtHome","childExperienceTrauma","childTraumaDescription","childrenCurrentInformation","trustedContacts","abuserTimesReturned","doesNotWantToReturn","maritalStatus","hasLegalCounsel","pursuingLegalCouncel","smokeOrVape","consumeAlcohol","hasCurrentAddictions","currentAddictions","languagesSpoken","physicalLimitations","physicalLimitationsDesc","foodAllergies","foodAllergiesDesc") VALUES ($3, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44, $45, $46, $47, $48, $49, $50, $51)',
+  text: 'INSERT INTO guests ("guestID", "firstName","lastName","SSN","dateOfBirth","currentMailingAddress","addressOfLastAbuse","dateLeftAbuser","abuserLocation","abuserJailInfo","abuserInformation","abuserLastCommunication","finalEvent","abuserTypeOfRelationship","abuserDateOfMarriage","abuserDateOfRelationship","abuserRelationshipDescription","currentRestrainingOrder","requestedRestrainingOrder","requiredEmergencyServices","facilityOfEmergencyServices","abuseMoneyOwedForMedical","outOfPocketExpenses","moneyOwedForMedical","moneyOwedForMedicalMonthly","abuserCourtOrderedForSupport","abuserCourtOrderedToPay","divorceDecreeAtCheckIn","onGoingTreatment","onGoingTreatmentDescription","primaryCarePhysician","abuserAlimony","abuserAlimonyLate","abuserAlimonyLateAmount","currentlyEmployed","currentSalary","childrenLivingAtHome","childExperienceTrauma","childTraumaDescription","childrenCurrentInformation","trustedContacts","abuserTimesReturned","doesNotWantToReturn","maritalStatus","hasLegalCounsel","pursuingLegalCouncel","smokeOrVape","consumeAlcohol","hasCurrentAddictions","currentAddictions","languagesSpoken","physicalLimitations","physicalLimitationsDesc","foodAllergies","foodAllergiesDesc") VALUES ($3, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44, $45, $46, $47, $48, $49, $50, $51, $52, $53, $54)',
   values: [firstName, 
 	lastName, 
 	SSN, 
@@ -328,8 +340,10 @@ const query = {
 	requestedRestrainingOrder,
 	requiredEmergencyServices,
 	facilityOfEmergencyServices,
+	abuseMoneyOwedForMedical,
 	outOfPocketExpenses,
 	moneyOwedForMedical,
+	moneyOwedForMedicalMonthly,
 	abuserCourtOrderedForSupport,
 	abuserCourtOrderedToPay,
 	divorceDecreeAtCheckIn,
@@ -340,6 +354,7 @@ const query = {
 	abuserAlimonyLate,
 	abuserAlimonyLateAmount,
 	currentlyEmployed,
+	currentSalary,
 	childrenLivingAtHome,
 	childExperienceTrauma,
 	childTraumaDescription,
@@ -403,8 +418,10 @@ const updateGuest = (request, response) => {
 	requestedRestrainingOrder,
 	requiredEmergencyServices,
 	facilityOfEmergencyServices,
+	abuseMoneyOwedForMedical,
 	outOfPocketExpenses,
 	moneyOwedForMedical,
+	moneyOwedForMedicalMonthly,
 	abuserCourtOrderedForSupport,
 	abuserCourtOrderedToPay,
 	divorceDecreeAtCheckIn,
@@ -415,6 +432,7 @@ const updateGuest = (request, response) => {
 	abuserAlimonyLate,
 	abuserAlimonyLateAmount,
 	currentlyEmployed,
+	currentSalary,
 	childrenLivingAtHome,
 	childExperienceTrauma,
 	childTraumaDescription,
@@ -495,11 +513,17 @@ const updateGuest = (request, response) => {
 	if(facilityOfEmergencyServices == "") { 
     facilityOfEmergencyServices = null;
 	}
+	if(abuseMoneyOwedForMedical == "") { 
+	abuseMoneyOwedForMedical = null;
+	}
 	if(outOfPocketExpenses == "") { 
-    outOfPocketExpenses = null;
+	outOfPocketExpenses = null;
 	}
 	if(moneyOwedForMedical == "") { 
-    moneyOwedForMedical = null;
+	moneyOwedForMedical = null;
+	}
+	if(moneyOwedForMedicalMonthly == "") { 
+	moneyOwedForMedicalMonthly = null;
 	}
 	if(abuserCourtOrderedForSupport == "") { 
     abuserCourtOrderedForSupport = null;
@@ -530,6 +554,9 @@ const updateGuest = (request, response) => {
 	}
 	if(currentlyEmployed == "") { 
     currentlyEmployed = null;
+	}
+	if(currentSalary == "") { 
+	currentSalary = null;
 	}
 	if(childrenLivingAtHome == "") { 
     childrenLivingAtHome = null;
@@ -590,7 +617,7 @@ const updateGuest = (request, response) => {
 	}
 	
   const query = {
-  text: 'UPDATE guests SET "currentMailingAddress" = $1,"addressOfLastAbuse" = $2,"dateLeftAbuser" = $3,"abuserLocation" = $4,"abuserJailInfo" = $5,"abuserInformation" = $6,"abuserLastCommunication" = $7,"finalEvent" = $8,"abuserTypeOfRelationship"=$9,"abuserDateOfMarriage"=$10,"abuserDateOfRelationship"=$11,"abuserRelationshipDescription"=$12,"currentRestrainingOrder"=$13,"requestedRestrainingOrder"=$14,"requiredEmergencyServices"=$15,"facilityOfEmergencyServices"=$16,"outOfPocketExpenses"=$17,"moneyOwedForMedical"=$18,"abuserCourtOrderedForSupport"=$19,"abuserCourtOrderedToPay"=$20,"divorceDecreeAtCheckIn"=$21,"onGoingTreatment"=$22,"onGoingTreatmentDescription"=$23,"primaryCarePhysician"=$24,"abuserAlimony"=$25,"abuserAlimonyLate"=$26,"abuserAlimonyLateAmount"=$27,"currentlyEmployed"=$28,"childrenLivingAtHome"=$29,"childExperienceTrauma"=$30,"childTraumaDescription"=$31,"childrenCurrentInformation"=$32,"trustedContacts"=$33,"abuserTimesReturned"=$34,"doesNotWantToReturn"=$35,"maritalStatus"=$36,"hasLegalCounsel"=$37,"pursuingLegalCouncel"=$38,"smokeOrVape"=$39,"consumeAlcohol"=$40,"hasCurrentAddictions"=$41,"currentAddictions"=$42,"languagesSpoken"=$43,"physicalLimitations"=$44,"physicalLimitationsDesc"=$45,"foodAllergies"=$46,"foodAllergiesDesc"=$47 WHERE "guestID"=$48',
+  text: 'UPDATE guests SET "currentMailingAddress" = $1,"addressOfLastAbuse" = $2,"dateLeftAbuser" = $3,"abuserLocation" = $4,"abuserJailInfo" = $5,"abuserInformation" = $6,"abuserLastCommunication" = $7,"finalEvent" = $8,"abuserTypeOfRelationship"=$9,"abuserDateOfMarriage"=$10,"abuserDateOfRelationship"=$11,"abuserRelationshipDescription"=$12,"currentRestrainingOrder"=$13,"requestedRestrainingOrder"=$14,"requiredEmergencyServices"=$15,"facilityOfEmergencyServices"=$16,"abuseMoneyOwedForMedical"=$17,"outOfPocketExpenses"=$18,"moneyOwedForMedical"=$19,"moneyOwedForMedicalMonthly"=$20,"abuserCourtOrderedForSupport"=$21,"abuserCourtOrderedToPay"=$22,"divorceDecreeAtCheckIn"=$23,"onGoingTreatment"=$24,"onGoingTreatmentDescription"=$25,"primaryCarePhysician"=$26,"abuserAlimony"=$27,"abuserAlimonyLate"=$28,"abuserAlimonyLateAmount"=$29,"currentlyEmployed"=$30,"currentlyEmployed"=$31,"childrenLivingAtHome"=$32,"childExperienceTrauma"=$33,"childTraumaDescription"=$34,"childrenCurrentInformation"=$35,"trustedContacts"=$36,"abuserTimesReturned"=$37,"doesNotWantToReturn"=$38,"maritalStatus"=$39,"hasLegalCounsel"=$40,"pursuingLegalCouncel"=$41,"smokeOrVape"=$42,"consumeAlcohol"=$43,"hasCurrentAddictions"=$44,"currentAddictions"=$45,"languagesSpoken"=$46,"physicalLimitations"=$47,"physicalLimitationsDesc"=$48,"foodAllergies"=$49,"foodAllergiesDesc"=$50 WHERE "guestID"=$51',
   values: [currentMailingAddress,
 	addressOfLastAbuse,
 	dateLeftAbuser,
@@ -607,8 +634,10 @@ const updateGuest = (request, response) => {
 	requestedRestrainingOrder,
 	requiredEmergencyServices,
 	facilityOfEmergencyServices,
+	abuseMoneyOwedForMedical,
 	outOfPocketExpenses,
 	moneyOwedForMedical,
+	moneyOwedForMedicalMonthly,
 	abuserCourtOrderedForSupport,
 	abuserCourtOrderedToPay,
 	divorceDecreeAtCheckIn,
@@ -619,6 +648,7 @@ const updateGuest = (request, response) => {
 	abuserAlimonyLate,
 	abuserAlimonyLateAmount,
 	currentlyEmployed,
+	currentSalary,
 	childrenLivingAtHome,
 	childExperienceTrauma,
 	childTraumaDescription,

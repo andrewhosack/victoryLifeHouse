@@ -45,8 +45,10 @@ xhr.send(
 	'&requestedRestrainingOrder=' + selRequestedRestrainingOrder.value +
 	'&requiredEmergencyServices=' + selRequiredEmergencyServices.value +
 	'&facilityOfEmergencyServices=' + txtFacilityOfEmergencyServices.value +
+	'&abuseMoneyOwedForMedical=' + selAbuseMoneyOwedForMedical.value +
 	'&outOfPocketExpenses=' + txtOutOfPocketExpenses.value +
 	'&moneyOwedForMedical=' + txtMoneyOwedForMedical.value +
+	'&moneyOwedForMedicalMonthly=' + txtMoneyOwedForMedicalMonthly.value +
 	'&abuserCourtOrderedForSupport=' + selCourtOrderedForSupport.value +
 	'&abuserCourtOrderedToPay=' + txtCourtOrderedToPay.value +
 	'&divorceDecreeAtCheckIn=' + selDivorceDecree.value +
@@ -162,8 +164,18 @@ xhr.onload = function () {
 																			:	null;
 
 			txtFacilityOfEmergencyServices.value = JSONObject.facilityOfEmergencyServices;
+			
+
+			selAbuseMoneyOwedForMedical.value = (JSONObject.abuseMoneyOwedForMedical == true) ? "Yes"
+																			: (JSONObject.abuseMoneyOwedForMedical == false) ? "No"
+																			:	null;
+
 			txtOutOfPocketExpenses.value = JSONObject.outOfPocketExpenses;
-			txtMoneyOwedForMedical.value = JSONObject.moneyOwedForMedical;
+			selMoneyOwedForMedical.value = (JSONObject.moneyOwedForMedical == true) ? "Yes"
+																			: (JSONObject.moneyOwedForMedical == false) ? "No"
+																			:	null;
+
+			txtMoneyOwedForMedicalMonthly.value = JSONObject.moneyOwedForMedicalMonthly;
 			selCourtOrderedForSupport.value = (JSONObject.abuserCourtOrderedForSupport == true) ? "Yes"
 																			: (JSONObject.abuserCourtOrderedForSupport == false) ? "No"
 																			:	null;
@@ -314,8 +326,10 @@ xhr.send(
 	'&requestedRestrainingOrder=' + selRequestedRestrainingOrder.value +
 	'&requiredEmergencyServices=' + selRequiredEmergencyServices.value +
 	'&facilityOfEmergencyServices=' + txtFacilityOfEmergencyServices.value +
+	'&abuseMoneyOwedForMedical=' + selAbuseMoneyOwedForMedical.value +
 	'&outOfPocketExpenses=' + txtOutOfPocketExpenses.value +
 	'&moneyOwedForMedical=' + txtMoneyOwedForMedical.value +
+	'&moneyOwedForMedicalMonthly=' + txtMoneyOwedForMedicalMonthly.value +
 	'&abuserCourtOrderedForSupport=' + selCourtOrderedForSupport.value +
 	'&abuserCourtOrderedToPay=' + txtCourtOrderedToPay.value +
 	'&divorceDecreeAtCheckIn=' + selDivorceDecree.value +
