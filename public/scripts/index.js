@@ -46,7 +46,7 @@ if(btnClick==='btnBasicInfoNext') {
   validation = validateBasicInfo();
 
   if( validation == 1) {
-    loadAddressInformation()
+    loadAddressInformation();
     hideClass('basicInfo');
     showClass('addressInfo');
   }
@@ -478,3 +478,4 @@ function loadTestGuestData() {
 	txtSocialSecurityNumber.value = '123456789';
 	txtDateOfBirth.value = '1996-01-01';
 }
+

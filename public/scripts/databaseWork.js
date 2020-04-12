@@ -252,7 +252,7 @@ xhr.onload = function () {
 																			:	null;
 
 			txtFoodAllergies.value = JSONObject.foodAllergiesDesc;
-
+			
 			setTextBoxVisibility();
 
 			//Make sure Update Guest Record button is visible on the Summary Screen
@@ -293,6 +293,10 @@ xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhr.onload = function () {
 		if (xhr.status  >= 200 && xhr.status < 300) {
 			// Request finished. Do processing here.
+
+			//Update Addresses on Guest record
+
+
 			// Clear out all text boxes
 			clearFormTextboxes();
 			Navigation('btnSubmitInfo');
@@ -413,7 +417,7 @@ function loadAddressInformation() {
 			
 	
 		// Code that should run regardless of the request status
-	
+		setTextBoxVisibility()
 	}
 	else {
 			// What do when the request fails
