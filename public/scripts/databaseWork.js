@@ -378,7 +378,7 @@ function loadAddressInformation() {
 		// Process our return data
 		if (xhr.status >= 200 && xhr.status < 300) {
 		// What do when the request is successful
-	
+				console.log(xhr.response)
 		if (xhr.response != "") {
 			console.log('xhr.response: "' + xhr.response + '"');
 			var JSONObject = JSON.parse(xhr.response);

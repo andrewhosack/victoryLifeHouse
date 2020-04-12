@@ -697,7 +697,7 @@ const getAddressByGuestId = (request, response) => {
 	  if (err) {
 		console.log(err);
 	  }
-	  response.status(200).json(res.rows[0])
+	  response.status(200).json(res.rows)
 	})
 	
   }
