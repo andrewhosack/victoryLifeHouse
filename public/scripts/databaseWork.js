@@ -310,7 +310,7 @@ xhr.send(
 	'&SSN=' + txtSocialSecurityNumber.value +
 	'&dateOfBirth=' + moment(txtDateOfBirth.value).format('YYYY-MM-DD') +
 	'&currentMailingAddress=1' +//+ txtStreetName.value +
-	'&addressOfLastAbuse=' + selCurrentAddress.value +
+	'&addressOfLastAbuse=' + selAddressOfLastAbuse.value +
 	'&dateLeftAbuser=' + moment(txtDateLeftAbuser.value).format('YYYY-MM-DD') +
 	'&abuserLocation=' + selLocationOfAbuser.value +
 	'&abuserJailInfo=' + txtAbuserJailInfo.value +
