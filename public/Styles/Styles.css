@@ -1,0 +1,285 @@
+/* Style the navbar */
+.navbar1 {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.navbar1 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/*Everything above this point is related to navbar */
+
+
+body {
+  font-family: 'Muli', 'Open Sans';
+  display: flex;
+  flex-direction:column;
+}
+
+section {
+  display: flex;
+  width:100%;
+  border-style:double;
+  border-color:black;
+  height:100%;
+}
+
+.navbar {
+  width:100%;
+  background-color:#f3f3f3;
+}
+
+.navbar  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar li a:hover {
+  background-color: #D3D3D3;
+}
+
+.divQuestionContent  {
+  display:flex;
+  width:100%;
+  flex-direction:column;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+
+.splashScreen img {
+  max-width: 50%;
+  max-height: 50vh;
+  margin: auto;
+  display: block;
+  border-radius: 8%;
+}
+
+img {
+  max-width: 75%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+
+
+
+label {
+  margin:5px;
+}
+
+.sectionHeader {
+  height:12vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.sectionHeader p {
+  margin:5px;
+}
+
+.divBackAndNext {
+  display:flex;
+  width:100%;
+  justify-content:space-evenly;
+  height:10vh;
+  align-items:center;
+}
+
+.divQuestionContent input[type="text"] {
+  flex:1 1 auto;
+  width:5em;
+  padding:.25em .5em;
+  margin:5px;
+}
+/*
+.divBackAndNext input[type="button"] {
+  width:auto;
+  height:auto;
+  min-height:50%;
+  white-space:normal;
+  margin:5px;
+  transition: transform .2s;
+}
+
+.divBackAndNext input[type="button"]:hover {
+  transform: scale(1.5);
+}
+*/
+
+.divBackAndNext input[type="button"] {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin:5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width:auto;
+  height:auto;
+  min-height:50%;
+  white-space:normal;
+}
+
+.divBackAndNext input[type="button"] {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  border-radius: 1em;
+}
+
+.divBackAndNext input[type="button"]:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+@media screen and (min-width: 350px) and (max-width: 700px) {
+  .divQuestionContent label {
+    display:block;
+  }
+  .sectionHeader {
+    font-size:large;
+  }
+
+}
+
+@media screen and (min-width: 700px) and (max-width: 1100px) {
+  .divQuestionContent label {
+    display: block;
+  }
+  .sectionHeader {
+    font-size:x-large;
+  }
+
+}
+
+@media screen and (min-width: 1100px) {
+  .divQuestionContent label {
+    display: block;
+  }
+  .sectionHeader {
+    font-size:xx-large;
+  }
+}
+
+
+.banner {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.splashScreen {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  background-color:#E3FFE2;
+  flex-direction:column;
+}
+
+.basicInfo {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  background-color:#E3FFE2;
+  flex-direction:column;
+}
+
+.addressInfo {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction:column;
+  background-color:#E3FFE2;
+}
+
+.abuserInfo {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction:column;
+  background-color:#E3FFE2;
+}
+
+.medicalAndFinancial {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction:column;
+  background-color:#E3FFE2;
+}
+
+.familyAndFriends {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction:column;
+  background-color:#E3FFE2;
+}
+
+.generalInfo {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction:column;
+    background-color:#E3FFE2;
+}
+
+.summaryPage {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction:column;
+  background-color:#E3FFE2;
+}
+
+.footer {
+  justify-content: space-evenly; /* align horizontal */
+  align-items: left; /* align vertical */
+  width:100%;
+  display:flex;
+  flex-direction:row;
+}
+
+.footerColumn {
+  display:flex;
+  flex-direction:column;
+  width:33%;
+  align-items:flex-end;
+}
