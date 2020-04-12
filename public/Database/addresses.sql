@@ -1,11 +1,10 @@
 CREATE TABLE "addresses" ( 
-	"patientID" INTEGER ,
-	"addressID" INTEGER ,
+	"addressID" SERIAL PRIMARY KEY ,
+	"guestID" INTEGER ,
 	"addressType" VARCHAR ,
 	"addressLine1" VARCHAR ,
 	"addressLine2" VARCHAR ,
 	"city" VARCHAR ,
 	"state" VARCHAR ,
-	"zipCode" VARCHAR,
-	"relationshipToAddress" VARCHAR
+	"zipCode" VARCHAR
    )

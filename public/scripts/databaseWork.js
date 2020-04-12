@@ -119,17 +119,14 @@ xhr.onload = function () {
 		alert('No guest record was found with those details! Please continue in order to create a Guest record!');
 	}
 	else {
-		console.log('xhr.response: "' + xhr.response + '"');
 		var JSONObject = JSON.parse(xhr.response);
-		console.log(JSONObject);
-		console.log(Object.keys(JSONObject).length);
 
 		if(Object.keys(JSONObject).length > 0) {
 
-			txtStreetName.value = "123 Fake Street";
-			txtCity.value = "Hendersonville";
-			document.getElementById('selState').value = "North Carolina";
-			document.getElementById('txtZipCode').value = 27232;
+			//txtStreetName.value = "123 Fake Street";
+			//txtCity.value = "Hendersonville";
+			//document.getElementById('selState').value = "North Carolina";
+			//document.getElementById('txtZipCode').value = 27232;
 			selCurrentAddress.value = "";
 			txtNewStreetName.value = "";
 			txtNewCity.value = "";
@@ -365,6 +362,55 @@ xhr.send(
 	);
 
 }
+
+function loadAddressInformation() {
+	// Set up our HTTP request
+	var xhr = new XMLHttpRequest();
+	
+	// Create and send a GET request
+	// The first argument is the post type (GET, POST, PUT, DELETE, etc.)
+	// The second argument is the endpoint URL
+	xhr.open('GET', 'https://victorylife.herokuapp.com/addresses/' + txtSocialSecurityNumber.value);
+	
+	// Setup our listener to process completed requests
+	xhr.onload = function () {
+	
+		// Process our return data
+		if (xhr.status >= 200 && xhr.status < 300) {
+		// What do when the request is successful
+	
+		if (xhr.response != "") {
+			console.log('xhr.response: "' + xhr.response + '"');
+			var JSONObject = JSON.parse(xhr.response);
+			console.log(JSONObject);
+	
+			if(Object.keys(JSONObject).length > 0) {
+	
+				//txtStreetName.value = "123 Fake Street";
+				//txtCity.value = "Hendersonville";
+				//document.getElementById('selState').value = "North Carolina";
+				//document.getElementById('txtZipCode').value = 27232;
+				
+				
+		}
+
+		}
+			
+	
+		// Code that should run regardless of the request status
+	
+	}
+	else {
+			// What do when the request fails
+			console.log('The request failed!');
+			alert('Please reach out to a sytem admin, failed to connect to the database.');
+		}
+	}
+	
+	xhr.send();
+	
+}
+	
 
 function clearFormTextboxes() {
 

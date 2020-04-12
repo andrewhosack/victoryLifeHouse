@@ -46,6 +46,7 @@ if(btnClick==='btnBasicInfoNext') {
   validation = validateBasicInfo();
 
   if( validation == 1) {
+    loadAddressInformation()
     hideClass('basicInfo');
     showClass('addressInfo');
   }

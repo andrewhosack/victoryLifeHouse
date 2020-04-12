@@ -229,7 +229,7 @@ function dataValidation(typeOfData, nameOfInput) {
 let valueOfInput = document.getElementById(nameOfInput).value;
 
 const dateREGX = /^\d{4}\-\d{2}\-\d{2}$/;
-const alphaNumericREGX = /^[a-zA-Z0-9_ ]*$/;
+const alphaNumericREGX = /^[a-zA-Z0-9_ .,!"]*$/;
 const decimalNumbersREGX = /^[0-9]+\.?[0-9]*$/;
 
 

@@ -684,6 +684,24 @@ pool.query(query, (err, res) => {
 
 }
 
+//Address Section
+const getAddressByGuestId = (request, response) => {
+
+	const id = parseInt(request.params.id)
+  const query = {
+	text: 'SELECT * FROM addresses WHERE "guestID" = $1',
+	values: [id],
+  }
+  // callback
+  pool.query(query, (err, res) => {
+	  if (err) {
+		console.log(err);
+	  }
+	  response.status(200).json(res.rows[0])
+	})
+	
+  }
+
 module.exports = {
   getUsers,
   getUserById,
@@ -693,4 +711,5 @@ module.exports = {
   getGuestById,
   createGuest,
   updateGuest,
+  getAddressByGuestId,
 }
