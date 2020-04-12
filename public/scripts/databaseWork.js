@@ -30,7 +30,7 @@ xhr.send(
 	'&SSN=' + txtSocialSecurityNumber.value +
 	'&dateOfBirth=' + txtDateOfBirth.value +
 	'&currentMailingAddress=0' +//+ txtStreetName.value +
-	'&addressOfLastAbuse=' + selCurrentAddress.value +
+	'&addressOfLastAbuse=' + selAddressOfLastAbuse.value +
 	'&dateLeftAbuser=' + txtDateLeftAbuser.value +
 	'&abuserLocation=' + selLocationOfAbuser.value +
 	'&abuserJailInfo=' + txtAbuserJailInfo.value +
@@ -135,7 +135,7 @@ xhr.onload = function () {
 			selRelationshipToNewAddress.value = "";
 			selAddressOfLastAbuse.value = JSONObject.addressOfLastAbuse;
 			txtDateLeftAbuser.value = moment(JSONObject.dateLeftAbuser).format('YYYY-MM-DD');
-			selLocationOfAbuser.value = JSONObject.locationOfAbuser;
+			selLocationOfAbuser.value = JSONObject.abuserLocation;
 			txtAbuserJailInfo.value = JSONObject.abuserJailInfo;
 			txtAbuserStreetName.value = "";
 			txtAbuserCity.value = "";
