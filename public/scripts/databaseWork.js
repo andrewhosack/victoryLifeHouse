@@ -382,7 +382,7 @@ function loadAddressInformation() {
 		if (xhr.response != "") {
 			
 			var JSONObject = JSON.parse(xhr.response);
-			
+			console.log(JSONObject)
 	
 			if(Object.keys(JSONObject.length > 0)) {
 				var myAddresses = JSONObject;
