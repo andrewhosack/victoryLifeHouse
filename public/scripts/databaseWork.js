@@ -30,9 +30,9 @@ xhr.send(
 	'&SSN=' + txtSocialSecurityNumber.value +
 	'&dateOfBirth=' + txtDateOfBirth.value +
 	'&currentMailingAddress=0' +//+ txtStreetName.value +
-	'&addressOfLastAbuse=0' +// + selCurrentAddress.value +
+	'&addressOfLastAbuse=' + selCurrentAddress.value +
 	'&dateLeftAbuser=' + txtDateLeftAbuser.value +
-	'&abuserLocation=0' + //+ selLocationOfAbuser.value +
+	'&abuserLocation=' + selLocationOfAbuser.value +
 	'&abuserJailInfo=' + txtAbuserJailInfo.value +
 	'&abuserInformation=' + txtInformationOnAbuser.value +
 	'&abuserLastCommunication=' + txtLastCommunication.value +
@@ -133,14 +133,14 @@ xhr.onload = function () {
 			selNewState.value = "";
 			txtNewZipCode.value = "";
 			selRelationshipToNewAddress.value = "";
-			selAddressOfLastAbuse.value = "";
+			selAddressOfLastAbuse.value = JSONObject.addressOfLastAbuse;
 			txtDateLeftAbuser.value = moment(JSONObject.dateLeftAbuser).format('YYYY-MM-DD');
-			//selLocationOfAbuser.value = 0;
+			selLocationOfAbuser.value = JSONObject.locationOfAbuser;
 			txtAbuserJailInfo.value = JSONObject.abuserJailInfo;
-			txtAbuserStreetName.value = "123 Fake Street";
-			txtAbuserCity.value = "Hendersonville";
-			selAbuserState.value = "North Carolina";
-			txtAbuserZipCode.value = 12345;
+			txtAbuserStreetName.value = "";
+			txtAbuserCity.value = "";
+			selAbuserState.value = "";
+			txtAbuserZipCode.value = null;
 			txtInformationOnAbuser.value = JSONObject.abuserInformation;
 			txtLastCommunication.value = moment(JSONObject.abuserLastCommunication).format('YYYY-MM-DD');
 			txtFinalEvent.value = JSONObject.finalEvent;
@@ -310,9 +310,9 @@ xhr.send(
 	'&SSN=' + txtSocialSecurityNumber.value +
 	'&dateOfBirth=' + moment(txtDateOfBirth.value).format('YYYY-MM-DD') +
 	'&currentMailingAddress=1' +//+ txtStreetName.value +
-	'&addressOfLastAbuse=0' +// + selCurrentAddress.value +
+	'&addressOfLastAbuse=' + selCurrentAddress.value +
 	'&dateLeftAbuser=' + moment(txtDateLeftAbuser.value).format('YYYY-MM-DD') +
-	'&abuserLocation=0' + //+ selLocationOfAbuser.value +
+	'&abuserLocation=' + selLocationOfAbuser.value +
 	'&abuserJailInfo=' + txtAbuserJailInfo.value +
 	'&abuserInformation=' + txtInformationOnAbuser.value +
 	'&abuserLastCommunication=' + moment(txtLastCommunication.value).format('YYYY-MM-DD') +
@@ -378,23 +378,29 @@ function loadAddressInformation() {
 		// Process our return data
 		if (xhr.status >= 200 && xhr.status < 300) {
 		// What do when the request is successful
-				console.log(xhr.response)
+		
 		if (xhr.response != "") {
-			console.log('xhr.response: "' + xhr.response + '"');
+			
 			var JSONObject = JSON.parse(xhr.response);
-			console.log(JSONObject);
+			
 	
-			if(Object.keys(JSONObject).length > 0) {
-	
-				//txtStreetName.value = "123 Fake Street";
-				//txtCity.value = "Hendersonville";
-				//document.getElementById('selState').value = "North Carolina";
-				//document.getElementById('txtZipCode').value = 27232;
+			if(Object.keys(JSONObject.length > 0)) {
+				var myAddresses = JSONObject;
+				for (var key in myAddresses) {
+					if(myAddresses[key].addressType=='1') {
+						txtStreetName.value = myAddresses[key].addressLine1;
+						txtCity.value = myAddresses[key].city;
+						document.getElementById('selState').value = myAddresses[key].state;
+						document.getElementById('txtZipCode').value = myAddresses[key].zipCode;
+
+					}
+				}
 				
+			}
 				
 		}
 
-		}
+		
 			
 	
 		// Code that should run regardless of the request status
