@@ -51,6 +51,9 @@ app.post('/guests', db.createGuest)
 app.get('/guests/:id', db.getGuestById)
 app.put('/guests/:id', db.updateGuest)
 
+//addresses
+app.get('/addresses/:id', db.getAddressByGuestId)
+
 //For website, and also database
 app.use('/', router);
 app.listen(process.env.PORT || 3000, function(){
