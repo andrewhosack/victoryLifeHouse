@@ -387,11 +387,20 @@ function loadAddressInformation() {
 			if(Object.keys(JSONObject.length > 0)) {
 				var myAddresses = JSONObject;
 				for (var key in myAddresses) {
+					//Address Type 1 is home location
 					if(myAddresses[key].addressType=='1') {
 						txtStreetName.value = myAddresses[key].addressLine1;
 						txtCity.value = myAddresses[key].city;
-						document.getElementById('selState').value = myAddresses[key].state;
-						document.getElementById('txtZipCode').value = myAddresses[key].zipCode;
+						selState.value = myAddresses[key].state;
+						txtZipCode.value = myAddresses[key].zipCode;
+
+					}
+					//Address Type 2 is abuser locations
+					else if (myAddresses[key].addressType=='2') {
+						txtAbuserStreetName.value = myAddresses[key].addressLine1;
+						txtAbuserCity.value = myAddresses[key].city;
+						selAbuserState.value = myAddresses[key].state;
+						txtAbuserZipCode.value = myAddresses[key].zipCode;
 
 					}
 				}
