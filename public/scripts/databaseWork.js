@@ -382,11 +382,13 @@ function loadAddressInformation() {
 		if (xhr.response != "") {
 			
 			var JSONObject = JSON.parse(xhr.response);
-			console.log(JSONObject)
+
+			console.log(JSONObject);
 	
 			if(Object.keys(JSONObject.length > 0)) {
 				var myAddresses = JSONObject;
 				for (var key in myAddresses) {
+
 					//Address Type 1 is home location
 					if(myAddresses[key].addressType=='1') {
 						txtStreetName.value = myAddresses[key].addressLine1;
