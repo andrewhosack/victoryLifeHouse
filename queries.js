@@ -729,7 +729,7 @@ const getAddressByGuestId = (request, response) => {
 	text: 'INSERT INTO addresses ("guestID", "addressType","addressLine1","city","state","zipCode") VALUES ($1, $2, $3, $4, $5, $6)',
 	values: [id,
 		typeOfAddress,
-		streetname,
+		streetName,
 		city,
 		state,
 		zipCode],
