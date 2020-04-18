@@ -489,7 +489,7 @@ function updateAddress(typeOfAddress) {
 
 		// Set up our HTTP request
 		var xhr = new XMLHttpRequest();
-		xhr.open('POST', 'https://victorylife.herokuapp.com/addresses/' + txtSocialSecurityNumber.value);
+		xhr.open('POST', 'https://victorylife.herokuapp.com/addresses/');
 		
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		
