@@ -302,7 +302,7 @@ xhr.onload = function () {
 			
 
 			// Clear out all text boxes
-			//clearFormTextboxes();
+			clearFormTextboxes();
 			Navigation('btnSubmitInfo');
 			alert('Guest was successfully updated!');
 		}
