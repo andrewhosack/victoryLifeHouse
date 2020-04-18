@@ -295,7 +295,10 @@ xhr.onload = function () {
 			// Request finished. Do processing here.
 
 			//Update Addresses on Guest record
-
+			if(selCurrentAddress.value == 'No') {
+				updateAddress(1);
+			}
+			
 
 			// Clear out all text boxes
 			clearFormTextboxes();
@@ -429,6 +432,46 @@ function loadAddressInformation() {
 	xhr.send();
 	
 }
+
+function updateAddress(typeOfAddress) {
+
+	// Set up our HTTP request
+	var xhr = new XMLHttpRequest();
+	xhr.open('PUT', 'https://victorylife.herokuapp.com/addresses/' + txtSocialSecurityNumber.value);
+	
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	
+	xhr.onload = function () {
+			if (xhr.status  >= 200 && xhr.status < 300) {
+				// Request finished. Do processing here.
+	
+				//Update Addresses on Guest record
+				if(typeOfAddress == "1") {
+					console.log('Primary address was updated!');
+				}
+				else if (typeOfAddress == "2") {
+					console.log('Abuser\'s address was updated');
+				}
+	
+				// Clear out all text boxes
+				//clearFormTextboxes();
+				//Navigation('btnSubmitInfo');
+			}
+			else {
+				// What do when the request fails
+				console.log('Address was not updated!')
+			}
+		}
+		
+	xhr.send(
+		'streetName=' + txtNewStreetName.value +
+		'city=' + txtNewCity.value +
+		'state=' + selNewState.value +
+		'zipCode=' + txtNewZipCode.value +
+		'typeOfAddress=' + typeOfAddress
+		);
+	
+	}
 	
 
 function clearFormTextboxes() {

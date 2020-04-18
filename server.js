@@ -53,6 +53,8 @@ app.put('/guests/:id', db.updateGuest)
 
 //addresses
 app.get('/addresses/:id', db.getAddressByGuestId)
+app.post('/addresses', db.insertGuestAddress)
+app.put('/addresses/', db.updateGuestAddress)
 
 //For website, and also database
 app.use('/', router);

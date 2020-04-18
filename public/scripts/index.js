@@ -46,7 +46,7 @@ if(btnClick==='btnBasicInfoNext') {
   validation = validateBasicInfo();
 
   if( validation == 1) {
-    loadAddressInformation();
+    //loadAddressInformation();
     hideClass('basicInfo');
     showClass('addressInfo');
   }
@@ -470,6 +470,8 @@ function myFunction() {
 
 function populateForm() {
 loadGuestInformation();
+loadAddressInformation()
+setTimeout(2000);
 }
 
 function loadTestGuestData() {

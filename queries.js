@@ -392,11 +392,7 @@ pool.query(query, (err, res) => {
 
 const updateGuest = (request, response) => {
 	
-  
-  
-
-
-	const id = parseInt(request.params.id)
+  const id = parseInt(request.params.id)
 	let { 
   firstName, 
   lastName, 
@@ -702,6 +698,106 @@ const getAddressByGuestId = (request, response) => {
 	
   }
 
+  const insertGuestAddress = (request, response) => {
+	
+	let { 
+		streetName,
+		city,
+		state,
+		zipCode,
+		typeOfAddress
+	 } = request.body
+	  
+	  if(streetName == "") { 
+		streetName = null;
+	  }
+	  if(city == "") { 
+		city = null;
+	  } 
+	  if(state == "") { 
+		state = null;
+	  } 
+	  if(zipCode == "") { 
+		zipCode = null;
+	  }
+	  if(typeOfAddress == "") { 
+		typeOfAddress = null;
+	  }
+	  
+  const query = {
+	text: 'INSERT INTO addresses ("guestID", "addressType","addressLine1","city","state","zipCode") VALUES ($1, $2, $3, $4, $5, $6)',
+	values: [id,
+		typeOfAddress,
+		streetname,
+		city,
+		state,
+		zipCode],
+  }
+  console.log(query);
+  // callback
+  pool.query(query, (err, res) => {
+	if (err) {
+	  console.log(err)
+	} else {
+	  response.status(201).send(`Address added for Guest`)
+	  //console.log(res.rows[0])
+	}
+  })
+  
+  
+  } 
+ 
+  const updateGuestAddress = (request, response) => {
+	const id = parseInt(request.params.id)
+
+	let { 
+		streetName,
+		city,
+		state,
+		zipCode,
+		typeOfAddress
+	 } = request.body
+	  
+	  if(streetName == "") { 
+		streetName = null;
+	  }
+	  if(city == "") { 
+		city = null;
+	  } 
+	  if(state == "") { 
+		state = null;
+	  } 
+	  if(zipCode == "") { 
+		zipCode = null;
+	  }
+	  if(typeOfAddress == "") { 
+		typeOfAddress = null;
+	  }
+	  
+	const query = {
+	text: 'UPDATE addresses SET "guestID" = $1,"addressType" = $2,"addressLine1" = $3,"city" = $4,"state" = $5,"zipCode" = $6 WHERE "guestID"=$1',
+	values: [id,
+	  typeOfAddress,
+	  streetname,
+	  city,
+	  state,
+	  zipCode],
+  }
+  console.log(query);
+  // callback
+  pool.query(query, (err, res) => {
+	if (err) {
+	  console.log(err)
+	} else {
+	  response.status(201).send(`Address modified for Guest`)
+	  //console.log(res.rows[0])
+	}
+  })
+  
+  
+  }
+
+
 module.exports = {
   getUsers,
   getUserById,
@@ -712,4 +808,6 @@ module.exports = {
   createGuest,
   updateGuest,
   getAddressByGuestId,
+  insertGuestAddress,
+  updateGuestAddress,
 }
