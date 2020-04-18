@@ -295,13 +295,14 @@ xhr.onload = function () {
 			// Request finished. Do processing here.
 
 			//Update Addresses on Guest record
-			if(selCurrentAddress.value == 'No') {
-				updateAddress(1);
-			}
+			handleAddresses();
+			
+			
+			
 			
 
 			// Clear out all text boxes
-			clearFormTextboxes();
+			//clearFormTextboxes();
 			Navigation('btnSubmitInfo');
 			alert('Guest was successfully updated!');
 		}
@@ -403,7 +404,7 @@ function loadAddressInformation() {
 
 					}
 					//Address Type 2 is abuser locations
-					else if (myAddresses[key].addressType=='2') {
+					if (myAddresses[key].addressType=='2') {
 						txtAbuserStreetName.value = myAddresses[key].addressLine1;
 						txtAbuserCity.value = myAddresses[key].city;
 						selAbuserState.value = myAddresses[key].state;
@@ -463,13 +464,26 @@ function updateAddress(typeOfAddress) {
 			}
 		}
 		
-	xhr.send(
-		'streetName=' + txtNewStreetName.value +
-		'&city=' + txtNewCity.value +
-		'&state=' + selNewState.value +
-		'&zipCode=' + txtNewZipCode.value +
-		'&typeOfAddress=' + typeOfAddress
-		);
+		if(typeOfAddress == '1') {
+			xhr.send(
+				'streetName=' + txtNewStreetName.value +
+				'&city=' + txtNewCity.value +
+				'&state=' + selNewState.value +
+				'&zipCode=' + txtNewZipCode.value +
+				'&typeOfAddress=' + typeOfAddress
+			);
+		}
+		else if(typeOfAddress == '2') {
+			xhr.send(
+				'streetName=' + txtAbuserStreetName.value +
+				'&city=' + txtAbuserCity.value +
+				'&state=' + selAbuserState.value +
+				'&zipCode=' + txtAbuserZipCode.value +
+				'&typeOfAddress=' + typeOfAddress
+			);
+		}
+		
+		
 	
 	}
 	
@@ -490,5 +504,102 @@ function setTextBoxVisibility() {
 			document.getElementById(myDivs[key].textboxName).parentElement.removeAttribute("hidden");
 		}
 	}
+
+}
+
+
+function handleAddresses() {
+	// Set up our HTTP request
+	var xhr = new XMLHttpRequest();
+	
+	// Create and send a GET request
+	xhr.open('GET', 'https://victorylife.herokuapp.com/addresses/' + txtSocialSecurityNumber.value);
+	
+	// Setup our listener to process completed requests
+	xhr.onload = function () {
+	
+		// Process our return data
+		if (xhr.status >= 200 && xhr.status < 300) {
+		// What do when the request is successful
+		
+		if (xhr.response != "") {
+			
+			var JSONObject = JSON.parse(xhr.response);
+			console.log('handle address - JSONObject:' + JSONObject)
+			console.log(JSONObject.length);
+			var myAddresses = JSONObject;
+	
+			//If this is a New Guest being entered they will have no address records so we can assume either of these addresses would be an Insert
+			if(Object.keys(JSONObject.length == 0)) {
+				if(selCurrentAddress.value == 'No') {
+					//insertAddress(1);
+				}
+				if(selLocationOfAbuser.value == 'Other address') {
+					//InsertAddress(2);
+				}
+			}
+			
+			//If Guest only has one address then figure out which address it is, and INSERT the address that is not here, and UPDATE the one that is, based on conditions
+			if(Object.keys(JSONObject.length == 1)) {
+				
+				if( myAddresses[0].addressType == '1') {
+					
+					if(selCurrentAddress.value == 'No') {
+						updateAddress(1);
+					}
+					if(selLocationOfAbuser.value == 'Other address') {
+						//InsertAddress(2);
+					}
+				}
+
+				if( myAddresses[0].addressType == '2') {
+					
+					if(selCurrentAddress.value == 'No') {
+						//insertAddress(1);
+					}
+					if(selLocationOfAbuser.value == 'Other address') {
+						updateAddress(2);
+					}
+				}
+			}
+				
+			//If Guest has two address records then you will simply update both based on the conditions
+			if(Object.keys(JSONObject.length == 2)) {
+				console.log('2 addresses exist, running update on addresses.', 'value of selCurrentAddress:' + document.getElementById('selCurrentAddress').value, selLocationOfAbuser.value)
+					
+					if(selCurrentAddress.value == 'No') {
+						updateAddress(1);
+					}
+					if(selLocationOfAbuser.value == 'Other address') {
+						updateAddress(2);
+					}
+
+				
+			}
+
+			
+			}
+				
+		
+
+		
+			
+	
+		// Code that should run regardless of the request status
+
+	}
+	else {
+			// What do when the request fails
+			console.log('The request failed!');
+			alert('Please reach out to a sytem admin, failed to connect to the database.');
+		}
+	}
+	
+	xhr.send();
+
+
+
+	
+	
 
 }

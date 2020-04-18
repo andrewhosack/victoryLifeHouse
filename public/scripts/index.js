@@ -470,8 +470,9 @@ function myFunction() {
 
 function populateForm() {
 loadGuestInformation();
-loadAddressInformation()
 setTimeout(2000);
+loadAddressInformation()
+
 }
 
 function loadTestGuestData() {
