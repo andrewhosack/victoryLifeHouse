@@ -465,10 +465,10 @@ function updateAddress(typeOfAddress) {
 		
 	xhr.send(
 		'streetName=' + txtNewStreetName.value +
-		'city=' + txtNewCity.value +
-		'state=' + selNewState.value +
-		'zipCode=' + txtNewZipCode.value +
-		'typeOfAddress=' + typeOfAddress
+		'&city=' + txtNewCity.value +
+		'&state=' + selNewState.value +
+		'&zipCode=' + txtNewZipCode.value +
+		'&typeOfAddress=' + typeOfAddress
 		);
 	
 	}
