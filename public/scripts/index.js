@@ -39,6 +39,8 @@ if(btnClick==='btnSubmitInfo') {
 }
 
 if(btnClick==='btnSplashScreenNext') {
+  clearFormTextboxes();
+  setTextBoxVisibility();
     hideClass('splashScreen');
     showClass('basicInfo');
   }
@@ -470,9 +472,7 @@ function myFunction() {
 
 function populateForm() {
 loadGuestInformation();
-setTimeout(2000);
-loadAddressInformation()
-
+loadAddressInformation();
 }
 
 function loadTestGuestData() {

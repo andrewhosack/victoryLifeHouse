@@ -8,8 +8,12 @@ xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhr.onload = function () {
 		if (this.status  >= 200 && this.status < 300) {
 			// Request finished. Do processing here.
+			
+			//Add necessary addresses
+			handleAddresses()
+			
 			// Clear out all text boxes
-			clearFormTextboxes()
+			//clearFormTextboxes()
 
 
 			// What do when the request is successful
@@ -260,7 +264,7 @@ xhr.onload = function () {
 			document.getElementById("btnUpdateGuest").removeAttribute("hidden");
 		}
 	}
-		
+	setTextBoxVisibility()
 
 	// Code that should run regardless of the request status
 
@@ -297,12 +301,7 @@ xhr.onload = function () {
 			//Update Addresses on Guest record
 			handleAddresses();
 			
-			
-			
-			
-
-			// Clear out all text boxes
-			clearFormTextboxes();
+			//Navigate to the splash screen
 			Navigation('btnSubmitInfo');
 			alert('Guest was successfully updated!');
 		}
@@ -392,9 +391,10 @@ function loadAddressInformation() {
 			var JSONObject = JSON.parse(xhr.response);
 			console.log(JSONObject)
 	
-			if(Object.keys(JSONObject.length > 0)) {
+			if(Object.keys(JSONObject).length > 0) {
 				var myAddresses = JSONObject;
 				for (var key in myAddresses) {
+					console.log('loading addresses, addressType:' + myAddresses[key].addressType);
 					//Address Type 1 is home location
 					if(myAddresses[key].addressType=='1') {
 						txtStreetName.value = myAddresses[key].addressLine1;
@@ -454,9 +454,7 @@ function updateAddress(typeOfAddress) {
 					console.log('Abuser\'s address was updated');
 				}
 	
-				// Clear out all text boxes
-				//clearFormTextboxes();
-				//Navigation('btnSubmitInfo');
+				
 			}
 			else {
 				// What do when the request fails
@@ -486,6 +484,57 @@ function updateAddress(typeOfAddress) {
 		
 	
 	}
+
+	function insertAddress(typeOfAddress) {
+
+		// Set up our HTTP request
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', 'https://victorylife.herokuapp.com/addresses/' + txtSocialSecurityNumber.value);
+		
+		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		
+		xhr.onload = function () {
+				if (xhr.status  >= 200 && xhr.status < 300) {
+					// Request finished. Do processing here.
+		
+					//Update Addresses on Guest record
+					if(typeOfAddress == "1") {
+						console.log('Primary address was inserted!');
+					}
+					else if (typeOfAddress == "2") {
+						console.log('Abuser\'s address was inserted');
+					}
+		
+					
+				}
+				else {
+					// What do when the request fails
+					console.log('Address was not inserted!')
+				}
+			}
+			
+			if(typeOfAddress == '1') {
+				xhr.send(
+					'streetName=' + txtNewStreetName.value +
+					'&city=' + txtNewCity.value +
+					'&state=' + selNewState.value +
+					'&zipCode=' + txtNewZipCode.value +
+					'&typeOfAddress=' + typeOfAddress
+				);
+			}
+			else if(typeOfAddress == '2') {
+				xhr.send(
+					'streetName=' + txtAbuserStreetName.value +
+					'&city=' + txtAbuserCity.value +
+					'&state=' + selAbuserState.value +
+					'&zipCode=' + txtAbuserZipCode.value +
+					'&typeOfAddress=' + typeOfAddress
+				);
+			}
+			
+			
+		
+		}
 	
 
 function clearFormTextboxes() {
@@ -530,47 +579,48 @@ function handleAddresses() {
 			var myAddresses = JSONObject;
 	
 			//If this is a New Guest being entered they will have no address records so we can assume either of these addresses would be an Insert
-			if(Object.keys(JSONObject.length == 0)) {
+			if(Object.keys(JSONObject).length == 0) {
 				if(selCurrentAddress.value == 'No') {
-					//insertAddress(1);
+					insertAddress(1);
 				}
 				if(selLocationOfAbuser.value == 'Other address') {
-					//InsertAddress(2);
+					insertAddress(2);
 				}
 			}
 			
 			//If Guest only has one address then figure out which address it is, and INSERT the address that is not here, and UPDATE the one that is, based on conditions
-			if(Object.keys(JSONObject.length == 1)) {
-				
+			if(Object.keys(JSONObject).length == 1) {
 				if( myAddresses[0].addressType == '1') {
 					
 					if(selCurrentAddress.value == 'No') {
+						console.log('Updating Address type 1 for 1 address');
 						updateAddress(1);
 					}
 					if(selLocationOfAbuser.value == 'Other address') {
-						//InsertAddress(2);
+						insertAddress(2);
 					}
 				}
 
 				if( myAddresses[0].addressType == '2') {
 					
 					if(selCurrentAddress.value == 'No') {
-						//insertAddress(1);
+						insertAddress(1);
 					}
 					if(selLocationOfAbuser.value == 'Other address') {
+						console.log('Updating Address type 2 for 1 address');
 						updateAddress(2);
 					}
 				}
 			}
 				
 			//If Guest has two address records then you will simply update both based on the conditions
-			if(Object.keys(JSONObject.length == 2)) {
-				console.log('2 addresses exist, running update on addresses.', 'value of selCurrentAddress:' + document.getElementById('selCurrentAddress').value, selLocationOfAbuser.value)
-					
+			if(Object.keys(JSONObject).length == 2) {
 					if(selCurrentAddress.value == 'No') {
+						console.log('Updating Address type 1 for 2 addresses');
 						updateAddress(1);
 					}
 					if(selLocationOfAbuser.value == 'Other address') {
+						console.log('Updating Address type 2 for 2 addresses');
 						updateAddress(2);
 					}
 
@@ -584,7 +634,7 @@ function handleAddresses() {
 
 		
 			
-	
+			
 		// Code that should run regardless of the request status
 
 	}
