@@ -778,7 +778,7 @@ const getAddressByGuestId = (request, response) => {
 	text: 'UPDATE addresses SET "guestID" = $1,"addressType" = $2,"addressLine1" = $3,"city" = $4,"state" = $5,"zipCode" = $6 WHERE "guestID"=$1',
 	values: [id,
 	  typeOfAddress,
-	  streetname,
+	  streetName,
 	  city,
 	  state,
 	  zipCode],
