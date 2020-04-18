@@ -519,7 +519,8 @@ function updateAddress(typeOfAddress) {
 					'&city=' + txtNewCity.value +
 					'&state=' + selNewState.value +
 					'&zipCode=' + txtNewZipCode.value +
-					'&typeOfAddress=' + typeOfAddress
+					'&typeOfAddress=' + typeOfAddress +
+					'&id=' + txtSocialSecurityNumber.value
 				);
 			}
 			else if(typeOfAddress == '2') {
@@ -528,7 +529,8 @@ function updateAddress(typeOfAddress) {
 					'&city=' + txtAbuserCity.value +
 					'&state=' + selAbuserState.value +
 					'&zipCode=' + txtAbuserZipCode.value +
-					'&typeOfAddress=' + typeOfAddress
+					'&typeOfAddress=' + typeOfAddress +
+					'&id=' + txtSocialSecurityNumber.value
 				);
 			}
 			

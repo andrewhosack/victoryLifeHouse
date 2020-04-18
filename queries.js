@@ -705,7 +705,8 @@ const getAddressByGuestId = (request, response) => {
 		city,
 		state,
 		zipCode,
-		typeOfAddress
+		typeOfAddress,
+		id
 	 } = request.body
 	  
 	  if(streetName == "") { 
