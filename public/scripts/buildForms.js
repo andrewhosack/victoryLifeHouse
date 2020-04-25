@@ -22,7 +22,8 @@ if(formName === 'Basic Info') {
   '<input type="button" value="Load Test Guest Data" id="btnLoadTestGuest" class = "navButtons" onClick="loadTestGuestData();"> </div>';
 }
 else {
-  buildFormStartHeaders = '';
+  buildFormStartHeaders = '<div id = "testFullGuestData" class = "divBackAndNext">' + 
+  '<input type="button" value="Load Full Test Guest Data" id="btnLoadFullTestGuest" class = "navButtons" onClick="loadFullGuestData();"> </div>';
 
 }
 

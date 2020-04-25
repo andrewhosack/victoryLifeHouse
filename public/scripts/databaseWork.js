@@ -120,6 +120,10 @@ xhr.onload = function () {
 		//Make sure the Submit Info button is visible on the summary screen
 		document.getElementById("btnUpdateGuest").hidden = "hidden"
 		document.getElementById("btnSubmitInformation").removeAttribute("hidden");
+
+		//Set the Address screen up
+		txtStreetName.value = "No Address on file";
+
 		alert('No guest record was found with those details! Please continue in order to create a Guest record!');
 	}
 	else {

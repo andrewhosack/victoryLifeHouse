@@ -10,7 +10,7 @@ function showClass(className) {
   var divsToShow = document.getElementsByClassName(className); //divsToHide is an array
       for(var i = 0; i < divsToShow.length; i++){
           divsToShow[i].style.visibility = "visible"; // or
-          divsToShow[i].style.display = "flex"; // depending on what you're doing
+          divsToShow[i].style.display = "block"; // depending on what you're doing
       }
 }
 
@@ -48,7 +48,6 @@ if(btnClick==='btnBasicInfoNext') {
   validation = validateBasicInfo();
 
   if( validation == 1) {
-    //loadAddressInformation();
     hideClass('basicInfo');
     showClass('addressInfo');
   }
@@ -355,7 +354,7 @@ summaryPage.appendChild(div14);
 summaryPage.appendChild(btnSummaryPage);
 
 var footer = document.getElementById('footer');
-footer.appendChild(divfooter);
+//footer.appendChild(divfooter);
 
 //By default only show the first screen
 hideClass('basicInfo');
@@ -446,7 +445,13 @@ if(this.innerHTML === 'Home') {
   hideClass('familyAndFriends');
   hideClass('generalInfo');
   hideClass('summaryPage');
+  window.location.replace("/");
 }
+
+//if(this.innerHTML === 'Data Input') {
+ // window.location.replace("/DataInput");
+
+//}
 }
 
 /* All navbar code */
@@ -480,5 +485,49 @@ function loadTestGuestData() {
   txtLastName.value = 'TestLast';
 	txtSocialSecurityNumber.value = '123456789';
 	txtDateOfBirth.value = '1996-01-01';
+}
+
+function loadFullGuestData() {
+
+  selCurrentAddress.value = 'No';
+  txtNewStreetName.value = '123 Fake Generated Drive';
+  txtNewCity.value = 'Fake City';
+  selNewState.value = 'South Carolina';
+  txtNewZipCode.value = '28804';
+  selRelationshipToNewAddress.value = 'Self';
+  selAddressOfLastAbuse.value = 'Same address thats been provided already';
+  txtDateLeftAbuser.value = '2019-01-01';
+  selLocationOfAbuser.value = 'Unknown';
+  txtLastCommunication.value = '2019-01-01';
+  txtFinalEvent.value = 'I left in a hurry';
+  selRelationshipToAbuser.value = 'Wife';
+  txtDateOfMarriageToAbuser.value = '2018-01-01';
+  selCurrentRestrainingOrder.value = 'Yes';
+  selRequiredEmergencyServices.value = 'No';
+  selMoneyOwedForMedical.value = 'No';
+  selAbuseMoneyOwedForMedical.value = 'No';
+  selCourtOrderedForSupport.value = 'Yes';
+  txtCourtOrderedToPay.value = '45000';
+  selDivorceDecree.value = 'Yes';
+  selOngoingTreatment.value = 'No';
+  txtPrimaryCarePhysician.value = 'Fake Physician Information';
+  selAbuserAlimony.value = 'No';
+  selEmployed.value = 'Yes';
+  txtCurrentSalary.value = '35000';
+  selChildrenLivingAtHome.value = 'No';
+  txtChildrenCurrentLocationAndInfo.value = 'With my friend Bill'
+  txtTrustedContacts.value = 'Nobody';
+  txtTimesReturnedToAbuser.value = '2';
+  selDoesNotWantToReturn.value = 'No';
+  selMaritalStatus.value = 'Married';
+  selLegalCounsel.value = 'Yes';
+  selSmokeOrVape.value = 'No';
+  selConsumeAlcohol.value = 'No';
+  selAddictions.value = 'No';
+  txtLanguages.value = 'Spanish and English';
+  selPhysicalLimitations.value = 'No';
+  selFoodAllergies.value = 'No';
+
+  setTextBoxVisibility();
 }
 
