@@ -559,6 +559,8 @@ function setTextBoxVisibility() {
 			document.getElementById(myDivs[key].textboxName).parentElement.removeAttribute("hidden");
 		}
 	}
+	selCurrentAddress.value = 'Yes';
+
 
 }
 
