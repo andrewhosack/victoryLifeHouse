@@ -34,6 +34,8 @@ function Navigation(btnClick) {
 let validation = 0;
 
 if(btnClick==='btnSubmitInfo') {
+  clearFormTextboxes();
+  setTextBoxVisibility();
   showClass('splashScreen');
   hideClass('summaryPage');
 }
