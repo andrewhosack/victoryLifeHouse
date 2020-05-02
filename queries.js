@@ -81,7 +81,7 @@ const deleteUser = (request, response) => {
 const getGuests = (request, response) => {
   
 
-	pool.query('SELECT * FROM guests ORDER BY id ASC', (err, res) => {
+	pool.query('SELECT * FROM guests ORDER BY "lastName" ASC', (err, res) => {
 	  if (err) {
 		console.log(err);
 	  }
