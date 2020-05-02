@@ -450,10 +450,9 @@ if(this.innerHTML === 'Home') {
   window.location.replace("/");
 }
 
-//if(this.innerHTML === 'Data Input') {
- // window.location.replace("/DataInput");
-
-//}
+if(this.innerHTML === 'Data Input') {
+  window.location.replace("/DataInput");
+}
 }
 
 /* All navbar code */
