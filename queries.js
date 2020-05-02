@@ -78,7 +78,20 @@ const deleteUser = (request, response) => {
 
 
 //App INSERT
-const getGuestById = (request, response) => {
+const getGuests = (request, response) => {
+  
+
+	pool.query('SELECT * FROM guests ORDER BY id ASC', (err, res) => {
+	  if (err) {
+		console.log(err);
+	  }
+	  response.status(200).json(res.rows[0])
+	})
+	
+  }
+  
+ 
+ const getGuestById = (request, response) => {
 
   const id = parseInt(request.params.id)
 const query = {
@@ -805,6 +818,7 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
+  getGuests,
   getGuestById,
   createGuest,
   updateGuest,
