@@ -18,10 +18,11 @@ function getGuests() {
 		console.log(JSONObject)
 
 		if(Object.keys(JSONObject).length > 0) {
-			var myGuests = JSONObject;
-			for (var key in myGuests) {
-				console.log('Guest ' + key + ':' + myGuests[key].guestID);
-			}
+			//var myGuests = JSONObject;
+			return JSONObject;
+			//for (var key in myGuests) {
+			//	console.log('Guest ' + key + ':' + myGuests[key].guestID);
+			//}
 				
 			
 				
