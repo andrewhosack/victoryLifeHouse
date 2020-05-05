@@ -15,19 +15,14 @@ function getGuests() {
 		// What do when the request is successful
 		
 		var JSONObject = JSON.parse(xhr.response);
-		console.log(JSONObject)
-
 		if(Object.keys(JSONObject).length > 0) {
-			//var myGuests = JSONObject;
-			return JSONObject;
-			//for (var key in myGuests) {
-			//	console.log('Guest ' + key + ':' + myGuests[key].guestID);
-			//}
+			console.log(JSONObject[0].guestID);
+			return JSONObject[0].guestID;
+
 				
 			
 				
 		}
-
 	}
 	else {
 			// What do when the request fails

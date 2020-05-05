@@ -28,10 +28,12 @@ function displayGuests() {
 
   let formattedGuests = '';
 
-  var myGuests = getGuests();
+  let myGuests = 'yes';
+  let myGuests = getGuests();
  
+  console.log(myGuests)
   for (var key in myGuests) {
-  
+ 
  
       formattedGuests +=
   
@@ -43,6 +45,7 @@ function displayGuests() {
           '</div>';
     }
   
+    console.log(formattedGuests);
 return formattedGuests;
 }
 
