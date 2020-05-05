@@ -72,9 +72,9 @@ displayGuestsDiv2.innerHTML = displayGuests();
 
 
 //Appending the divs to the various sections
-var displayGuests = document.getElementById('displayGuests');
-displayGuests.appendChild(displayGuestsDiv);
-displayGuests.appendChild(displayGuestsDiv2);
+var displayGuestsViews = document.getElementById('displayGuests');
+displayGuestsViews.appendChild(displayGuestsDiv);
+displayGuestsViews.appendChild(displayGuestsDiv2);
 
 //var footer = document.getElementById('footer');
 //footer.appendChild(divfooter);
