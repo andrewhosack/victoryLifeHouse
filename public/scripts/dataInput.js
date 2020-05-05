@@ -29,7 +29,7 @@ function displayGuests() {
   let formattedGuests = '';
 
   let myGuests = 'yes';
-  let myGuests = getGuests();
+   myGuests = getGuests();
  
   console.log(myGuests)
   for (var key in myGuests) {
