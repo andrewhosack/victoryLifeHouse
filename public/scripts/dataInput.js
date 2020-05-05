@@ -33,7 +33,7 @@ function displayGuests() {
   for (var key in myGuests) {
   
  
-      formattedGuests +
+      formattedGuests +=
   
         '<div class="summaryDisplay">' +
         '      <div class="summaryLabels">          <label for="' + myGuests[key].guestID + '">' +
@@ -43,7 +43,7 @@ function displayGuests() {
           '</div>';
     }
   
-console.log( formattedGuests);
+return formattedGuests;
 }
 
 
