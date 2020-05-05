@@ -47,7 +47,7 @@ function displayGuests() {
   
         formattedGuests += '<div class="SummaryDisplay">' +
         '      <div class="SummaryLabels">          <label for="' + myGuests[key].guestID + '">' +
-        '                  <span>' + myGuests[key].guestID + ': </span>' +
+        '                  <span>' + myGuests[key].guestID + '</span>' +
         '                </label> </div>' +
         '     <div class="SummaryValues"> <span>' + myGuests[key].firstName + ' ' + myGuests[key].lastName + ' </span></div>' +
           '</div>';
