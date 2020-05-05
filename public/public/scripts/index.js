@@ -452,7 +452,6 @@ if(this.innerHTML === 'Home') {
 
 if(this.innerHTML === 'Data Input') {
   window.location.replace("/DataInput");
-
 }
 }
 

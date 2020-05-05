@@ -1,3 +1,47 @@
+function getGuests() {
+	// Set up our HTTP request
+	var xhr = new XMLHttpRequest();
+	
+	// Create and send a GET request
+	// The first argument is the post type (GET, POST, PUT, DELETE, etc.)
+	// The second argument is the endpoint URL
+	xhr.open('GET', 'https://victorylife.herokuapp.com/guests');
+	
+	// Setup our listener to process completed requests
+	xhr.onload = function () {
+	
+		// Process our return data
+		if (xhr.status >= 200 && xhr.status < 300) {
+		// What do when the request is successful
+		
+		var JSONObject = JSON.parse(xhr.response);
+		console.log(JSONObject)
+
+		if(Object.keys(JSONObject).length > 0) {
+			//var myGuests = JSONObject;
+			return JSONObject;
+			//for (var key in myGuests) {
+			//	console.log('Guest ' + key + ':' + myGuests[key].guestID);
+			//}
+				
+			
+				
+		}
+
+	}
+	else {
+			// What do when the request fails
+			console.log('The request failed!');
+			alert('Please reach out to a sytem admin, failed to connect to the database.');
+		}
+	}
+	
+	xhr.send();
+	
+}
+
+
+
 function submitInfo() {
 
 // Set up our HTTP request

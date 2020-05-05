@@ -269,6 +269,13 @@ label {
   background-color:#E3FFE2;
 }
 
+.displayGuests {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  background-color:#E3FFE2;
+  flex-direction:column;
+}
+
 .footer {
   justify-content: space-evenly; /* align horizontal */
   align-items: left; /* align vertical */
