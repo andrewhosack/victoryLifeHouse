@@ -43,7 +43,7 @@ function displayGuests() {
           '</div>';
     }
   
-return formattedGuests;
+console.log( formattedGuests);
 }
 
 
