@@ -34,23 +34,29 @@ function displayGuests() {
     
     myGuests= result;
     
+    //Headers for Guest Id and Name
+    formattedGuests += '<div class="SummaryDisplay">' +
+        '      <div class="SummaryLabels">' +
+        '                  <span>Guest ID </span>' +
+        '                 </div>' +
+        '     <div class="SummaryValues"> <span> Name of Guests </span></div>' +
+        '</div>';
+
+
     for (var key in myGuests) {
- 
- 
-      formattedGuests +=
   
-        '<div class="summaryDisplay">' +
-        '      <div class="summaryLabels">          <label for="' + myGuests[key].guestID + '">' +
+        formattedGuests += '<div class="SummaryDisplay">' +
+        '      <div class="SummaryLabels">          <label for="' + myGuests[key].guestID + '">' +
         '                  <span>' + myGuests[key].guestID + ': </span>' +
         '                </label> </div>' +
-        '     <div class="SummaryValues"> <span>' + myGuests[key].firstName + ' ' + myGuests[key].lastName + ' </span></div>'
+        '     <div class="SummaryValues"> <span>' + myGuests[key].firstName + ' ' + myGuests[key].lastName + ' </span></div>' +
           '</div>';
     }
-
     console.log(formattedGuests);
 
     let displayGuestsDiv2 = document.createElement('div');
     displayGuestsDiv2.setAttribute("id", "displayGuestsDiv2");
+    displayGuestsDiv2.classList.add("divQuestionContent");
     displayGuestsDiv2.innerHTML = formattedGuests;
 
     var displayGuestsViews = document.getElementById('displayGuests');
