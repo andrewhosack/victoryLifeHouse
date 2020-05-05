@@ -1,38 +1,48 @@
-function getGuests() {
-	// Set up our HTTP request
-	var xhr = new XMLHttpRequest();
+// function getGuests() {
+// 	// Set up our HTTP request
+// 	var xhr = new XMLHttpRequest();
 	
-	// Create and send a GET request
-	// The first argument is the post type (GET, POST, PUT, DELETE, etc.)
-	// The second argument is the endpoint URL
-	xhr.open('GET', 'https://victorylife.herokuapp.com/guests');
+// 	// Create and send a GET request
+// 	// The first argument is the post type (GET, POST, PUT, DELETE, etc.)
+// 	// The second argument is the endpoint URL
+// 	xhr.open('GET', 'https://victorylife.herokuapp.com/guests');
 	
-	// Setup our listener to process completed requests
-	xhr.onload = function () {
+// 	// Setup our listener to process completed requests
+// 	xhr.onload = function () {
 	
-		// Process our return data
-		if (xhr.status >= 200 && xhr.status < 300) {
-		// What do when the request is successful
+// 		// Process our return data
+// 		if (xhr.status >= 200 && xhr.status < 300) {
+// 		// What do when the request is successful
 		
-		var JSONObject = JSON.parse(xhr.response);
-		if(Object.keys(JSONObject).length > 0) {
-			console.log(JSONObject[0].guestID);
-			return JSONObject[0].guestID;
-
+// 		var JSONObject = JSON.parse(xhr.response);
+// 		if(Object.keys(JSONObject).length > 0) {
+// 			console.log(JSONObject[0].guestID);
+// 			//return JSONObject[0].guestID;
+// 			return 3;
 				
 			
 				
-		}
-	}
-	else {
-			// What do when the request fails
-			console.log('The request failed!');
-			alert('Please reach out to a sytem admin, failed to connect to the database.');
-		}
-	}
+// 		}
+// 	}
+// 	else {
+// 			// What do when the request fails
+// 			console.log('The request failed!');
+// 			alert('Please reach out to a sytem admin, failed to connect to the database.');
+// 		}
+// 	}
 	
-	xhr.send();
+// 	xhr.send();
 	
+// }
+
+function getGuests(callback) {
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onload = function(){ // when the request is loaded
+		var JSONObject = JSON.parse(httpRequest.responseText);
+		callback(JSONObject);// we're calling our method
+    };
+    httpRequest.open('GET', 'https://victorylife.herokuapp.com/guests');
+    httpRequest.send();
 }
 
 

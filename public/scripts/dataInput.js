@@ -24,15 +24,17 @@ function loadNavBar() {
   sectionNav.appendChild(navbar1);
 }
 
+
 function displayGuests() {
+  //loading with the Guests
+  getGuests(function(result) {
+    let formattedGuests = '';
 
-  let formattedGuests = '';
-
-  let myGuests = 'yes';
-   myGuests = getGuests();
- 
-  console.log(myGuests)
-  for (var key in myGuests) {
+    let myGuests = '';
+    
+    myGuests= result;
+    
+    for (var key in myGuests) {
  
  
       formattedGuests +=
@@ -44,10 +46,22 @@ function displayGuests() {
         '     <div class="SummaryValues"> <span>' + myGuests[key].firstName + ' ' + myGuests[key].lastName + ' </span></div>'
           '</div>';
     }
-  
+
     console.log(formattedGuests);
-return formattedGuests;
+
+    let displayGuestsDiv2 = document.createElement('div');
+    displayGuestsDiv2.setAttribute("id", "displayGuestsDiv2");
+    displayGuestsDiv2.innerHTML = formattedGuests;
+
+    var displayGuestsViews = document.getElementById('displayGuests');
+    
+    displayGuestsViews.appendChild(displayGuestsDiv2);
+
+
+});
+
 }
+
 
 
 
@@ -61,10 +75,6 @@ displayGuestsDiv.setAttribute("id", "displayGuestsDiv");
 displayGuestsDiv.innerHTML = '<p>Current guests</p>';
 displayGuestsDiv.classList.add("sectionHeader");
 
-let displayGuestsDiv2 = document.createElement('div');
-displayGuestsDiv2.setAttribute("id", "displayGuestsDiv2");
-displayGuestsDiv2.innerHTML = displayGuests();
-
 // //creating the footer
 // let divfooter = document.createElement('div');
 // divfooter.setAttribute("id", "divfooter");
@@ -77,7 +87,9 @@ displayGuestsDiv2.innerHTML = displayGuests();
 //Appending the divs to the various sections
 var displayGuestsViews = document.getElementById('displayGuests');
 displayGuestsViews.appendChild(displayGuestsDiv);
-displayGuestsViews.appendChild(displayGuestsDiv2);
+//displayGuestsViews.appendChild(displayGuestsDiv2);
+
+displayGuests();
 
 //var footer = document.getElementById('footer');
 //footer.appendChild(divfooter);
