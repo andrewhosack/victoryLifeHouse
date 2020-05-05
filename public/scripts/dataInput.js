@@ -33,12 +33,12 @@ function loadPage() {
 //Creating splash screen
 let displayGuestsDiv = document.createElement('div');
 displayGuestsDiv.setAttribute("id", "displayGuestsDiv");
-displayGuestsDiv.innerHTML = '<p>Current guests:</p>';
+displayGuestsDiv.innerHTML = '<p>Current guests</p>';
 displayGuestsDiv.classList.add("sectionHeader");
 
 let displayGuestsDiv2 = document.createElement('div');
 displayGuestsDiv2.setAttribute("id", "displayGuestsDiv2");
-displayGuestsDiv2.innerHTML = 'Hello';
+displayGuestsDiv2.innerHTML = displayGuests();
 
 // //creating the footer
 // let divfooter = document.createElement('div');
@@ -132,7 +132,23 @@ function myFunction() {
 
 function displayGuests() {
 
-console.log(getGuests());
+  let formattedGuests = '';
 
+  var myGuests = getGuests();
+ 
+  for (var key in myGuests) {
+  
+ 
+      formattedGuests +
+  
+        '<div class="summaryDisplay">' +
+        '      <div class="summaryLabels">          <label for="' + myGuests[key].guestID + '">' +
+        '                  <span>' + myGuests[key].guestID + ': </span>' +
+        '                </label> </div>' +
+        '     <div class="SummaryValues"> <span>' + myGuests[key].firstName + ' ' + myGuests[key].lastName + ' </span></div>'
+          '</div>';
+    }
+  
+return formattedGuests;
 }
 
