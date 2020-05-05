@@ -24,6 +24,28 @@ function loadNavBar() {
   sectionNav.appendChild(navbar1);
 }
 
+function displayGuests() {
+
+  let formattedGuests = '';
+
+  var myGuests = getGuests();
+ 
+  for (var key in myGuests) {
+  
+ 
+      formattedGuests +
+  
+        '<div class="summaryDisplay">' +
+        '      <div class="summaryLabels">          <label for="' + myGuests[key].guestID + '">' +
+        '                  <span>' + myGuests[key].guestID + ': </span>' +
+        '                </label> </div>' +
+        '     <div class="SummaryValues"> <span>' + myGuests[key].firstName + ' ' + myGuests[key].lastName + ' </span></div>'
+          '</div>';
+    }
+  
+return formattedGuests;
+}
+
 
 
 
@@ -130,25 +152,5 @@ function myFunction() {
 
 
 
-function displayGuests() {
 
-  let formattedGuests = '';
-
-  var myGuests = getGuests();
- 
-  for (var key in myGuests) {
-  
- 
-      formattedGuests +
-  
-        '<div class="summaryDisplay">' +
-        '      <div class="summaryLabels">          <label for="' + myGuests[key].guestID + '">' +
-        '                  <span>' + myGuests[key].guestID + ': </span>' +
-        '                </label> </div>' +
-        '     <div class="SummaryValues"> <span>' + myGuests[key].firstName + ' ' + myGuests[key].lastName + ' </span></div>'
-          '</div>';
-    }
-  
-return formattedGuests;
-}
 
