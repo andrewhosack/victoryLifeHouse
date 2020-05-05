@@ -36,20 +36,20 @@ function displayGuests() {
     
     //Headers for Guest Id and Name
     formattedGuests += '<div class="SummaryDisplay">' +
-        '      <div class="SummaryLabels">' +
-        '                  <span>Guest ID </span>' +
+        '      <div class="ReportLabels">' +
+        '                  <span class="ReportHeaderLabels">Guest ID </span>' +
         '                 </div>' +
-        '     <div class="SummaryValues"> <span> Name of Guests </span></div>' +
+        '     <div class="ReportValues"> <span class="ReportHeaderValues"> Name of Guest </span></div>' +
         '</div>';
 
 
     for (var key in myGuests) {
   
         formattedGuests += '<div class="SummaryDisplay">' +
-        '      <div class="SummaryLabels">          <label for="' + myGuests[key].guestID + '">' +
+        '      <div class="ReportLabels">          <label for="' + myGuests[key].guestID + '">' +
         '                  <span>' + myGuests[key].guestID + '</span>' +
         '                </label> </div>' +
-        '     <div class="SummaryValues"> <span>' + myGuests[key].firstName + ' ' + myGuests[key].lastName + ' </span></div>' +
+        '     <div class="ReportValues"> <span>' + myGuests[key].firstName + ' ' + myGuests[key].lastName + ' </span></div>' +
           '</div>';
     }
     console.log(formattedGuests);

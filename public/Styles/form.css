@@ -145,6 +145,30 @@ border:none;
   font-weight: bold;
 }
 
+.ReportValues {
+  font-weight:bold;
+  width:70%;
+}
+
+.ReportLabels {
+  width:30%;
+  font-weight: bold;
+}
+
+.ReportHeaderValues {
+  font-weight:bold;
+  width:70%;
+  color: grey;
+  font-size: large;
+}
+
+.ReportHeaderLabels {
+  width:30%;
+  font-weight: bold;
+  color: grey;
+  font-size: large;
+}
+
 
 .SummaryValues input[type="text"] {
     border: none;
